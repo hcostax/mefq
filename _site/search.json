@@ -1,5 +1,68 @@
 [
   {
+    "objectID": "slides/slides.html",
+    "href": "slides/slides.html",
+    "title": "Apresentações e Referências",
+    "section": "",
+    "text": "Nesta página é possível encontrar os slides dos encontros e as referências utilizada.\n\nDados e R – Data Wrangling & DataViz.\nApresentação\nAtividade Prática - Tidyverse\nAtividade Prática - ggplot2"
+  },
+  {
+    "objectID": "slides/Day1A_Slides.html",
+    "href": "slides/Day1A_Slides.html",
+    "title": "Day 1A Slides",
+    "section": "",
+    "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
+  },
+  {
+    "objectID": "pratica/pratica_tidyverse.html#pergunta-1.",
+    "href": "pratica/pratica_tidyverse.html#pergunta-1.",
+    "title": "Atividade Prática",
+    "section": "Pergunta 1.",
+    "text": "Pergunta 1.\nCarregue o tibble economics (incluído em {tidyverse}). Em seguida, crie um pipeline para realizar as seguintes etapas de manipulação de dados:\n\nPrimeiro, no tibble economics, renomeie a variável uempmed (a duração média do emprego, em semanas) para duration e a variável unemploy (o número de desempregados, em milhares) para number.\nEm seguida, adicione uma nova variável chamada rate que é calculada dividindo number (da parte a) por pop (a população total, em milhares).\nEm seguida, remova (ou seja, desmarque) as variáveis ​​pce, pop e psavert do tibble.\nEm seguida, realoque a variável rate para ficar entre as variáveis ​​date e duration.\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\neconomics |&gt; \n  rename(duration = uempmed, number = unemploy)\n\n\n  \n\n\n\nAnswer (b)\n\neconomics |&gt; \n  rename(duration = uempmed, number = unemploy) |&gt; \n  mutate(rate = number / pop)\n\n\n  \n\n\n\nAnswer (c)\n\neconomics |&gt; \n  rename(duration = uempmed, number = unemploy) |&gt; \n  mutate(rate = number / pop) |&gt; \n  select(-c(pce, pop, psavert))\n\n\n  \n\n\n\nAnswer (d)\n\neconomics |&gt;\n  rename(duration = uempmed, number = unemploy) |&gt; \n  mutate(rate = number / pop) |&gt; \n  select(-c(pce, pop, psavert)) |&gt; \n  relocate(rate, .after = date)"
+  },
+  {
+    "objectID": "pratica/pratica_tidyverse.html#question-2.",
+    "href": "pratica/pratica_tidyverse.html#question-2.",
+    "title": "Atividade Prática",
+    "section": "Question 2.",
+    "text": "Question 2.\nDownload the cereal data file from the workshop website. Copy it to your Project folder and read it into R as a tibble. Then create a pipeline to produce a short list of cereals for me to try. I am only interested in cold cereals with a rating greater than 70. Please arrange the list so that the cereals with the fewest calories are displayed at the top. Finally, write the result of this pipeline to a CSV file called “jeffs_list.csv” (I expect it to be even more popular than Craig’s list).\n\n\n\nClick here for the answer key\n\n\n\ncereal &lt;- read_csv(\"cereal.csv\") \n\njeffs_list &lt;- \n  cereal |&gt; \n  filter(type == \"cold\" & rating &gt; 70) |&gt; \n  arrange(calories)\n\njeffs_list\n\n\n\n\n  \n\n\n\n\nwrite_csv(jeffs_list, \"jeffs_list.csv\")"
+  },
+  {
+    "objectID": "pratica/pratica_tidyverse.html#question-3",
+    "href": "pratica/pratica_tidyverse.html#question-3",
+    "title": "Atividade Prática",
+    "section": "Question 3",
+    "text": "Question 3\n\nTransform the drv variable in the mpg tibble into a factor where “4” is labeled Four Wheel Drive, “r” is labelled Rear Wheel Drive, and “f” is labeled Front Wheel Drive. Save this updated tibble as mpg2.\nTransform the manufacturer and model variables in the mpg2 tibble so that the first letter of each word is capitalized. Save this updated tibble as mpg3.\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\nmpg2 &lt;- \n  mpg |&gt; \n  mutate(\n    drv = factor(\n      drv, \n      levels = c(\"4\", \"r\", \"f\"), \n      labels = c(\"Four Wheel Drive\", \"Rear Wheel Drive\", \"Front Wheel Drive\")\n    )\n  )\nmpg2\n\n\n  \n\n\n\nAnswer (b)\n\nmpg3 &lt;- \n  mpg2 |&gt; \n  mutate(\n    manufacturer = str_to_title(manufacturer),\n    model = str_to_title(model)\n  )\nmpg3"
+  },
+  {
+    "objectID": "pratica/pratica_tidyverse.html#resources",
+    "href": "pratica/pratica_tidyverse.html#resources",
+    "title": "Atividade Prática",
+    "section": "Resources",
+    "text": "Resources\n\nR4DS Chapter 5 (§5.1–§5.5): Read more about the basic wrangling verbs\nR4DS Chapter 18: Read more about pipes and pipelines1\nR4DS Chapter 15: Read more about working with factors in R\nSchafer & Graham (2002): Read more about missing data analysis2"
+  },
+  {
+    "objectID": "pratica/pratica_tidyverse.html#fun-stuff",
+    "href": "pratica/pratica_tidyverse.html#fun-stuff",
+    "title": "Atividade Prática",
+    "section": "Fun Stuff",
+    "text": "Fun Stuff\n\nStunt Rope\nThese are some advanced wrangling verbs…\n\n\n\n\nPipeline\nThe official theme song of pipelines everywhere…"
+  },
+  {
+    "objectID": "pratica/pratica_tidyverse.html#footnotes",
+    "href": "pratica/pratica_tidyverse.html#footnotes",
+    "title": "Atividade Prática",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNote that this chapter talks about %&gt;% being the pipe operator, which might confuse you at first since I am teaching |&gt; as the pipe. Basically, |&gt; is newer and requires no packages to be installed; it often called the “native pipe” as in it is built into R natively.↩︎\nNote that ignoring missing values can lead to estimation bias and reduced power when performing statistical inference. Read this paper to learn more about better approaches, which can be done in R (e.g., using the {mice} package for multiple imputation or the {lavaan} package for full information maximum likelihood).↩︎"
+  },
+  {
+    "objectID": "pratica/Day2B_Slides.html",
+    "href": "pratica/Day2B_Slides.html",
+    "title": "Day 2B Slides",
+    "section": "",
+    "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
+  },
+  {
     "objectID": "LICENSE.html",
     "href": "LICENSE.html",
     "title": "Métodos Estratégitos em Finanças Quantitativas",
@@ -98,90 +161,6 @@
     "text": "Resources\n\nWeb: Read more about the methods offered by the {correlation} package\nWeb: Read more about all the information in a {ggstatsplot} graphic\nLearning Statistics with R: A free textbook on the ideas/theory underlying the statistical models we just discussed"
   },
   {
-    "objectID": "Day_2/Day2B_Practice.html#question-1",
-    "href": "Day_2/Day2B_Practice.html#question-1",
-    "title": "Day 2B Practice",
-    "section": "Question 1",
-    "text": "Question 1\n\nLoad the txhousing tibble (included in {tidyverse}). This contains the number of homes listed (listings) and the typical home sales price (median) in multiple Texas cities and months. Create a summary tibble that contains the average number of listings and the average typical home sales price across all cities and months. Note: For these descriptive purposes, you can ignore missing values.\nModify your answer to Question 1a to generate the same summary statistics but per city this time (still averaging across all months).\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\ntxhousing |&gt; \n  summarize(\n    listings = mean(listings, na.rm = TRUE), \n    median = mean(median, na.rm = TRUE)\n  )\n\n\n  \n\n\n\nAnswer (b)\n\ntxhousing |&gt; \n  group_by(city) |&gt; \n  summarize(\n    listings = mean(listings, na.rm = TRUE), \n    median = mean(median, na.rm = TRUE)\n  )"
-  },
-  {
-    "objectID": "Day_2/Day2B_Practice.html#question-2",
-    "href": "Day_2/Day2B_Practice.html#question-2",
-    "title": "Day 2B Practice",
-    "section": "Question 2",
-    "text": "Question 2\nFor each of the following code snippets, find and fix the error(s).\n\n“The Scatterbrained Scatterplot”\n\n\nggplot(mpg, x = displ, y = hwy) + \n  geom_point()\n\n\n“Not-so-smooth Smoothing”\n\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point()\n  geom_smooth() +\n  scale_y_continuous(\"Highway MPG\") +\n  scale_x_discrete(\"Engine Size\")\n\n\n“A Leaky Pipeline”\n\n\nggplot(economics, aes(x = date, y = unemploy)) |&gt; \n  geom_line() |&gt; \n  geom_point()\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\nThe code forgot to put the mappings inside aes().\n\nggplot(mpg, aes(x = displ, y = hwy)) + # fix 1\n  geom_point() \n\n\n\n\n\n\n\n\nAnswer (b)\nThe code forgot a + and set the x-axis to discrete instead of continuous.\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point() + # fix 1\n  geom_smooth() +\n  scale_y_continuous(\"Highway MPG\") +\n  scale_x_continuous(\"Engine Size\") # fix 2\n#&gt; `geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\n\nAnswer (c)\nThe code used pipes instead of plus signs to connect ggplot2 commands.\n\nggplot(economics, aes(x = date, y = unemploy)) + # fix 1\n  geom_line() + # fix 2\n  geom_point()"
-  },
-  {
-    "objectID": "Day_2/Day2B_Practice.html#question-3",
-    "href": "Day_2/Day2B_Practice.html#question-3",
-    "title": "Day 2B Practice",
-    "section": "Question 3",
-    "text": "Question 3\n\nInstall and load the {palmerpenguins} package.\nRecreate the following graphic as closely as you can from the penguins tibble in that package (don’t worry about getting the geom settings exactly right).\nClean up the x and y axis titles so that they are more readable (e.g., “Flipper length (mm)” instead of “flipper_length_mm”). Bonus: See if you can figure out how to also rename the legend title.\n\n\n\n\n\n\n\n\n\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\n# Extra pane &gt; Packages tab &gt; Install button &gt; palmerpenguins &gt; Install\n\nlibrary(palmerpenguins)\n\nAnswer (b)\n\nggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,\n                     color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.75)\n\n\n\n\n\n\n\n\nAnswer (c)\n\np &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,\n                     color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.75) +\n  scale_x_continuous(name = \"Flipper length (mm)\") +\n  scale_y_continuous(name = \"Body mass (g)\") +\n  scale_color_discrete(name = \"Penguin species\") +\n  scale_shape_discrete(name = \"Penguin species\")\np\n\n\n\n\n\n\n\n\nOr, use this shortcut:\n\np &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,\n                     color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.75) +\n  labs(\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Penguin species\",\n    shape_ = \"Penguin species\"\n  )\np\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
-  },
-  {
-    "objectID": "Day_2/Day2B_Practice.html#question-4",
-    "href": "Day_2/Day2B_Practice.html#question-4",
-    "title": "Day 2B Practice",
-    "section": "Question 4",
-    "text": "Question 4\n\nUse your graphic from Question 3(c) a starting graphic object. Apply the “classic” complete theme to it and move the legend to the top. Bonus: Also make the axis titles italic (you may need to check a cheatsheet or do some searching to find the right element).\nExport this graphic as an image file to include in a paper. Make it 6.5 inches wide and 4 inches high. Bonus: Open Microsoft Word or Google Docs and insert the image.\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\np2 &lt;- \n  p + \n  theme_classic() + \n  theme(\n    legend.position = \"top\",\n    axis.title = element_text(face = \"italic\") # bonus\n  )\np2\n\n\n\n\n\n\n\n\nAnswer (b)\n\nggsave(\"practice.png\", plot = p2, width = 6.5, height = 4, units = \"in\")"
-  },
-  {
-    "objectID": "Day_2/Day2B_Practice.html#resources",
-    "href": "Day_2/Day2B_Practice.html#resources",
-    "title": "Day 2B Practice",
-    "section": "Resources",
-    "text": "Resources\n\nR4DS Chapter 5 (§5.6–§5.7): Read more about grouped summaries and mutates\nR4DS Chapter 12: Read more about reshaping and tidying data in R\nR4DS Chapter 3: Read an introduction to visualization\nGGP2 Chapter 11: Read more about color in ggplot2\nGGP2 Chapter 18: Read more about themes in ggplot2"
-  },
-  {
-    "objectID": "Day_2/Day2B_Practice.html#fun-stuff",
-    "href": "Day_2/Day2B_Practice.html#fun-stuff",
-    "title": "Day 2B Practice",
-    "section": "Fun Stuff",
-    "text": "Fun Stuff\n\nLet’s Enhance\nIf you want to be able to do this, save your images as .pdf or .svg…\n\n\n\n\nDon McMillan’s Greatest Charts\nWould these be more or less funny if he had used ggplot2… ?"
-  },
-  {
-    "objectID": "Day_2/Day2A_Practice.html#question-1.",
-    "href": "Day_2/Day2A_Practice.html#question-1.",
-    "title": "Day 2A Practice",
-    "section": "Question 1.",
-    "text": "Question 1.\nLoad the economics tibble (included in {tidyverse}). Then create a pipeline to accomplish the following data wrangling steps:\n\nFirst, in the economics tibble, rename the uempmed variable (the median duration of enemployment, in weeks) to duration and the unemploy variable (the number of unemployed, in thousands) to number.\nThen add a new variable called rate that is calculated by dividing number (from part a) by pop (the total population, in thousands).\nThen drop (i.e., unselect) the pce, pop, and psavert variables from the tibble.\nThen relocate the rate variable to be between the date and duration variables.\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\neconomics |&gt; \n  rename(duration = uempmed, number = unemploy)\n\n\n  \n\n\n\nAnswer (b)\n\neconomics |&gt; \n  rename(duration = uempmed, number = unemploy) |&gt; \n  mutate(rate = number / pop)\n\n\n  \n\n\n\nAnswer (c)\n\neconomics |&gt; \n  rename(duration = uempmed, number = unemploy) |&gt; \n  mutate(rate = number / pop) |&gt; \n  select(-c(pce, pop, psavert))\n\n\n  \n\n\n\nAnswer (d)\n\neconomics |&gt;\n  rename(duration = uempmed, number = unemploy) |&gt; \n  mutate(rate = number / pop) |&gt; \n  select(-c(pce, pop, psavert)) |&gt; \n  relocate(rate, .after = date)"
-  },
-  {
-    "objectID": "Day_2/Day2A_Practice.html#question-2.",
-    "href": "Day_2/Day2A_Practice.html#question-2.",
-    "title": "Day 2A Practice",
-    "section": "Question 2.",
-    "text": "Question 2.\nDownload the cereal data file from the workshop website. Copy it to your Project folder and read it into R as a tibble. Then create a pipeline to produce a short list of cereals for me to try. I am only interested in cold cereals with a rating greater than 70. Please arrange the list so that the cereals with the fewest calories are displayed at the top. Finally, write the result of this pipeline to a CSV file called “jeffs_list.csv” (I expect it to be even more popular than Craig’s list).\n\n\n\nClick here for the answer key\n\n\n\ncereal &lt;- read_csv(\"cereal.csv\") \n\njeffs_list &lt;- \n  cereal |&gt; \n  filter(type == \"cold\" & rating &gt; 70) |&gt; \n  arrange(calories)\n\njeffs_list\n\n\n\n\n  \n\n\n\n\nwrite_csv(jeffs_list, \"jeffs_list.csv\")"
-  },
-  {
-    "objectID": "Day_2/Day2A_Practice.html#question-3",
-    "href": "Day_2/Day2A_Practice.html#question-3",
-    "title": "Day 2A Practice",
-    "section": "Question 3",
-    "text": "Question 3\n\nTransform the drv variable in the mpg tibble into a factor where “4” is labeled Four Wheel Drive, “r” is labelled Rear Wheel Drive, and “f” is labeled Front Wheel Drive. Save this updated tibble as mpg2.\nTransform the manufacturer and model variables in the mpg2 tibble so that the first letter of each word is capitalized. Save this updated tibble as mpg3.\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\nmpg2 &lt;- \n  mpg |&gt; \n  mutate(\n    drv = factor(\n      drv, \n      levels = c(\"4\", \"r\", \"f\"), \n      labels = c(\"Four Wheel Drive\", \"Rear Wheel Drive\", \"Front Wheel Drive\")\n    )\n  )\nmpg2\n\n\n  \n\n\n\nAnswer (b)\n\nmpg3 &lt;- \n  mpg2 |&gt; \n  mutate(\n    manufacturer = str_to_title(manufacturer),\n    model = str_to_title(model)\n  )\nmpg3"
-  },
-  {
-    "objectID": "Day_2/Day2A_Practice.html#resources",
-    "href": "Day_2/Day2A_Practice.html#resources",
-    "title": "Day 2A Practice",
-    "section": "Resources",
-    "text": "Resources\n\nR4DS Chapter 5 (§5.1–§5.5): Read more about the basic wrangling verbs\nR4DS Chapter 18: Read more about pipes and pipelines1\nR4DS Chapter 15: Read more about working with factors in R\nSchafer & Graham (2002): Read more about missing data analysis2"
-  },
-  {
-    "objectID": "Day_2/Day2A_Practice.html#fun-stuff",
-    "href": "Day_2/Day2A_Practice.html#fun-stuff",
-    "title": "Day 2A Practice",
-    "section": "Fun Stuff",
-    "text": "Fun Stuff\n\nStunt Rope\nThese are some advanced wrangling verbs…\n\n\n\n\nPipeline\nThe official theme song of pipelines everywhere…"
-  },
-  {
-    "objectID": "Day_2/Day2A_Practice.html#footnotes",
-    "href": "Day_2/Day2A_Practice.html#footnotes",
-    "title": "Day 2A Practice",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nNote that this chapter talks about %&gt;% being the pipe operator, which might confuse you at first since I am teaching |&gt; as the pipe. Basically, |&gt; is newer and requires no packages to be installed; it often called the “native pipe” as in it is built into R natively.↩︎\nNote that ignoring missing values can lead to estimation bias and reduced power when performing statistical inference. Read this paper to learn more about better approaches, which can be done in R (e.g., using the {mice} package for multiple imputation or the {lavaan} package for full information maximum likelihood).↩︎"
-  },
-  {
     "objectID": "Day_1/Day1B_Practice.html#question-1.",
     "href": "Day_1/Day1B_Practice.html#question-1.",
     "title": "Day 1B Practice",
@@ -259,20 +238,6 @@
     "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
   },
   {
-    "objectID": "Day_2/Day2A_Slides.html",
-    "href": "Day_2/Day2A_Slides.html",
-    "title": "Day 2A Slides",
-    "section": "",
-    "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
-  },
-  {
-    "objectID": "Day_2/Day2B_Slides.html",
-    "href": "Day_2/Day2B_Slides.html",
-    "title": "Day 2B Slides",
-    "section": "",
-    "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
-  },
-  {
     "objectID": "Day_3/Day3A_Slides.html",
     "href": "Day_3/Day3A_Slides.html",
     "title": "Day 3A Slides",
@@ -313,5 +278,89 @@
     "title": "Métodos Estratégicos em Finanças Quantitativas",
     "section": "",
     "text": "É um treinamento (simplificado) de 60 horas/aulas focado em métodos comumente utilizados na grande área de finanças quantitativas. Será “simplificado” pois não abordará toda a grande área de finanças quantitativas, mas tem um esforço alocado em gestão de riscos quantitativos através de tópicos em risco de crédito e mercado, e rentabilidade. Criando assim um portfólio totalmente técnico e estratégico.\nO treinamento terá o foco no processo de aprendizado “fazendo e aprendendo” (learing by doing), e por este motivo todos os encontros serão divididos em parte teórica/discução e prática, esta última sendo a parte que ganhará grande parte de todo o esforço empregado nos encontros.\nNos tópicos serão abordados manipulação e ajuste de dados (data wrangling), visualização (dataviz), e modelagem (muita modelagem) usando a linguagem R, como ferramenta padrão.\n\nR é uma opção de linguagem de programação focada em estatística e bastante popular para analisar, ajustar e visualizar dados em diversas áreas. É totalmente gratuito, é executado em todas as principais plataformas (ou seja, Windows, Mac e Linux) e oferece um rico catálogo de ferramentas e técnicas que são atualizadas com frequência. É uma excelente escolha para uma primeira linguagem de programação (quando ensinada corretamente) e fornece todas as ferramentas computacionais que a maioria dos profissionais precisará.\nEste treinamento foi projetado para facilitar os proffisionais a fazerem uma transição de carreira mais suave e para compor/aprimorar o repertório de profissionais atuante em áreas correlatas. Tem como objetivo fornecer uma base sólida de conhecimento conceitual e habilidades aplicadas que constroem a confiança, a curiosidade e a motivação que serão necessárias para continuar aprendendo e aplicando após o término do treinamento.\nEmbora existam muitos ótimos recursos educacionais para sobre métodos em finças quantitativas, incluindo alguns cursos em vídeo gratuitos e livros didáticos, este treinamento fornecerá um ambiente estruturado, guiado e comunitário que é feito sob medida. Assim, enfatiza os conceitos e habilidades mais necessários para esses profissionais.\nEm particular, ensina técnicas modernas de ciência de dados usando ferramentas do ecossistema tidyverse (por exemplo, os pacotes dplyr, tidyr, e ggplot2) e técnicas estatísticas usando ferramentas do ecossistema easystats (por exemplo, os pacotes parameters, performance, modelbased, e see). A beleza dessas ferramentas é que elas são amigáveis para iniciantes e escaláveis para resolver problemas mais complexos e interagir com técnicas mais avançadas."
+  },
+  {
+    "objectID": "pratica/Day2A_Slides.html",
+    "href": "pratica/Day2A_Slides.html",
+    "title": "Day 2A Slides",
+    "section": "",
+    "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
+  },
+  {
+    "objectID": "pratica/pratica_ggplot2.html#question-1",
+    "href": "pratica/pratica_ggplot2.html#question-1",
+    "title": "Day 2B Practice",
+    "section": "Question 1",
+    "text": "Question 1\n\nLoad the txhousing tibble (included in {tidyverse}). This contains the number of homes listed (listings) and the typical home sales price (median) in multiple Texas cities and months. Create a summary tibble that contains the average number of listings and the average typical home sales price across all cities and months. Note: For these descriptive purposes, you can ignore missing values.\nModify your answer to Question 1a to generate the same summary statistics but per city this time (still averaging across all months).\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\ntxhousing |&gt; \n  summarize(\n    listings = mean(listings, na.rm = TRUE), \n    median = mean(median, na.rm = TRUE)\n  )\n\n\n  \n\n\n\nAnswer (b)\n\ntxhousing |&gt; \n  group_by(city) |&gt; \n  summarize(\n    listings = mean(listings, na.rm = TRUE), \n    median = mean(median, na.rm = TRUE)\n  )"
+  },
+  {
+    "objectID": "pratica/pratica_ggplot2.html#question-2",
+    "href": "pratica/pratica_ggplot2.html#question-2",
+    "title": "Day 2B Practice",
+    "section": "Question 2",
+    "text": "Question 2\nFor each of the following code snippets, find and fix the error(s).\n\n“The Scatterbrained Scatterplot”\n\n\nggplot(mpg, x = displ, y = hwy) + \n  geom_point()\n\n\n“Not-so-smooth Smoothing”\n\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point()\n  geom_smooth() +\n  scale_y_continuous(\"Highway MPG\") +\n  scale_x_discrete(\"Engine Size\")\n\n\n“A Leaky Pipeline”\n\n\nggplot(economics, aes(x = date, y = unemploy)) |&gt; \n  geom_line() |&gt; \n  geom_point()\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\nThe code forgot to put the mappings inside aes().\n\nggplot(mpg, aes(x = displ, y = hwy)) + # fix 1\n  geom_point() \n\n\n\n\n\n\n\n\nAnswer (b)\nThe code forgot a + and set the x-axis to discrete instead of continuous.\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point() + # fix 1\n  geom_smooth() +\n  scale_y_continuous(\"Highway MPG\") +\n  scale_x_continuous(\"Engine Size\") # fix 2\n#&gt; `geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n\n\n\n\n\n\nAnswer (c)\nThe code used pipes instead of plus signs to connect ggplot2 commands.\n\nggplot(economics, aes(x = date, y = unemploy)) + # fix 1\n  geom_line() + # fix 2\n  geom_point()"
+  },
+  {
+    "objectID": "pratica/pratica_ggplot2.html#question-3",
+    "href": "pratica/pratica_ggplot2.html#question-3",
+    "title": "Day 2B Practice",
+    "section": "Question 3",
+    "text": "Question 3\n\nInstall and load the {palmerpenguins} package.\nRecreate the following graphic as closely as you can from the penguins tibble in that package (don’t worry about getting the geom settings exactly right).\nClean up the x and y axis titles so that they are more readable (e.g., “Flipper length (mm)” instead of “flipper_length_mm”). Bonus: See if you can figure out how to also rename the legend title.\n\n\n\n\n\n\n\n\n\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\n# Extra pane &gt; Packages tab &gt; Install button &gt; palmerpenguins &gt; Install\n\nlibrary(palmerpenguins)\n\nAnswer (b)\n\nggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,\n                     color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.75)\n\n\n\n\n\n\n\n\nAnswer (c)\n\np &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,\n                     color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.75) +\n  scale_x_continuous(name = \"Flipper length (mm)\") +\n  scale_y_continuous(name = \"Body mass (g)\") +\n  scale_color_discrete(name = \"Penguin species\") +\n  scale_shape_discrete(name = \"Penguin species\")\np\n\n\n\n\n\n\n\n\nOr, use this shortcut:\n\np &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,\n                     color = species, shape = species)) +\n  geom_point(size = 3, alpha = 0.75) +\n  labs(\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Penguin species\",\n    shape_ = \"Penguin species\"\n  )\np\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+  },
+  {
+    "objectID": "pratica/pratica_ggplot2.html#question-4",
+    "href": "pratica/pratica_ggplot2.html#question-4",
+    "title": "Day 2B Practice",
+    "section": "Question 4",
+    "text": "Question 4\n\nUse your graphic from Question 3(c) a starting graphic object. Apply the “classic” complete theme to it and move the legend to the top. Bonus: Also make the axis titles italic (you may need to check a cheatsheet or do some searching to find the right element).\nExport this graphic as an image file to include in a paper. Make it 6.5 inches wide and 4 inches high. Bonus: Open Microsoft Word or Google Docs and insert the image.\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\n\np2 &lt;- \n  p + \n  theme_classic() + \n  theme(\n    legend.position = \"top\",\n    axis.title = element_text(face = \"italic\") # bonus\n  )\np2\n\n\n\n\n\n\n\n\nAnswer (b)\n\nggsave(\"practice.png\", plot = p2, width = 6.5, height = 4, units = \"in\")"
+  },
+  {
+    "objectID": "pratica/pratica_ggplot2.html#resources",
+    "href": "pratica/pratica_ggplot2.html#resources",
+    "title": "Day 2B Practice",
+    "section": "Resources",
+    "text": "Resources\n\nR4DS Chapter 5 (§5.6–§5.7): Read more about grouped summaries and mutates\nR4DS Chapter 12: Read more about reshaping and tidying data in R\nR4DS Chapter 3: Read an introduction to visualization\nGGP2 Chapter 11: Read more about color in ggplot2\nGGP2 Chapter 18: Read more about themes in ggplot2"
+  },
+  {
+    "objectID": "pratica/pratica_ggplot2.html#fun-stuff",
+    "href": "pratica/pratica_ggplot2.html#fun-stuff",
+    "title": "Day 2B Practice",
+    "section": "Fun Stuff",
+    "text": "Fun Stuff\n\nLet’s Enhance\nIf you want to be able to do this, save your images as .pdf or .svg…\n\n\n\n\nDon McMillan’s Greatest Charts\nWould these be more or less funny if he had used ggplot2… ?"
+  },
+  {
+    "objectID": "slides/Day1A_Practice.html#question-1.",
+    "href": "slides/Day1A_Practice.html#question-1.",
+    "title": "Day 1A Practice",
+    "section": "Question 1.",
+    "text": "Question 1.\nRead what the user wanted to do and look at the command they sent to R. Fix the errors in the commands and calculate the answers.\n\nI want to add 20 and 0.2 and divide that sum by 4.1. But I get an error when I try:[20 + .2] \\ 4.1\nI want to multiply 6 by the sum of 2 and 1,300. But I get an error when I try:6 x (2 + 1,300)\n\n\n\n\nClick here for the answer key\n\n\nAnswer (a)\nChange the brackets [] to parentheses () because parentheses () are the order of operations operator in R. Also, change the backslash \\ to a forward slash / because forward slash / is the division operator in R.\n\n(20 + .2) / 4.1\n#&gt; [1] 4.926829\n\nAnswer (b)\nChange the x to an asterisk * because asterisk * is the multiplication operator in R. Also, remove the comma , from 1,300 because R doesn’t use commas to delimit digits in large numbers.\n\n6 * (2 + 1300)\n#&gt; [1] 7812"
+  },
+  {
+    "objectID": "slides/Day1A_Practice.html#question-2.",
+    "href": "slides/Day1A_Practice.html#question-2.",
+    "title": "Day 1A Practice",
+    "section": "Question 2.",
+    "text": "Question 2.\nWhich of the following commands do you think will create an error in R? Why?\n\nscore@T1 &lt;- 3.2\nscore_at_T1 &lt;- 3.2\nscore at T1 &lt;- 3.2\n1_score &lt;- 3.2\nScoreAtTime1 &lt;- 3.2\n\nMake your best guesses just by looking at the commands and then check your guesses by running the commands in R.\n\n\n\nClick here for the answer key\n\n\nThe following commands will create an error in R: a (@ is not allowed in an object name), c (spaces are not allowed in an object name), and d (the first character in an object name cannot be a number)."
+  },
+  {
+    "objectID": "slides/Day1A_Practice.html#resources",
+    "href": "slides/Day1A_Practice.html#resources",
+    "title": "Day 1A Practice",
+    "section": "Resources",
+    "text": "Resources\n\nR4DS Chapter 8: Read more about projects\nR4DS Chapter 4: Read about basic programming\nR4DS Chapter 27: Read more about RMarkdown"
+  },
+  {
+    "objectID": "slides/Day1A_Practice.html#fun-stuff",
+    "href": "slides/Day1A_Practice.html#fun-stuff",
+    "title": "Day 1A Practice",
+    "section": "Fun Stuff",
+    "text": "Fun Stuff\n\nLiteral Genie\nWhat it feels like to talk to R sometimes…"
+  },
+  {
+    "objectID": "slides/Day1B_Slides.html",
+    "href": "slides/Day1B_Slides.html",
+    "title": "Day 1B Slides",
+    "section": "",
+    "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
   }
 ]

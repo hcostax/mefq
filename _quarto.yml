@@ -18,7 +18,8 @@ website:
             href: Details/schedule.qmd
           - text: "Bases de Dados"
             href: Details/datasets.qmd
-      - text: "Slides"
+      - href: slides/slides.qmd
+        text: "Slides"
         menu:
           - text: "Day 1A Slides"
             href: Day_1/Day1A_Slides.qmd
