@@ -1,5 +1,5 @@
 ---
-title: "Datasets"
+title: "Bases de dados"
 format:
   html:
     df-print: paged
@@ -13,13 +13,16 @@ library(tidyverse)
 ```
 
 
-## Datasets to download
+## Bases de dados para *download*.
 
-### affairs
 
-Real data on 601 participants' extramarital activities.
 
-<a href="https://pittmethods.github.io/r4ss/data/affairs.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+### Asuntos (affairs)
+
+Dados reais sobre atividades extraconjugais de 601 participantes.Certos grupos são mais propensos a ter casos extraconjugais? \[[Fonte](https://www.kaggle.com/datasets/clarkchong/fairs-affairs-dataset)\]
+
+
+<a href="https://mefq.netlify.app/data/affairs.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -28,11 +31,13 @@ Real data on 601 participants' extramarital activities.
 read_csv("../data/affairs.csv")
 ```
 
-### cereal
 
-Real data on 77 cereal products from the early 1990s. \[[Source](https://www.kaggle.com/datasets/crawford/80-cereals)\]
 
-<a href="https://pittmethods.github.io/r4ss/data/cereal.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+### 80 Cereais
+
+Dados reais sobre 80 produtos de cereais do início da década de 1990. \[[Fonte](https://www.kaggle.com/datasets/crawford/80-cereals)\]
+
+<a href="https://mefq.netlify.app/data/cereal.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -41,11 +46,11 @@ Real data on 77 cereal products from the early 1990s. \[[Source](https://www.kag
 read_csv("../data/cereal.csv")
 ```
 
-### diary
+### Anotações diárias
 
-Real data from 112 participants in a "daily diary" study on stress and affect. \[[Source](https://doi.org/10.1521/pedi.2015.29.4.503)\]
+Dados reais de 112 participantes em um estudo de "anotações diárias" sobre estresse e afeto, entre indivíduos ( N = 101) previamente diagnosticados com transtornos de personalidade que completaram diários ao longo de 100 dias. [[Fonte](https://doi.org/10.1521/pedi.2015.29.4.503)\]
 
-<a href="https://pittmethods.github.io/r4ss/data/diary.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+<a href="https://mefq.netlify.app/data/diary.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -54,11 +59,11 @@ Real data from 112 participants in a "daily diary" study on stress and affect. \
 read_csv("../data/diary.csv")
 ```
 
-### ds_salaries
+### Salários de empregos em ciência de dados
 
-Real data about 607 data scientist's jobs and salaries during 2020-2022. \[[Source](https://www.kaggle.com/datasets/saurabhshahane/data-science-jobs-salaries)\]
+Dados reais sobre 607 empregos e salários de cientistas de dados durante 2020-2022. \[[Fonte](https://www.kaggle.com/datasets/saurabhshahane/data-science-jobs-salaries)\]
 
-<a href="https://pittmethods.github.io/r4ss/data/ds_salaries.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+<a href="https://mefq.netlify.app/data/ds_salaries.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -67,11 +72,13 @@ Real data about 607 data scientist's jobs and salaries during 2020-2022. \[[Sour
 read_csv("../data/ds_salaries.csv")
 ```
 
-### elicitation
 
-Real data about 139 participants' emotions during four emotion elicitation tasks. \[[Source](https://doi.org/10.1016/j.imavis.2014.06.002)\]
 
-<a href="https://pittmethods.github.io/r4ss/data/elicitation.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+### Elicitação
+
+Dados reais sobre as emoções de 139 participantes durante quatro tarefas de elicitação de emoções. \[[Fonte](https://doi.org/10.1016/j.imavis.2014.06.002)\]
+
+<a href="https://mefq.netlify.app/data/elicitation.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -80,11 +87,12 @@ Real data about 139 participants' emotions during four emotion elicitation tasks
 read_csv("../data/elicitation.csv")
 ```
 
-### exercise
 
-Simulated data about 900 participants' weight loss under different exercise programs.
+### Exercício
 
-<a href="https://pittmethods.github.io/r4ss/data/exercise.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+Dados simulados sobre a perda de peso de 900 participantes em diferentes programas de exercícios.
+
+<a href="https://mefq.netlify.app/data/exercise.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -93,11 +101,13 @@ Simulated data about 900 participants' weight loss under different exercise prog
 read_csv("../data/exercise.csv")
 ```
 
-### gradebook
 
-Simulated data on the scores of 10 students on 5 tests.
 
-<a href="https://pittmethods.github.io/r4ss/data/gradebook.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+### Boletim Escolar
+
+Dados simulados sobre as notas de 10 alunos em 5 testes.
+
+<a href="https://mefq.netlify.app/data/gradebook.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -106,11 +116,11 @@ Simulated data on the scores of 10 students on 5 tests.
 read_csv("../data/gradebook.csv")
 ```
 
-### interpersonal
+### Interpessoal
 
-Real data about the interpersonal problems of 34 psychotherapy clients. \[[Source](https://doi.org/10.1109/FG52635.2021.9667021)\]
+Dados reais sobre os problemas interpessoais de 34 clientes de psicoterapia. \[[Source](https://doi.org/10.1109/FG52635.2021.9667021)\]
 
-<a href="https://pittmethods.github.io/r4ss/data/interpersonal.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+<a href="https://mefq.netlify.app/data/interpersonal.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -119,11 +129,13 @@ Real data about the interpersonal problems of 34 psychotherapy clients. \[[Sourc
 read_csv("../data/interpersonal.csv")
 ```
 
-### political
 
-Real data about the political activities of 59 college students.
 
-<a href="https://pittmethods.github.io/r4ss/data/political.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+### Político
+
+Dados reais sobre as atividades políticas de 59 estudantes universitários.
+
+<a href="https://mefq.netlify.app/data/political.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -132,11 +144,11 @@ Real data about the political activities of 59 college students.
 read_csv("../data/political.csv")
 ```
 
-### salaries
+### Salários de Professores
 
-Real data about 397 professors during 2008 to 2009. \[[Source](https://cran.r-project.org/package=carData)\]
+Dados reais sobre 397 professores durante 2008 a 2009. \[[Fonte](https://cran.r-project.org/package=carData)\]
 
-<a href="https://pittmethods.github.io/r4ss/data/salaries.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+<a href="https://mefq.netlify.app/data/salaries.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -147,7 +159,7 @@ read_csv("../data/salaries.csv")
 
 ### yearspubs
 
-<a href="https://pittmethods.github.io/r4ss/data/yearspubs.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
+<a href="https://mefq.netlify.app/data/yearspubs.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -156,13 +168,15 @@ read_csv("../data/salaries.csv")
 read_csv("../data/yearspubs.csv")
 ```
 
-## Datasets in Packages
 
-### economics 
 
-Real economic time series data about the US from 1967 to 2015. \[[Source](https://fred.stlouisfed.org/)\]
+## Bases de dados que vem dentro dos Pacotes
 
-Included in the \{ggplot2\} package and loaded by \{tidyverse\}.
+### economia
+
+Dados reais de séries temporais econômicas sobre os EUA de 1967 a 2015. \[[Fonte](https://fred.stlouisfed.org/)\]
+
+Incluído no pacote \{ggplot2\} e carregado pelo \{tidyverse\}.
 
 ```{r}
 #| echo: false
@@ -170,11 +184,12 @@ Included in the \{ggplot2\} package and loaded by \{tidyverse\}.
 economics
 ```
 
-### flights
 
-Real data about all 336,766 flights in and out of New York City in 2013. \[[Source](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236)\]
+### Voos
 
-Included in the \{nycflights13\} package.
+Dados reais sobre todos os 336.766 voos de e para Nova York em 2013. \[[Fonte](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236)\]
+
+Incluído no pacote \{nycflights13\}.
 
 ```{r}
 #| echo: false
@@ -182,11 +197,13 @@ Included in the \{nycflights13\} package.
 nycflights13::flights
 ```
 
-### mpg
 
-Real data about 234 car models from 1999 and 2008. \[[Source](https://fueleconomy.gov/)\]
 
-Included in the \{ggplot2\} package and loaded by \{tidyverse\}.
+### mpg (milhas por galões) 
+
+Dados reais sobre 234 modelos de automóveis de 1999 e 2008. \[[Fonte](https://fueleconomy.gov/)\]
+
+Incluído no pacote \{ggplot2\} e carregado pelo \{tidyverse\}.
 
 ```{r}
 #| echo: false
@@ -194,11 +211,13 @@ Included in the \{ggplot2\} package and loaded by \{tidyverse\}.
 mpg
 ```
 
-### penguins
 
-Real data about 344 penguins observed in Palmer Archipelago. \[[Source](https://doi.org/10.1371/journal.pone.0090081)\]
 
-Included in the \{palmerpenguins\} package.
+### Pinguins
+
+Dados reais sobre 344 pinguins observados no Arquipélago Palmer. \[[Fonte](https://doi.org/10.1371/journal.pone.0090081)\]
+
+Incluído no pacote \{palmerpenguins\}.
 
 ```{r}
 #| echo: false
@@ -206,11 +225,12 @@ Included in the \{palmerpenguins\} package.
 palmerpenguins::penguins
 ```
 
-### starwars
 
-Real data about 87 characters in the Star Wars franchise. \[[Source](https://swapi.dev)\]
+### Starwars
 
-Included in the \{dplyr\} package and loaded by \{tidyverse\}.
+Dados reais sobre 87 personagens da franquia Star Wars. \[[Fonte](https://swapi.dev)\]
+
+Incluído no pacote \{dplyr\} e carregado pelo \{tidyverse\}.
 
 ```{r}
 #| echo: false
@@ -218,11 +238,13 @@ Included in the \{dplyr\} package and loaded by \{tidyverse\}.
 starwars
 ```
 
+
+
 ### txhousing
 
-Real data about the Texas housing market from 2000 to 2015. \[[Source](https://www.recenter.tamu.edu/)\]
+Dados reais sobre o mercado imobiliário do Texas de 2000 a 2015. \[[Fonte](https://www.recenter.tamu.edu/)\]
 
-Included in the \{ggplot2\} package and loaded by \{tidyverse\}.
+Incluído no pacote \{ggplot2\} e carregado pelo \{tidyverse\}.
 
 ```{r}
 #| echo: false

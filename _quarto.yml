@@ -16,7 +16,7 @@ website:
             href: Details/instructor.qmd
           - text: "Agendas"
             href: Details/schedule.qmd
-          - text: "Datasets"
+          - text: "Bases de Dados"
             href: Details/datasets.qmd
       - text: "Slides"
         menu:
