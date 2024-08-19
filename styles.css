@@ -1,5 +1,9 @@
 /* custom styles */
 
+.justify {
+  text-align: justify !important
+}
+
 .hero {
   width: 67%;
   max-height: 300px;

@@ -2,6 +2,8 @@
 title: "Métodos Estratégicos em Finanças Quantitativas"
 ---
 
+::: {.justify}
+
 É um treinamento (simplificado) de 60 horas/aulas focado em métodos comumente utilizados na grande área de finanças quantitativas. Será "simplificado" pois não abordará toda a grande área de finanças quantitativas, mas tem um esforço alocado em gestão de riscos quantitativos através de tópicos em risco de crédito e mercado, e rentabilidade. Criando assim um portfólio totalmente técnico e estratégico. 
 
 O treinamento terá o foco no processo de aprendizado "fazendo e aprendendo" (*learing by doing*), e por este motivo todos os encontros serão divididos em parte teórica/discução e prática, esta última sendo a parte que ganhará grande parte de todo o esforço empregado nos encontros.  
@@ -19,7 +21,7 @@ Embora existam muitos ótimos recursos educacionais para sobre métodos em finç
 
 Em particular, ensina técnicas modernas de ciência de dados usando ferramentas do ecossistema [**tidyverse**](https://www.tidyverse.org/) (por exemplo, os pacotes [dplyr](https://dplyr.tidyverse.org/), [tidyr](https://tidyr.tidyverse.org/), e [ggplot2](https://ggplot2.tidyverse.org/)) e técnicas estatísticas usando ferramentas do ecossistema [**easystats**](https://easystats.github.io/easystats/) (por exemplo, os pacotes [parameters](https://easystats.github.io/parameters/), [performance](https://easystats.github.io/performance/), [modelbased](https://easystats.github.io/modelbased/), e [see](https://easystats.github.io/see/)). A beleza dessas ferramentas é que elas são amigáveis para iniciantes e escaláveis para resolver problemas mais complexos e interagir com técnicas mais avançadas.
 
-
+:::
 
 ------------------------------------------------------------------------
 
