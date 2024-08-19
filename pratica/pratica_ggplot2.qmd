@@ -1,5 +1,5 @@
 ---
-title: "Day 2B Practice"
+title: "Atividade Prática - ggplot2"
 format:
   html:
     df-print: paged
@@ -14,17 +14,17 @@ format:
 library(tidyverse)
 ```
 
-## Question 1
+## Pergunta 1
 
-a) Load the `txhousing` tibble (included in \{tidyverse\}). This contains the number of homes listed (`listings`) and the typical home sales price (`median`) in multiple Texas cities and months. Create a summary tibble that contains the average number of listings and the average typical home sales price across all cities and months. *Note:* For these descriptive purposes, you can ignore missing values.
+a) Carregue o tibble `txhousing` (incluído em \{tidyverse\}). Ele contém o número de casas listadas (`listings`) e o preço típico de venda de casas (`median`) em várias cidades e meses do Texas. Crie um tibble de resumo que contenha o número médio de listagens e o preço médio típico de venda de casas em todas as cidades e meses. *Observação:* para esses propósitos descritivos, você pode ignorar os valores ausentes.
 
-b) Modify your answer to Question 1a to generate the same summary statistics but *per city* this time (still averaging across all months).
+b) Modifique sua resposta à Pergunta 1a para gerar as mesmas estatísticas de resumo, mas *por cidade* desta vez (ainda com média em todos os meses).
 
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui para ver a resposta</summary>
 <blockquote>
 
-**Answer (a)**
+**Resposta (a)**
 
 ```{r}
 #| comment: "#>"
@@ -38,7 +38,7 @@ txhousing |>
 
 ```
 
-**Answer (b)**
+**Resposta (b)**
 
 ```{r}
 #| comment: "#>"
@@ -55,11 +55,11 @@ txhousing |>
 
 </blockquote></details></p>
 
-## Question 2
+## Pergunta 2
 
-For each of the following code snippets, find and fix the error(s).
+Para cada um dos seguintes trechos de código, encontre e corrija o(s) erro(s).
 
-a) "The Scatterbrained Scatterplot"
+a) "O diagrama de dispersão desmiolado"
 
 ```{r}
 #| eval: false
@@ -69,7 +69,7 @@ ggplot(mpg, x = displ, y = hwy) +
   geom_point()
 ```
 
-b) "Not-so-smooth Smoothing"
+b) "Suavização não tão suave"
 
 ```{r}
 #| eval: false
@@ -82,7 +82,7 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
   scale_x_discrete("Engine Size")
 ```
 
-c) "A Leaky Pipeline"
+c) "Um cano com vazamento"
 
 ```{r}
 #| eval: false
@@ -94,12 +94,12 @@ ggplot(economics, aes(x = date, y = unemploy)) |>
 ```
 
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui pra ver a resposta</summary>
 <blockquote>
 
-**Answer (a)**
+**Resposta (a)**
 
-The code forgot to put the mappings inside `aes()`.
+O código esqueceu de colocar os mapeamentos dentro `aes()`.
 
 ```{r}
 #| comment: "#>"
@@ -109,9 +109,9 @@ ggplot(mpg, aes(x = displ, y = hwy)) + # fix 1
   geom_point() 
 ```
 
-**Answer (b)**
+**Resposta (b)**
 
-The code forgot a `+` and set the x-axis to discrete instead of continuous.
+O código esqueceu um `+` e definiu o eixo x como discreto em vez de contínuo.
 
 ```{r}
 #| comment: "#>"
@@ -124,9 +124,9 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
   scale_x_continuous("Engine Size") # fix 2
 ```
 
-**Answer (c)**
+**Resposta (c)**
 
-The code used pipes instead of plus signs to connect ggplot2 commands.
+O código usava "pipes" (`%>%`) em vez de sinais de mais (`+`) para conectar comandos ggplot2.
 
 ```{r}
 #| comment: "#>"
@@ -139,13 +139,13 @@ ggplot(economics, aes(x = date, y = unemploy)) + # fix 1
 
 </blockquote></details></p>
 
-## Question 3
+## Pergunta 3
 
-a) Install and load the \{palmerpenguins\} package.
+a) Instale e carregue o pacote \{palmerpenguins\}.
 
-b) Recreate the following graphic as closely as you can from the `penguins` tibble in that package (don't worry about getting the geom settings exactly right).
+b) Recrie o gráfico a seguir o mais próximo possível do tibble `penguins` naquele pacote (não se preocupe em obter as configurações geom exatamente corretas).
 
-c) Clean up the x and y axis titles so that they are more readable (e.g., "Flipper length (mm)" instead of "flipper_length_mm"). *Bonus:* See if you can figure out how to also rename the legend title.
+c) Limpe os títulos dos eixos x e y para que sejam mais legíveis (por exemplo, "Flipper length (mm)" em vez de "flipper_length_mm"). *Bônus:* Veja se você consegue descobrir como renomear também o título da legenda.
 
 ```{r}
 #| echo: false
@@ -160,10 +160,10 @@ ggplot(palmerpenguins::penguins,
 
 
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui para ver a resposta</summary>
 <blockquote>
 
-**Answer (a)**
+**Resposta (a)**
 
 ```{r}
 #| comment: "#>"
@@ -174,7 +174,7 @@ ggplot(palmerpenguins::penguins,
 library(palmerpenguins)
 ```
 
-**Answer (b)**
+**Resposta (b)**
 
 ```{r}
 #| comment: "#>"
@@ -186,7 +186,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,
   geom_point(size = 3, alpha = 0.75)
 ```
 
-**Answer (c)**
+**Resposta (c)**
 
 ```{r}
 #| comment: "#>"
@@ -203,7 +203,7 @@ p <- ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,
 p
 ```
 
-Or, use this shortcut:
+Ou use este atalho:
 
 ```{r}
 p <- ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm,
@@ -221,17 +221,16 @@ p
 
 </blockquote></details></p>
 
-## Question 4
+## Pergunta 4
 
-a) Use your graphic from Question 3(c) a starting graphic object. Apply the "classic" complete theme to it and move the legend to the top. *Bonus:* Also make the axis titles italic (you may need to check a cheatsheet or do some searching to find the right element).
+a) Use seu gráfico da Pergunta 3(c) como um objeto gráfico inicial. Aplique o tema completo "classic" a ele e mova a legenda para o topo. *Bônus:* Também deixe os títulos dos eixos em itálico (pode ser necessário verificar uma folha de dicas [`cheatsheet`] ou fazer alguma pesquisa para encontrar o elemento certo).
 
-b) Export this graphic as an image file to include in a paper. Make it 6.5 inches wide and 4 inches high. *Bonus:* Open Microsoft Word or Google Docs and insert the image.
-
+b) Exporte este gráfico como um arquivo de imagem para incluir em um artigo. Faça com que tenha 6,5 ​​polegadas de largura e 4 polegadas de altura. *Bônus:* Abra o Microsoft Word ou o Google Docs e insira a imagem.
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui para ver a resposta</summary>
 <blockquote>
 
-**Answer (a)**
+**Resposta (a)**
 
 ```{r}
 #| comment: "#>"
@@ -248,7 +247,7 @@ p2 <-
 p2
 ```
 
-**Answer (b)**
+**Resposta (b)**
 
 ```{r}
 #| comment: "#>"
@@ -260,28 +259,16 @@ ggsave("practice.png", plot = p2, width = 6.5, height = 4, units = "in")
 
 </blockquote></details></p>
 
-## Resources
+## Recursos
 
-- [R4DS Chapter 5](https://r4ds.had.co.nz/transform.html) (§5.6–§5.7): Read more about grouped summaries and mutates
+- [R4DS Capítulo 5](https://r4ds.had.co.nz/transform.html) (§5.6–§5.7): Leia mais sobre resumos, agrupamentos e modificações
 
-- [R4DS Chapter 12](https://r4ds.had.co.nz/tidy-data.html): Read more about reshaping and tidying data in R
+- [R4DS Capítulo 12](https://r4ds.had.co.nz/tidy-data.html): Leia mais sobre remodelar e organizar dados em R
 
-- [R4DS Chapter 3](https://r4ds.had.co.nz/data-visualisation.html): Read an introduction to visualization
+- [R4DS Capítulo 3](https://r4ds.had.co.nz/data-visualisation.html): Leia uma introdução à visualização
 
-- [GGP2 Chapter 11](https://ggplot2-book.org/scale-colour.html): Read more about color in ggplot2
+- [GGP2 Capítulo 11](https://ggplot2-book.org/scale-colour.html): Leia mais sobre cores em ggplot2
 
-- [GGP2 Chapter 18](https://ggplot2-book.org/polishing.html): Read more about themes in ggplot2
+- [GGP2 Capítulo 18](https://ggplot2-book.org/polishing.html): Leia mais sobre temas em ggplot2
 
-## Fun Stuff
 
-### Let's Enhance
-
-If you want to be able to do this, save your images as `.pdf` or `.svg`...
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LhF_56SxrGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-### Don McMillan's Greatest Charts
-
-Would these be more or less funny if he had used ggplot2... ?
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LYE3GtXqDV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

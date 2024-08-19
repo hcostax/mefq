@@ -15,9 +15,9 @@ Nesta página é possível encontrar os slides dos encontros e as referências u
 
 [Apresentação](https://mefq.netlify.app/day_1/r4ss_day1a#/)
 
-[Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.qmd/)
+[Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/)
 
-[Atividade Prática - ggplot2](https://mefq.netlify.app/pratica/pratica_ggplot2.qmd/)
+[Atividade Prática - ggplot2](https://mefq.netlify.app/pratica/pratica_ggplot2.html/)
 
 
 

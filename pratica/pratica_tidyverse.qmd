@@ -1,5 +1,5 @@
 ---
-title: "Atividade Prática"
+title: "Atividade Prática - Tidyverse"
 format:
   html:
     df-print: paged
@@ -24,17 +24,17 @@ c) Em seguida, remova (ou seja, desmarque) as variáveis ​​`pce`, `pop` e `p
 d) Em seguida, realoque a variável `rate` para ficar entre as variáveis ​​`date` e `duration`.
 
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui para ver a resposta</summary>
 <blockquote>
 
-**Answer (a)**
+**Resposta (a)**
 
 ```{r}
 economics |> 
   rename(duration = uempmed, number = unemploy)
 ```
 
-**Answer (b)**
+**Resposta (b)**
 
 ```{r}
 economics |> 
@@ -42,7 +42,7 @@ economics |>
   mutate(rate = number / pop)
 ```
 
-**Answer (c)**
+**Resposta (c)**
 
 ```{r}
 economics |> 
@@ -51,7 +51,7 @@ economics |>
   select(-c(pce, pop, psavert))
 ```
 
-**Answer (d)**
+**Resposta (d)**
 
 ```{r}
 economics |>
@@ -64,12 +64,12 @@ economics |>
 </blockquote>
 </details></p>
 
-## Question 2.
+## Pergunta 2.
 
-Download the [cereal](https://pittmethods.github.io/r4ss/data/cereal.csv) data file from the [workshop website](../Details/datasets.qmd). Copy it to your Project folder and read it into R as a tibble. Then create a pipeline to produce a short list of cereals for me to try. I am only interested in cold cereals with a rating greater than 70. Please arrange the list so that the cereals with the fewest calories are displayed at the top. Finally, write the result of this pipeline to a CSV file called "jeffs_list.csv" (I expect it to be even more popular than Craig's list).
+Baixe o arquivo de dados [cereal](https://mefq.netlify.app/data/cereal.csv) da [página de bases de dados](../Details/datasets.qmd). Copie-o para sua pasta do Projeto e leia-o no R como um tibble. Em seguida, crie um pipeline para produzir uma pequena lista de cereais para eu experimentar. Estou interessado apenas em cereais frios com uma classificação maior que 70. Organize a lista de forma que os cereais com menos calorias sejam exibidos no topo. Por fim, escreva o resultado deste pipeline em um arquivo CSV chamado "cereal_list.csv" (espero que seja ainda mais popular do que a lista de Craig).
 
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui para ver a resposta</summary>
 <blockquote>
 
 ```{r}
@@ -78,12 +78,12 @@ Download the [cereal](https://pittmethods.github.io/r4ss/data/cereal.csv) data f
 
 cereal <- read_csv("cereal.csv") 
 
-jeffs_list <- 
+cereal_list <- 
   cereal |> 
   filter(type == "cold" & rating > 70) |> 
   arrange(calories)
 
-jeffs_list
+cereal_list
 ```
 
 ```{r}
@@ -92,34 +92,34 @@ jeffs_list
 
 cereal <- read_csv("../data/cereal.csv") 
 
-jeffs_list <- 
+cereal_list <- 
   cereal |> 
   filter(type == "cold" & rating > 70) |> 
   arrange(calories)
 
-jeffs_list
+cereal_list
 ```
 
 ```{r}
 #| eval: false
 
-write_csv(jeffs_list, "jeffs_list.csv")
+write_csv(cereal_list, "cereal_list.csv")
 ```
 
 </blockquote>
 </details></p>
 
-## Question 3
+## Pergunta 3
 
-a) Transform the `drv` variable in the `mpg` tibble into a factor where "4" is labeled Four Wheel Drive, "r" is labelled Rear Wheel Drive, and "f" is labeled Front Wheel Drive. Save this updated tibble as `mpg2`.
+a) Transforme a variável `drv` no tibble `mpg` em um fator onde "4" é rotulado como Tração nas Quatro Rodas, "r" é rotulado como Tração Traseira e "f" é rotulado como Tração Frontal. Salve este tibble atualizado como `mpg2`.
 
-b) Transform the `manufacturer` and `model` variables in the `mpg2` tibble so that the first letter of each word is capitalized. Save this updated tibble as `mpg3`.
+b) Transforme as variáveis ​​`manufacturer` e `model` no tibble `mpg2` para que a primeira letra de cada palavra seja maiúscula. Salve este tibble atualizado como `mpg3`.
 
 <p><details>
-<summary>Click here for the answer key</summary>
+<summary>Clique aqui para ver a resposta</summary>
 <blockquote>
 
-**Answer (a)**
+**Resposta (a)**
 
 ```{r}
 #| comment: "#>"
@@ -131,13 +131,13 @@ mpg2 <-
     drv = factor(
       drv, 
       levels = c("4", "r", "f"), 
-      labels = c("Four Wheel Drive", "Rear Wheel Drive", "Front Wheel Drive")
+      labels = c("Tração nas Quatro Rodas", "Tração Traseira", "Tração Frontal")
     )
   )
 mpg2
 ```
 
-**Answer (b)**
+**Resposta (b)**
 
 ```{r}
 #| comment: "#>"
@@ -155,26 +155,19 @@ mpg3
 
 </blockquote></details></p>
 
-## Resources
+## Recursos
 
--   [R4DS Chapter 5](https://r4ds.had.co.nz/transform.html) (§5.1–§5.5): Read more about the basic wrangling verbs 
+- [R4DS Capítulo 5](https://r4ds.had.co.nz/transform.html) (§5.1–§5.5): Leia mais sobre os verbos básicos de wrangling
 
--   [R4DS Chapter 18](https://r4ds.had.co.nz/pipes.html): Read more about pipes and pipelines^[Note that this chapter talks about `%>%` being the pipe operator, which might confuse you at first since I am teaching `|>` as the pipe. Basically, `|>` is newer and requires no packages to be installed; it often called the "native pipe" as in it is built into R natively.]
+- [R4DS Capítulo 18](https://r4ds.had.co.nz/pipes.html): Leia mais sobre pipes e pipelines.
 
--   [R4DS Chapter 15](https://r4ds.had.co.nz/factors.html): Read more about working with factors in R
+- [R4DS Capítulo 15](https://r4ds.had.co.nz/factors.html): Leia mais sobre como trabalhar com fatores em R
 
--   [Schafer \& Graham (2002)](https://doi.org/10/dsvqnz): Read more about missing data analysis^[Note that ignoring missing values can lead to estimation bias and reduced power when performing statistical inference. Read this paper to learn more about better approaches, which can be done in R (e.g., using the \{mice\} package for [multiple imputation](https://stefvanbuuren.name/fimd/) or the \{lavaan\} package for [full information maximum likelihood](https://lavaan.ugent.be/tutorial/est.html)).]
+- [Schafer \& Graham (2002)](https://doi.org/10/dsvqnz): Leia mais sobre análise de dados ausentes.
 
-## Fun Stuff
 
-### Stunt Rope
+<!-- ### Pipeline -->
 
-These are some advanced wrangling verbs...
+<!-- The official theme song of pipelines everywhere... -->
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/flcFl8z_hF4?start=99" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-### Pipeline
-
-The official theme song of pipelines everywhere...
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/56SAxtf-RTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/56SAxtf-RTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->

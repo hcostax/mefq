@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Métodos Estratégitos em Finanças Quantitativas - Day 2B Practice</title>
+<title>Métodos Estratégitos em Finanças Quantitativas - Atividade Prática - ggplot2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Day 2B Practice</h1>
+<h1 class="title">Atividade Prática - ggplot2</h1>
 </div>
 
 
@@ -221,19 +221,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><img src="../img/making_art_2780E3.svg" class="hero img-fluid"></p>
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<section id="pergunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-1">Pergunta 1</h2>
 <ol type="a">
-<li><p>Load the <code>txhousing</code> tibble (included in {tidyverse}). This contains the number of homes listed (<code>listings</code>) and the typical home sales price (<code>median</code>) in multiple Texas cities and months. Create a summary tibble that contains the average number of listings and the average typical home sales price across all cities and months. <em>Note:</em> For these descriptive purposes, you can ignore missing values.</p></li>
-<li><p>Modify your answer to Question 1a to generate the same summary statistics but <em>per city</em> this time (still averaging across all months).</p></li>
+<li><p>Carregue o tibble <code>txhousing</code> (incluído em {tidyverse}). Ele contém o número de casas listadas (<code>listings</code>) e o preço típico de venda de casas (<code>median</code>) em várias cidades e meses do Texas. Crie um tibble de resumo que contenha o número médio de listagens e o preço médio típico de venda de casas em todas as cidades e meses. <em>Observação:</em> para esses propósitos descritivos, você pode ignorar os valores ausentes.</p></li>
+<li><p>Modifique sua resposta à Pergunta 1a para gerar as mesmas estatísticas de resumo, mas <em>por cidade</em> desta vez (ainda com média em todos os meses).</p></li>
 </ol>
 <p>
 </p><details>
 <summary>
-Click here for the answer key
+Clique aqui para ver a resposta
 </summary>
 <blockquote class="blockquote">
-<p><strong>Answer (a)</strong></p>
+<p><strong>Resposta (a)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>txhousing <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
@@ -248,7 +248,7 @@ Click here for the answer key
 </div>
 </div>
 </div>
-<p><strong>Answer (b)</strong></p>
+<p><strong>Resposta (b)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>txhousing <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(city) <span class="sc">|&gt;</span> </span>
@@ -268,18 +268,18 @@ Click here for the answer key
 </details>
 <p></p>
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>For each of the following code snippets, find and fix the error(s).</p>
+<section id="pergunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-2">Pergunta 2</h2>
+<p>Para cada um dos seguintes trechos de código, encontre e corrija o(s) erro(s).</p>
 <ol type="a">
-<li>“The Scatterbrained Scatterplot”</li>
+<li>“O diagrama de dispersão desmiolado”</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="at">x =</span> displ, <span class="at">y =</span> hwy) <span class="sc">+</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
-<li>“Not-so-smooth Smoothing”</li>
+<li>“Suavização não tão suave”</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
@@ -289,7 +289,7 @@ Click here for the answer key
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="st">"Engine Size"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="a">
-<li>“A Leaky Pipeline”</li>
+<li>“Um cano com vazamento”</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(economics, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> unemploy)) <span class="sc">|&gt;</span> </span>
@@ -299,11 +299,11 @@ Click here for the answer key
 <p>
 </p><details>
 <summary>
-Click here for the answer key
+Clique aqui pra ver a resposta
 </summary>
 <blockquote class="blockquote">
-<p><strong>Answer (a)</strong></p>
-<p>The code forgot to put the mappings inside <code>aes()</code>.</p>
+<p><strong>Resposta (a)</strong></p>
+<p>O código esqueceu de colocar os mapeamentos dentro <code>aes()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> <span class="co"># fix 1</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -315,8 +315,8 @@ Click here for the answer key
 </div>
 </div>
 </div>
-<p><strong>Answer (b)</strong></p>
-<p>The code forgot a <code>+</code> and set the x-axis to discrete instead of continuous.</p>
+<p><strong>Resposta (b)</strong></p>
+<p>O código esqueceu um <code>+</code> e definiu o eixo x como discreto em vez de contínuo.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># fix 1</span></span>
@@ -332,8 +332,8 @@ Click here for the answer key
 </div>
 </div>
 </div>
-<p><strong>Answer (c)</strong></p>
-<p>The code used pipes instead of plus signs to connect ggplot2 commands.</p>
+<p><strong>Resposta (c)</strong></p>
+<p>O código usava “pipes” (<code>%&gt;%</code>) em vez de sinais de mais (<code>+</code>) para conectar comandos ggplot2.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(economics, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> unemploy)) <span class="sc">+</span> <span class="co"># fix 1</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="co"># fix 2</span></span>
@@ -350,12 +350,12 @@ Click here for the answer key
 </details>
 <p></p>
 </section>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<section id="pergunta-3" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-3">Pergunta 3</h2>
 <ol type="a">
-<li><p>Install and load the {palmerpenguins} package.</p></li>
-<li><p>Recreate the following graphic as closely as you can from the <code>penguins</code> tibble in that package (don’t worry about getting the geom settings exactly right).</p></li>
-<li><p>Clean up the x and y axis titles so that they are more readable (e.g., “Flipper length (mm)” instead of “flipper_length_mm”). <em>Bonus:</em> See if you can figure out how to also rename the legend title.</p></li>
+<li><p>Instale e carregue o pacote {palmerpenguins}.</p></li>
+<li><p>Recrie o gráfico a seguir o mais próximo possível do tibble <code>penguins</code> naquele pacote (não se preocupe em obter as configurações geom exatamente corretas).</p></li>
+<li><p>Limpe os títulos dos eixos x e y para que sejam mais legíveis (por exemplo, “Flipper length (mm)” em vez de “flipper_length_mm”). <em>Bônus:</em> Veja se você consegue descobrir como renomear também o título da legenda.</p></li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
@@ -369,16 +369,16 @@ Click here for the answer key
 <p>
 </p><details>
 <summary>
-Click here for the answer key
+Clique aqui para ver a resposta
 </summary>
 <blockquote class="blockquote">
-<p><strong>Answer (a)</strong></p>
+<p><strong>Resposta (a)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extra pane &gt; Packages tab &gt; Install button &gt; palmerpenguins &gt; Install</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Answer (b)</strong></p>
+<p><strong>Resposta (b)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm,</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
@@ -391,7 +391,7 @@ Click here for the answer key
 </div>
 </div>
 </div>
-<p><strong>Answer (c)</strong></p>
+<p><strong>Resposta (c)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm,</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
@@ -409,7 +409,7 @@ Click here for the answer key
 </div>
 </div>
 </div>
-<p>Or, use this shortcut:</p>
+<p>Ou use este atalho:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm,</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
@@ -437,19 +437,19 @@ Click here for the answer key
 </details>
 <p></p>
 </section>
-<section id="question-4" class="level2">
-<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<section id="pergunta-4" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-4">Pergunta 4</h2>
 <ol type="a">
-<li><p>Use your graphic from Question 3(c) a starting graphic object. Apply the “classic” complete theme to it and move the legend to the top. <em>Bonus:</em> Also make the axis titles italic (you may need to check a cheatsheet or do some searching to find the right element).</p></li>
-<li><p>Export this graphic as an image file to include in a paper. Make it 6.5 inches wide and 4 inches high. <em>Bonus:</em> Open Microsoft Word or Google Docs and insert the image.</p></li>
-</ol>
+<li><p>Use seu gráfico da Pergunta 3(c) como um objeto gráfico inicial. Aplique o tema completo “classic” a ele e mova a legenda para o topo. <em>Bônus:</em> Também deixe os títulos dos eixos em itálico (pode ser necessário verificar uma folha de dicas [<code>cheatsheet</code>] ou fazer alguma pesquisa para encontrar o elemento certo).</p></li>
+<li><p>Exporte este gráfico como um arquivo de imagem para incluir em um artigo. Faça com que tenha 6,5 ​​polegadas de largura e 4 polegadas de altura. <em>Bônus:</em> Abra o Microsoft Word ou o Google Docs e insira a imagem.</p>
 <p>
 </p><details>
 <summary>
-Click here for the answer key
+<p>Clique aqui para ver a resposta</p>
 </summary>
-<blockquote class="blockquote">
-<p><strong>Answer (a)</strong></p>
+<blockquote class="blockquote"></blockquote></details></li>
+</ol>
+<p><strong>Resposta (a)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  p <span class="sc">+</span> </span>
@@ -467,40 +467,25 @@ Click here for the answer key
 </div>
 </div>
 </div>
-<p><strong>Answer (b)</strong></p>
+<p><strong>Resposta (b)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"practice.png"</span>, <span class="at">plot =</span> p2, <span class="at">width =</span> <span class="fl">6.5</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</blockquote>
-</details>
+
+
 <p></p>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="recursos" class="level2">
+<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
 <ul>
-<li><p><a href="https://r4ds.had.co.nz/transform.html">R4DS Chapter 5</a> (§5.6–§5.7): Read more about grouped summaries and mutates</p></li>
-<li><p><a href="https://r4ds.had.co.nz/tidy-data.html">R4DS Chapter 12</a>: Read more about reshaping and tidying data in R</p></li>
-<li><p><a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Chapter 3</a>: Read an introduction to visualization</p></li>
-<li><p><a href="https://ggplot2-book.org/scale-colour.html">GGP2 Chapter 11</a>: Read more about color in ggplot2</p></li>
-<li><p><a href="https://ggplot2-book.org/polishing.html">GGP2 Chapter 18</a>: Read more about themes in ggplot2</p></li>
+<li><p><a href="https://r4ds.had.co.nz/transform.html">R4DS Capítulo 5</a> (§5.6–§5.7): Leia mais sobre resumos, agrupamentos e modificações</p></li>
+<li><p><a href="https://r4ds.had.co.nz/tidy-data.html">R4DS Capítulo 12</a>: Leia mais sobre remodelar e organizar dados em R</p></li>
+<li><p><a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Capítulo 3</a>: Leia uma introdução à visualização</p></li>
+<li><p><a href="https://ggplot2-book.org/scale-colour.html">GGP2 Capítulo 11</a>: Leia mais sobre cores em ggplot2</p></li>
+<li><p><a href="https://ggplot2-book.org/polishing.html">GGP2 Capítulo 18</a>: Leia mais sobre temas em ggplot2</p></li>
 </ul>
-</section>
-<section id="fun-stuff" class="level2">
-<h2 class="anchored" data-anchor-id="fun-stuff">Fun Stuff</h2>
-<section id="lets-enhance" class="level3">
-<h3 class="anchored" data-anchor-id="lets-enhance">Let’s Enhance</h3>
-<p>If you want to be able to do this, save your images as <code>.pdf</code> or <code>.svg</code>…</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LhF_56SxrGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</section>
-<section id="don-mcmillans-greatest-charts" class="level3">
-<h3 class="anchored" data-anchor-id="don-mcmillans-greatest-charts">Don McMillan’s Greatest Charts</h3>
-<p>Would these be more or less funny if he had used ggplot2… ?</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LYE3GtXqDV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
