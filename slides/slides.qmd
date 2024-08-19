@@ -13,7 +13,7 @@ Nesta página é possível encontrar os slides dos encontros e as referências u
 
 ### Dados e R – Data Wrangling & DataViz.
 
-[Apresentação](https://mefq.netlify.app/day_1/r4ss_day1a#/)
+[Apresentação](https://mefq.netlify.app/slide/slide_tidyverse#/)
 
 [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/)
 

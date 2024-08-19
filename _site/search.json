@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "slides/slides.html",
-    "href": "slides/slides.html",
-    "title": "Apresentações e Referências",
-    "section": "",
-    "text": "Nesta página é possível encontrar os slides dos encontros e as referências utilizada.\n\nDados e R – Data Wrangling & DataViz.\nApresentação\nAtividade Prática - Tidyverse\nAtividade Prática - ggplot2"
-  },
-  {
     "objectID": "slides/Day1A_Slides.html",
     "href": "slides/Day1A_Slides.html",
     "title": "Day 1A Slides",
@@ -341,5 +334,12 @@
     "title": "Day 1B Slides",
     "section": "",
     "text": "Note. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
+  },
+  {
+    "objectID": "slides/slides.html",
+    "href": "slides/slides.html",
+    "title": "Apresentações e Referências",
+    "section": "",
+    "text": "Nesta página é possível encontrar os slides dos encontros e as referências utilizada.\n\nDados e R – Data Wrangling & DataViz.\nApresentação\nAtividade Prática - Tidyverse\nAtividade Prática - ggplot2"
   }
 ]
