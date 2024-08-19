@@ -1,0 +1,25 @@
+---
+title: "Métodos Estratégicos em Finanças Quantitativas"
+---
+
+É um treinamento (simplificado) de 60 horas/aulas focado em métodos comumente utilizados na grande área de finanças quantitativas. Será "simplificado" pois não abordará toda a grande área de finanças quantitativas, mas tem um esforço alocado em gestão de riscos quantitativos através de tópicos em risco de crédito e mercado, e rentabilidade. Criando assim um portfólio totalmente técnico e estratégico. 
+
+O treinamento terá o foco no processo de aprendizado "fazendo e aprendendo" (*learing by doing*), e por este motivo todos os encontros serão divididos em parte teórica/discução e prática, esta última sendo a parte que ganhará grande parte de todo o esforço empregado nos encontros.  
+
+Nos tópicos serão abordados manipulação e ajuste de dados (*data wrangling*), visualização (*dataviz*), e modelagem (muita modelagem) usando a linguagem R, como ferramenta padrão.
+
+<!-- ![](./img/proud_coder_2780E3.svg){.hero} -->
+
+R é uma opção de linguagem de programação focada em estatística e bastante popular para analisar, ajustar e visualizar dados em diversas áreas. É totalmente gratuito, é executado em todas as principais plataformas (ou seja, Windows, Mac e Linux) e oferece um rico catálogo de ferramentas e técnicas que são atualizadas com frequência. É uma excelente escolha para uma **primeira** linguagem de programação (quando ensinada corretamente) e fornece todas as ferramentas computacionais que a maioria dos profissionais precisará.
+
+Este treinamento foi projetado para facilitar os proffisionais a fazerem uma transição de carreira mais suave e para compor/aprimorar o repertório de profissionais atuante em áreas correlatas. Tem como objetivo fornecer uma base sólida de conhecimento conceitual e habilidades aplicadas que constroem a confiança, a curiosidade e a motivação que serão necessárias para continuar aprendendo e aplicando após o término do treinamento.
+
+
+Embora existam muitos ótimos recursos educacionais para sobre métodos em finças quantitativas, incluindo alguns cursos em vídeo gratuitos e livros didáticos, este treinamento fornecerá um ambiente estruturado, guiado e comunitário que é feito sob medida. Assim, enfatiza os conceitos e habilidades mais necessários para esses profissionais. 
+
+Em particular, ensina técnicas modernas de ciência de dados usando ferramentas do ecossistema [**tidyverse**](https://www.tidyverse.org/) (por exemplo, os pacotes [dplyr](https://dplyr.tidyverse.org/), [tidyr](https://tidyr.tidyverse.org/), e [ggplot2](https://ggplot2.tidyverse.org/)) e técnicas estatísticas usando ferramentas do ecossistema [**easystats**](https://easystats.github.io/easystats/) (por exemplo, os pacotes [parameters](https://easystats.github.io/parameters/), [performance](https://easystats.github.io/performance/), [modelbased](https://easystats.github.io/modelbased/), e [see](https://easystats.github.io/see/)). A beleza dessas ferramentas é que elas são amigáveis para iniciantes e escaláveis para resolver problemas mais complexos e interagir com técnicas mais avançadas.
+
+
+
+------------------------------------------------------------------------
+

@@ -1,0 +1,113 @@
+---
+title: "Agendas"
+---
+
+![](../img/date_picker_2780E3.svg){.hero}
+
+As agendas ocorreão em encontros online via plataforma Google Meet todas segundas-feiras a partir do dia 12/08/2024. 
+
+Os encontros serão gravados, então estejam ciêntes de que o rosto, nome e voz de todos os participantes estará sendo gravados em vídeos. 
+
+As gravações em vídeos dos encontros serão disponibilizadas pela platadorma YouTube através de link privado, e só os participantes com e-mail cadastrado terão acesso. Para acessar bastar clicar na opção "Encontros" na barra de navegação superior deste website. 
+
+
+
+## Tópicos abordados
+
+**Dados e R** – *Data Wrangling & DataViz*
+
+  -   Dados
+  
+  -   Sumarização
+  
+  -   Gramática dos Gráficos
+  
+
+**Princípios de Modelagem e Tópicos em Economia**
+
+  - Teoria e Mundo Real
+  
+  - Váriaveis Macro são importante? 
+  
+  - Análise Micro é útil?
+  
+  - Tópicos em Econometria
+  
+  
+**Métodos Quantitativos Complementares**
+
+  - Survival Curve
+  
+  - Hazard Rates
+  
+  - Simulação de Monte Carlo
+  
+  - Introdução à Inferência Causal
+  
+  
+**Métodos Quantitativos para avaliar Riscos de Mercado**
+
+  - Risco, Retorno e Indice de Sharpe
+  
+  - Portfólio de Mínima Variância – Markowitz
+  
+  - CAPM
+  
+  - Value-at-Risk & Expected Short-fall (Stressed VaR/CVaR) 
+  
+  
+**Métodos Quantitativos para avaliar Risco de Crédito**
+
+  - Classificação de Riscos (Credit Scores & Ratings) 
+  
+  - Matrizes de Transição – Cadeias de Markov
+  
+  - Fatores de Riscos: PD, EAD e LGD 
+  
+  - Perda Esperada e Provisões para Crédito
+  
+
+**Métodos Quantitativos para avaliar Rentabilidade**
+
+  - NPV – Net Present Value Model
+  
+  - RAROC – Risk Adjustment Return On Capital 
+  
+
+**Métodos para estratégia e tomada de decisões**
+
+  - Apetite a Risco & Políticas
+  
+  - Monitoramento, Performance e Efeito Doppler 
+  
+  - Porque o futuro foi diferente do qual “previ”? 
+  
+  - Avaliação de Impacto
+  
+  - Decisão sob incerteza: a arte de ousar e assumir riscos.
+  
+  
+**Projeto Real**
+
+  - Projeto real: orientação de definição
+  
+  - Projeto real: orientação de metodologia
+  
+  - Projeto real: orientação de análise
+  
+  - Projeto real: apresentação
+  
+  
+
+
+## Encontros online:
+
+Todas segundas-feiras
+
+19:30 – 21:30 (hórario de Brasíli/São Paulo-SP)
+
+[**Link para o Google Meet**](https://meet.google.com/etv-rxvx-jhf)
+    
+
+Lembrando que só os e-mails cadastrados poderão acessar. 
+

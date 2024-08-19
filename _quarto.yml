@@ -1,0 +1,64 @@
+project:
+  type: website
+  resources:
+    - "data/*.csv"
+
+website:
+  title: "Métodos Estratégitos em Finanças Quantitativas"
+  navbar:
+    background: primary
+    right:
+      - href: index.qmd
+        text: Início
+      - text: "Recursos"
+        menu:
+          - text: "Instrutor"
+            href: Details/instructor.qmd
+          - text: "Agendas"
+            href: Details/schedule.qmd
+          - text: "Datasets"
+            href: Details/datasets.qmd
+      - text: "Slides"
+        menu:
+          - text: "Day 1A Slides"
+            href: Day_1/Day1A_Slides.qmd
+          - text: "Day 1A Practice"
+            href: Day_1/Day1A_Practice.qmd
+          - text: "Day 1B Slides"
+            href: Day_1/Day1B_Slides.qmd
+          - text: "Day 1B Practice"
+            href: Day_1/Day1B_Practice.qmd
+      - text: "Encontros"
+        menu:
+          - text: "Day 2A Slides"
+            href: Day_2/Day2A_Slides.qmd
+          - text: "Day 2A Practice"
+            href: Day_2/Day2A_Practice.qmd
+          - text: "Day 2B Slides"
+            href: Day_2/Day2B_Slides.qmd
+          - text: "Day 2B Practice"
+            href: Day_2/Day2B_Practice.qmd
+      - text: "Prévias"
+        menu:
+          - text: "Day 3A Slides"
+            href: Day_3/Day3A_Slides.qmd
+          - text: "Day 3A Practice"
+            href: Day_3/Day3A_Practice.qmd
+          - text: "Day 3B Slides"
+            href: Day_3/Day3B_Slides.qmd
+          - text: "Day 3B Practice"
+            href: Day_3/Day3B_Practice.qmd
+          - text: "Extra Slides"
+            href: Day_3/Extra_Slides.qmd
+      # - icon: github
+      #   href: https://www.github.com/pittmethods/r4ss
+  search: false
+  page-footer: "Copyright 2024 © Henrique Costa"
+
+format:
+  html:
+    theme: cosmo.scss
+    css: styles.css
+
+execute:
+  freeze: auto

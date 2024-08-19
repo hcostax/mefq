@@ -1,0 +1,38 @@
+---
+title: "Henrique Costa"
+about:
+  template: trestles
+  image: ../img/henrique.jpg
+  links:
+    - icon: link
+      text: Risk Taker (website/blog)
+      href: https://hcostax.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/hcostax
+    - icon: twitter
+      text: Twitter
+      href: https://www.twitter.com/hcostax
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/henrique_qrm
+---
+
+
+
+## Experiências recentes
+
+**Credsystem** | São Paulo, SP (BR) <br />
+Risco de Crédito & Mercado (Sênior)  | Posição Atual <br />
+Riscos Financeiros Quantitativos | Riscos Integrados
+
+**Grupo QuintoAndar** | São Paulo, SP (BR) <br />
+Estratégia em Risco de Crédito e Rentabilidade 
+
+## Educação
+
+**Universidade Federal de Mato Grosso** | Cuiabá, MT (BR) <br />
+Mestrado em Economia (Microeconomia Aplicada) | 2019
+
+**Universidade Federal de Mato Grosso** | Cuiabá, MT (BR) <br />
+Bacharel em Ciências Econômicas | 2017
