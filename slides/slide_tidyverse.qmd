@@ -38,17 +38,17 @@ format:
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Recipes]{.b .green} allow chefs to cook up tasty treats
-    -   Recipes call for ingredients
+-   [Receitas]{.b .green} permitem que os chefs preparem guloseimas saborosas
+    -   As receitas pedem ingredientes
     -   Recipes involve one or more steps
-    -   Steps transform ingredients into treats
+    -   As etapas transformam os ingredientes em guloseimas
 
 ::: {.fragment .mt1}
--   [Functions]{.b .blue} are like *customizable* recipes
-    -   Functions call for inputs ("arguments")
-    -   Functions involve one or more lines of code
-    -   Code transforms inputs into outputs
-    -   Using functions requires parentheses (usually)
+-   [Funções]{.b .blue} são como receitas *personalizáveis*
+    -   Funções solicitam entradas ("argumentos")
+    -   As funções envolvem uma ou mais linhas de código
+    -   O código transforma entradas em saídas
+    -   O uso de funções requer parênteses (geralmente)
 :::
 :::
 
@@ -56,7 +56,7 @@ format:
 {{< li vpqdjfdy trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
 
 ::: {.fragment}
-`out <- f(in1, in2)`
+`doce <- f(ing1, ing2)`
 :::
 :::
 :::
@@ -65,16 +65,16 @@ format:
 
 :::
 
-## Functions Live Coding
+## Funções - Prática
 
 ```{r}
 #| echo: true
 #| eval: false
 #| code-line-numbers: false
 
-# USECASE: Function can perform a task more easily and readably
+# CASO DE USO: A função pode executar uma tarefa de forma mais fácil e legível
 
-# TEMPLATE: output <- function_name(input)
+# MODELO: saída <- nome_da_função(entrada)
 
 9 ^ (1 / 2)
 
@@ -83,7 +83,7 @@ x
 
 # ==============================================================================
 
-# LESSON: We can also use functions to transform objects
+# LIÇÃO: Também podemos usar funções para transformar objetos
 
 y <- 9
 
@@ -91,7 +91,7 @@ sqrt(y)
 
 # ==============================================================================
 
-# LESSON: We can even use functions to transform the result of calculations
+# LIÇÃO: Podemos até usar funções para transformar o resultado dos cálculos
 
 2 / 3
 
@@ -99,9 +99,10 @@ round(2 / 3)
 
 # ==============================================================================
 
-# LESSON: We can customize what a function does using arguments
+# LIÇÃO: Podemos personalizar o que uma função faz usando argumentos
 
-# TEMPLATE: output <- function_name(argument, argument_name = argument_value)
+# MODELO: saída <- nome_da_função(argumento, nome_do_argumento = valor_do_argumento)
+
 
 round(2 / 3, digits = 2)
 
@@ -109,7 +110,7 @@ round(2 / 3, digits = 3)
 
 # ==============================================================================
 
-# LESSON: Some arguments are optional because they have default values
+# LIÇÃO: Alguns argumentos são opcionais porque têm valores padrão
 
 round(2 / 3) # the default value for digits is 0
 
@@ -120,32 +121,33 @@ round(2 / 3, digits = 0)
 
 :::
 
-## Vectors {.smaller}
+
+## Vectores {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Vectors]{.b .blue} combine similar objects into a collection
-    -   *I like to imagine a train pulling multiple cars*<br />
-    ![](../img/traincar.png)
-    -   A vector is one object with many sub-objects
-    -   We refer to each sub-object as an [element]{.b .green}
+-   [Vetores]{.b .blue} combinam objetos semelhantes em uma coleção
+    -   *Gosto de imaginar um trem puxando vários vagões*
+    -   Um vetor é um objeto com muitos subobjetos
+    -   Nós nos referimos a cada subobjeto como um [elemento]{.b .green}
 
 ::: {.fragment .mt1}
--   Some functions [transform each element]{.b .green} in turn
-    -   *Double the amount of cargo in every train car*
+-   Algumas funções [transformam cada elemento]{.b .green} um de cada vez
+    -   *Dobrar a quantidade de carga em cada vagão*
 :::
 
 ::: {.fragment .mt1}
--   Some functions [summarize across elements]{.b .green}
-    -   *Calculate the total cargo across all train cars*
+-   Algumas funções [resumir em todos os elementos]{.b .green}
+    -   *Calcule a carga total em todos os vagões do trem*
 :::
 :::
 
 ::: {.column .tc .pv5 width="40%"}
-{{< li bqmoqptv trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+<br />
+    ![](../img/traincar.png)
 
 ::: {.fragment}
-`v <- c(1, 2, 3)`
+`v <- c(1, 2, 3, 4, 5)`
 :::
 
 :::
@@ -155,7 +157,7 @@ round(2 / 3, digits = 0)
 
 :::
 
-## Vectors Live Coding
+## Vetores - Prática
 
 ```{r}
 #| echo: true
@@ -163,9 +165,9 @@ round(2 / 3, digits = 0)
 #| error: true
 #| code-line-numbers: false
 
-# LESSON: We can combine multiple elements into a vector
+# LIÇÃO: Podemos combinar vários elementos em um vetor
 
-# TEMPLATE: vector_name <- c(element1, element2, element3)
+# MODELO: nome_do_vetor <- c(elemento1, elemento2, elemento3)
 
 x <- 4 9 16 25 # error
 
@@ -177,7 +179,7 @@ y
 
 # ==============================================================================
 
-# LESSON: We can also combine multiple vectors and elements
+# LIÇÃO: Também podemos combinar vários vetores e elementos
 
 c(x, y)
 
@@ -185,17 +187,17 @@ c(x, y, 20)
 
 # ==============================================================================
 
-# USECASE: Math operators will transform each element individually
+# CASO DE USO: Operadores matemáticos transformarão cada elemento individualmente
 
 x + 1
 
 x * 3
 
-x # but again, this won't be saved unless you use assignment
+x # mas, novamente, isso não será salvo a menos que você use atribuição
 
 # ==============================================================================
 
-# USECASE: Some functions will also transform each element individually
+# CASO DE USO: Algumas funções também transformarão cada elemento individualmente
 
 sqrt(x)
 
@@ -203,7 +205,7 @@ log(x)
 
 # ==============================================================================
 
-# USECASE: Other functions will summarize the vector with a single number
+# CASO DE USO: Outras funções resumirão o vetor com um único número
 
 length(x)
 
@@ -222,19 +224,38 @@ mean(x)
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   When talking to R, we need a way to distinguish
-    -   Object/function names (e.g., the *mean* function)
-    -   Text/character data (e.g., the word *mean*)
+-   Ao programar com R, precisamos de uma maneira de distinguir
+    -   Nomes de objetos/funções (por exemplo, a função *mean*)
+    -   Dados de texto/caractere (por exemplo, a palavra *mean*)
     
 ::: {.fragment .mt1}
--   [Strings]{.b .blue} are R's way of storing text data
-    -   Strings can store any characters (no rules!)
-    -   Strings are created and displayed with [quotes]{.b .green}
+-   [Strings]{.b .blue} são a maneira do R armazenar dados de texto
+    -   Strings podem armazenar qualquer caractere (sem regras!)
+    -   As strings são criadas e exibidas com [quotes]{.b .green}
 :::
+
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li xqnbvely trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+
+
+:::
+:::
+
+::::
+
+<!-- Insert quiz and short break here? -->
+
+## Strings {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+
 ::: {.fragment .mt1}
--   R has great tools for working with strings
-    -   Strings can be collected into vectors
-    -   Special functions can transform strings
+-   R tem ótimas ferramentas para trabalhar com strings
+    -   As strings podem ser coletadas em vetores
+    -   Funções especiais podem transformar strings
 :::
 :::
 
@@ -248,11 +269,9 @@ mean(x)
 :::
 :::
 
-::: footer
-
 :::
 
-## Strings Live Coding
+## Strings - Prática
 
 ```{r}
 #| echo: true
@@ -260,15 +279,15 @@ mean(x)
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: Strings are the main way to store character data in R
+# CASO DE USO: Strings são a principal maneira de armazenar dados de caracteres em R
  
 my_color <- red # error
 
-my_color <- "red" # correct
+my_color <- "red" # correto
 
 # ==============================================================================
 
-# USECASE: Strings can also store symbols not allowed in object names
+# CASO DE USO: Strings também podem armazenar símbolos não permitidos em nomes de objetos
 
 dye <- "red#40"
 dye
@@ -278,7 +297,7 @@ dyes
 
 # ==============================================================================
 
-# PITFALL: Many operations you can do to numbers won't work for strings
+# ARMADILHA: Muitas operações que você pode fazer com números não funcionarão para strings
 
 dyes + 1 # error
 
@@ -286,7 +305,7 @@ mean(dyes) # error
 
 # ==============================================================================
 
-# USECASE: But other operations work for both or even just for strings
+# CASO DE USO: Mas outras operações funcionam para ambos ou mesmo apenas para strings
 
 length(dyes)
 
@@ -300,22 +319,38 @@ dyes2
 
 :::
 
-## Packages {.smaller}
+## Packages (Pacotes) {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Cookbooks]{.b .green} are a great way to learn to cook
-    -   *They contain lots of recipes and instructions*
-    -   Browse an online **bookstore** for a cookbook
-    -   **Order** it to add it to your personal **bookshelf**
-    -   To use, **pull** the cookbook off the shelf
+-   [Livros de receitas]{.b .green} são uma ótima maneira de aprender a cozinhar
+    -   *Eles contêm muitas receitas e instruções*
+    -   Navegue em uma **livraria** online para encontrar um livro de receitas
+    -   **Encomende** para adicionar à sua **estante** pessoal
+    -   Para usar, **retire** o livro de receitas da prateleira
+
+
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li tboujdsn trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+
+
+:::
+:::
+
+
+## Packages (Pacotes) {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
 
 ::: {.fragment .mt1}
--   [Packages]{.b .blue} are like cookbooks for R
-    -   *They contain helpful functions and datasets*
-    -   Browse an online **repository** for a package
-    -   **Install** it to add it to your personal **library**
-    -   To use, **load** the package from the library
+-   [Pacotes]{.b .blue} são como livros de receitas para R
+    -   *Eles contêm funções e conjuntos de dados úteis*
+    -   Navegue em um **repositório** online para um pacote
+    -   **Instale** para adicioná-lo à sua **biblioteca** pessoal
+    -   Para usar, **carregue** o pacote da biblioteca
 :::
 :::
 
@@ -332,7 +367,7 @@ dyes2
 
 :::
 
-## Packages Live Coding
+## Packages - Prática
 
 ```{r}
 #| echo: true
@@ -340,38 +375,38 @@ dyes2
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: The stringr package adds a function to fix capitalization
+# CASO DE USO: O pacote stringr adiciona uma função para corrigir a capitalização
 
 students <- c("mary anne", "BENjamin", "Lee")
 
 # ==============================================================================
 
-# PITFALL: But we can't use that function without installing the package
+# ARMADILHA: Mas não podemos usar essa função sem instalar o pacote
 
 str_to_title(students) # error
 
 # ==============================================================================
 
-# LESSON: Installing a package using RStudio
+# LIÇÃO: Instalando um pacote usando RStudio
 
 # - RStudio > Extras pane > Packages tab > Install button
 
 # ==============================================================================
 
-# PITFALL: We also need to load the package before we can use it
+# ARMADILHA: Também precisamos carregar o pacote antes de podermos usá-lo
 
 str_to_title(students) # error
 
 # ==============================================================================
 
-# LESSON: We load the package using library()
+# LIÇÃO: Carregamos o pacote usando library()
 
 library("stringr")
 str_to_title(students) #finally works!
 
 # ==============================================================================
 
-# LESSON: We can also keep our packages updated using RStudio
+# LIÇÃO: Também podemos manter nossos pacotes atualizados usando o RStudio
 
 # RStudio > Extras pane > Packages tab > Update button
 ```
@@ -384,18 +419,18 @@ str_to_title(students) #finally works!
 
 # `Wrangle I`
 
-## Tidy Data Principles {.smaller}
+## Princípio de Dados Tidy (Arrumados) {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
-- There are many ways to store data
+- Existem muitas maneiras de armazenar dados
 
 ::: {.fragment .mt1}
-- We will be learning the [tidy data]{.b .blue} format
-    - Data should be *rectangular*
-    - Each [variable]{.green} has its own column
-    - Each [observation]{.green} has its own row
-    - Each [value]{.green} has its own cell
+- Aprenderemos o formato [tidy data]{.b .blue}
+    - Os dados devem ser *retangulares*
+    - Cada [variável]{.green} tem sua própria coluna
+    - Cada [observação]{.green} tem sua própria linha
+    - Cada [valor]{.verde} tem sua própria célula
 :::
 
 ::: {.fragment .mt1}
