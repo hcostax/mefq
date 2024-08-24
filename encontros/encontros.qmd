@@ -13,16 +13,16 @@ Nesta página é possível encontrar os vídeos dos encontros.
 ### Primeiro Encontro - Introdução.
 
 
-[Introdução](https://youtu.be/hqKfs_vSLoY)
+**Encontro 12/08/2024:** [Introdução](https://youtu.be/hqKfs_vSLoY)
 
 
-[Revisão - Quarto](https://youtu.be/UcXpKnDAEVY)
+**Encontro 15/08/2024:** [Revisão - Quarto](https://youtu.be/UcXpKnDAEVY)
 
 
 
 ### Dados e R – Data Wrangling & DataViz.
 
-[Dados e R - Part I (Funções, Pacotes e Ajuste de Dados - Data Wrangling I)](https://youtu.be/UFrAwKRE6c0)
+**Encontro 19/08/2024:** [Dados e R - Part I (Funções, Pacotes e Ajuste de Dados - Data Wrangling I)](https://youtu.be/UFrAwKRE6c0)
 
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
 
