@@ -15,14 +15,44 @@ library(tidyverse)
 
 ## Bases de dados para *download*.
 
+Aqui neste botão é possível fazer o download somente das bases de dados que não estão dentro de pacotes.
+
+<br>
+
+<br>
+
+```{r}
+#| echo: false
+#| message: false
+
+suppressPackageStartupMessages(library(downloadthis))
+
+download_dir(
+  path = here::here("data"),
+  output_name = "bases_de_dados",
+  output_extension = ".csv",
+  button_label = "Baixar todas as bases de dados",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = TRUE
+)
+
+```
+
+
+
+<br>
+
+<br>
+
+
 
 
 ### Asuntos (affairs)
 
 Dados reais sobre atividades extraconjugais de 601 participantes.Certos grupos são mais propensos a ter casos extraconjugais? \[[Fonte](https://www.kaggle.com/datasets/clarkchong/fairs-affairs-dataset)\]
 
-
-<a href="https://mefq.netlify.app/data/affairs.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -37,7 +67,6 @@ read_csv("../data/affairs.csv")
 
 Dados reais sobre 80 produtos de cereais do início da década de 1990. \[[Fonte](https://www.kaggle.com/datasets/crawford/80-cereals)\]
 
-<a href="https://mefq.netlify.app/data/cereal.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -50,7 +79,6 @@ read_csv("../data/cereal.csv")
 
 Dados reais de 112 participantes em um estudo de "anotações diárias" sobre estresse e afeto, entre indivíduos ( N = 101) previamente diagnosticados com transtornos de personalidade que completaram diários ao longo de 100 dias. [[Fonte](https://doi.org/10.1521/pedi.2015.29.4.503)\]
 
-<a href="https://mefq.netlify.app/data/diary.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -63,7 +91,6 @@ read_csv("../data/diary.csv")
 
 Dados reais sobre 607 empregos e salários de cientistas de dados durante 2020-2022. \[[Fonte](https://www.kaggle.com/datasets/saurabhshahane/data-science-jobs-salaries)\]
 
-<a href="https://mefq.netlify.app/data/ds_salaries.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -78,7 +105,6 @@ read_csv("../data/ds_salaries.csv")
 
 Dados reais sobre as emoções de 139 participantes durante quatro tarefas de elicitação de emoções. \[[Fonte](https://doi.org/10.1016/j.imavis.2014.06.002)\]
 
-<a href="https://mefq.netlify.app/data/elicitation.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -92,7 +118,6 @@ read_csv("../data/elicitation.csv")
 
 Dados simulados sobre a perda de peso de 900 participantes em diferentes programas de exercícios.
 
-<a href="https://mefq.netlify.app/data/exercise.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -107,7 +132,6 @@ read_csv("../data/exercise.csv")
 
 Dados simulados sobre as notas de 10 alunos em 5 testes.
 
-<a href="https://mefq.netlify.app/data/gradebook.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -120,7 +144,6 @@ read_csv("../data/gradebook.csv")
 
 Dados reais sobre os problemas interpessoais de 34 clientes de psicoterapia. \[[Source](https://doi.org/10.1109/FG52635.2021.9667021)\]
 
-<a href="https://mefq.netlify.app/data/interpersonal.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -135,7 +158,6 @@ read_csv("../data/interpersonal.csv")
 
 Dados reais sobre as atividades políticas de 59 estudantes universitários.
 
-<a href="https://mefq.netlify.app/data/political.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -148,7 +170,6 @@ read_csv("../data/political.csv")
 
 Dados reais sobre 397 professores durante 2008 a 2009. \[[Fonte](https://cran.r-project.org/package=carData)\]
 
-<a href="https://mefq.netlify.app/data/salaries.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -159,7 +180,6 @@ read_csv("../data/salaries.csv")
 
 ### yearspubs
 
-<a href="https://mefq.netlify.app/data/yearspubs.csv"><button type="button" class="btn btn-primary">Download CSV</button></a>
 
 ```{r}
 #| echo: false
@@ -168,6 +188,10 @@ read_csv("../data/salaries.csv")
 read_csv("../data/yearspubs.csv")
 ```
 
+
+<br>
+
+<br>
 
 
 ## Bases de dados que vem dentro dos Pacotes
