@@ -29,7 +29,7 @@ website:
         #     href: Day_1/Day1B_Slides.qmd
         #   - text: "Day 1B Practice"
         #     href: Day_1/Day1B_Practice.qmd
-      - href: slides/quase.qmd
+      - href: encontros/encontros.qmd
         text: "Encontros"
         # menu:
         #   - text: "Day 2A Slides"

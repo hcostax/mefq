@@ -1,0 +1,39 @@
+---
+title: "Vídeos gravados dos encontros"
+format:
+  html:
+    df-print: paged
+---
+
+![](../img/spreadsheets_2780E3.svg){.hero}
+
+Nesta página é possível encontrar os vídeos dos encontros. 
+
+
+### Primeiro Encontro - Introdução.
+
+
+[Introdução](https://youtu.be/hqKfs_vSLoY)
+
+
+[Revisão - Quarto](https://youtu.be/UcXpKnDAEVY)
+
+
+
+### Dados e R – Data Wrangling & DataViz.
+
+[Dados e R - Part I (Funções, Pacotes e Ajuste de Dados - Data Wrangling I)](https://youtu.be/UFrAwKRE6c0)
+
+<!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
+
+<!-- [Atividade Prática - ggplot2](https://mefq.netlify.app/pratica/pratica_ggplot2.html/) -->
+
+
+
+
+
+
+
+
+
+
