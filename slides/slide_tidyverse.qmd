@@ -1239,17 +1239,17 @@ old_gradebook
 
 # Wrangle II
 
-## Basic wrangling verbs {.smaller}
+## Vérbos basicos em *data wrangling* {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [tidyverse]{.b .blue} provides tools for wrangling tibbles
-    -   These functions are named after *verbs*
-    -   So if you name your objects after *nouns*...
-    -   ...your code becomes easier to read
+-   [tidyverse]{.b .blue} fornece ferramentas para controlar tibbles
+    -   Essas funções são nomeadas após *verbos*
+    -   Então, se você nomear seus objetos com base em *substantivos*...
+    -   ...seu código se torna mais fácil de ler
 
 ::: {.fragment .mt1}
-| Noun(noun) ❌        |  Verb(noun)  ✔️  | 
+| Substantivo(substantivo) ❌        |  Verbo(substantivo) ✔️  | 
 |:----------------------|:----------------|
 | `blender(fruit)`      | `blend(fruit)`  |
 | `screwdriver(screw)`  | `drive(screw)`  |
@@ -1267,25 +1267,25 @@ old_gradebook
 
 :::
 
-## Column-focused verbs {.smaller}
+## Verbos focados em colunas {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Select]{.b .blue} retains only certain columns/variables
+-   [Selecionar]{.b .blue} retém apenas certas colunas/variáveis
     -   [`select(TBL, VAR_KEEP, -VAR_DROP)`]{.f3}
 
 ::: {.fragment .mt1}
--   [Mutate]{.b .blue} adds or transforms columns/variables
+-   [Mutate]{.b .blue} adiciona ou transforma colunas/variáveis
     -   [`mutate(TBL, NEW_VAR = OLD_VAR / 1000)`]{.f3}
 :::
 
 ::: {.fragment .mt1}
--   [Rename]{.b .green} changes the names of columns/variables
+-   [Rename]{.b .green} altera os nomes das colunas/variáveis
     -   [`rename(TBL, NEW_NAME = OLD_NAME)`]{.f3}
 :::
 
 ::: {.fragment .mt1}
--   [Relocate]{.b .green} changes the order of columns/variables
+-   [Relocate]{.b .green} altera a ordem das colunas/variáveis
     -   [`relocate(TBL, VAR_MOVE, .after = OTHER_VAR)`]{.f3}
 :::
 :::
@@ -1299,7 +1299,7 @@ old_gradebook
 
 :::
 
-## *Select* Live Coding
+## *Select* - Prática
 
 ```{r}
 #| echo: true
@@ -1307,14 +1307,14 @@ old_gradebook
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: Load package and inspect example tibble
+# CONFIGURAÇÃO: Carregar pacote e inspecionar exemplo tibble
 
-library(tidyverse) # includes the dplyr package
+library(tidyverse) # inclui o pacote dplyr
 starwars
 
 # ==============================================================================
 
-# USECASE: Retain only the specified variables
+# CASO DE USO: Reter apenas as variáveis especificadas
 
 sw <- select(starwars, name)
 sw
@@ -1323,21 +1323,21 @@ sw
 
 # ==============================================================================
 
-# PITFALL: Don't forget to save the change with assignment
+# ARMADILHA: Não esqueça de salvar a alteração com a atribuição
 
 select(starwars, name, sex, species)
-starwars # still includes all variables
+starwars # ainda inclui todas as variáveis
 
 # ==============================================================================
 
-# USECASE: Retain all variables between two variables
+# CASO DE USO: Reter todas as variáveis entre duas variáveis
 
 sw <- select(starwars, name, hair_color:eye_color)
 sw
 
 # ==============================================================================
 
-# USECASE: Retain all variables except the specified ones
+# CASO DE USO: Reter todas as variáveis, exceto as especificadas
 
 sw <- select(starwars, -sex, -species)
 sw
@@ -1351,7 +1351,7 @@ sw
 
 :::
 
-## *Mutate* Live Coding
+## *Mutate* - Prática
 
 ```{r}
 #| echo: true
@@ -1359,7 +1359,7 @@ sw
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: Create example tibble
+# CONFIGURAÇÃO: Criar exemplo tibble
 
 patients <- tibble(
   id = c("S1", "S2", "S3"),
@@ -1371,7 +1371,7 @@ patients
 
 # ==============================================================================
 
-# USECASE: Add one or more variables
+# CASO DE USO: Adicionar uma ou mais variáveis
 
 p2 <- mutate(patients, sex = c("M", "F", "F"))
 p2
@@ -1389,7 +1389,7 @@ p2
 
 # ==============================================================================
 
-# USECASE: Compute variables
+# CASO DE USO: Calcular variáveis
 
 p2 <- mutate(patients, height = feet + inches / 12)
 p2
@@ -1399,24 +1399,24 @@ p2
 
 # ==============================================================================
 
-# USECASE: Overwrite variables
+# CASO DE USO: Substituir variáveis
 
 patients <- mutate(patients, height = height / 3.281)
 patients
 
 # ==============================================================================
 
-# USECASE: Duplicate variables
+# CASO DE USO: Variáveis duplicadas
 
 p2 <- mutate(patients, weight = pounds)
-p2 # both weight and pounds exist
+p2 # tanto peso quanto libras existem
 ```
 
 ::: footer
 
 :::
 
-## *Rename* / *Relocate* Live Coding
+## *Rename* / *Relocate* - Prática
 
 ```{r}
 #| echo: true
@@ -1424,7 +1424,7 @@ p2 # both weight and pounds exist
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: Change the name of one or more variables
+# CASO DE USO: Alterar o nome de uma ou mais variáveis
 
 starwars
 
@@ -1436,13 +1436,13 @@ sw
 
 # ==============================================================================
 
-# PITFALL: Don't swap the order and try old_name = new_name
+# ARMADILHA: Não troque a ordem e tente old_name = new_name
 
 sw <- rename(starwars, name = Character) # error
 
 # ==============================================================================
 
-# USECASE: Move variables before or after another variable
+# CASO DE USO: Mover variáveis antes ou depois de outra variável
 
 starwars
 
@@ -1454,10 +1454,10 @@ sw
 
 # ==============================================================================
 
-# PITFALL: Don't forget the period!
+# ARMADILHA: Não se esqueça do ponto final!
 
 sw <- relocate(starwars, sex, before = height) 
-sw # height was accidentally renamed to before
+sw # altura foi renomeada acidentalmente para antes
 
 ```
 
@@ -1465,17 +1465,17 @@ sw # height was accidentally renamed to before
 
 :::
 
-## Row-focused verbs {.smaller}
+## Verbos focados em linha {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Arrange]{.b .blue} sorts rows based on their values
+-   [Arrange]{.b .blue} classifica as linhas com base em seus valores
     -   [`arrange(TBL, VAR_SORT_UP)`]{.f3}
     -   [`arrange(TBL, desc(VAR_SORT_DOWN))`]{.f3}
     -   [`arrange(TBL, VAR_SORT_1ST, VAR_SORT_2ND)`]{.f3}
 
 ::: {.fragment .mt1}
--   [Filter]{.b .blue} retains certain rows based on criteria
+-   [Filter]{.b .blue} retém certas linhas com base em critérios
     -   [`filter(TBL, DBL_CRIT > 0)`]{.f3}
     -   [`filter(TBL, STR_CRIT == "A")`]{.f3}
     -   [`filter(TBL, CRIT1, CRIT2)`]{.f3}
@@ -1493,7 +1493,7 @@ sw # height was accidentally renamed to before
 :::
 
 
-## *Arrange* Live Coding
+## *Arrange* - Prática
 
 ```{r}
 #| echo: true
@@ -1501,39 +1501,40 @@ sw # height was accidentally renamed to before
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: Sort observations by a variable
+# CASO DE USO: Classificar observações por uma variável
 
 starwars
 
 sw <- arrange(starwars, height)
-sw # sorted by height, ascending
+sw # classificado por altura, crescente
 
 sw <- arrange(starwars, name)
-sw # sorted by name, alphabetically
+sw # classificado por nome, em ordem alfabética
 
 # ==============================================================================
 
-# USECASE: Sort observations by a variable, in reverse order
+# CASO DE USO: Classificar observações por uma variável, em ordem reversa
 
 sw <- arrange(starwars, desc(height))
-sw # sorted by height, descending
+sw # classificado por altura, decrescente
 
 sw <- arrange(starwars, desc(name))
-sw # sorted by name, reverse-alphabetically
+sw # classificado por nome, em ordem alfabética reversa
 
 # ==============================================================================
 
-# USECASE: Sort observations by multiple variables
+# CASO DE USO: Classificar observações por múltiplas variáveis
 
 sw <- arrange(starwars, hair_color, mass)
-sw # sorted by hair_color, then ties broken by mass
+sw # classificado por cor do cabelo, então os empates são quebrados por massa
+
 ```
 
 ::: footer
 
 :::
 
-## *Filter* Live Coding
+## *Filter* - Prática
 
 ```{r}
 #| echo: true
@@ -1541,23 +1542,23 @@ sw # sorted by hair_color, then ties broken by mass
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: Retain only observations that meet a criterion
+# CASO DE USO: Reter apenas observações que atendem a um critério
 
 sw <- filter(starwars, mass > 100)
-sw # only observations with mass greater than 100
+sw # apenas observações com massa maior que 100
 
 sw <- filter(starwars, mass <= 100)
-sw # only observations with mass less than or equal to 100
+sw # apenas observações com massa menor ou igual a 100
 
 sw <- filter(starwars, species == "Human")
-sw # only observations with species equal to Human
+sw # apenas observações com espécies iguais ao Humano
 
 sw <- filter(starwars, species != "Human")
-sw # only observations with species not equal to Human
+sw # apenas observações com espécies diferentes do Humano
 
 # ==============================================================================
 
-# PITFALL: Don't try to use a single = for testing equality
+# ARMADILHA: Não tente usar um único = para testar igualdade
 
 sw <- filter(starwars, height = 150) # error
 
@@ -1566,33 +1567,33 @@ sw
 
 # ==============================================================================
 
-# PITFALL: Don't forget that R is case-sensitive
+# ARMADILHA: Não se esqueça de que R diferencia maiúsculas de minúsculas
 
 sw <- filter(starwars, species == "human")
-sw # no observations left (because it should be Human)
+sw # nenhuma observação restante (porque deveria ser Humano)
 
 # ==============================================================================
 
-# USECASE: Retain only observations that meet complex criteria
+# CASO DE USO: Reter apenas observações que atendem a critérios complexos
 
 sw <- filter(starwars, mass > 100 & height > 200)
-sw # only observations with mass over 100 AND height over 200
+sw # apenas observações com massa acima de 100 E altura acima de 200
 
 sw <- filter(starwars, height < 100 | hair_color == "none")
-sw # only observations with height under 100 OR hair_color equal to none
+sw # somente observações com altura menor que 100 OU hair_color igual a nenhum
 
 # ==============================================================================
 
-# PITFALL: Don't forget to complete both conditions
+# ARMADILHA: Não se esqueça de preencher as duas condições
 
 sw <- filter(starwars, mass > 100 & < 200) # error
 
-sw <- filter(starwars, mass > 100 & mass < 200) # correct
+sw <- filter(starwars, mass > 100 & mass < 200) # correto
 sw
 
 # ==============================================================================
 
-# PITFALL: Don't try to equate a string to a vector
+# ARMADILHA: Não tente igualar uma string a um vetor
 
 sw <- filter(starwars, species == c("Human", "Droid")) # error
 
@@ -1611,15 +1612,15 @@ sw
 
 | Symbol | Description            | Num | Chr   |
 |--------|------------------------|-----|-------|
-| `<`    | Less than              | Yes | *No*  |
-| `<=`   | Less than or equal to  | Yes | *No*  |
-| `>`    | More than              | Yes | *No*  |
-| `>=`   | More than or equal to  | Yes | *No*  |
-| `==`   | Equal to               | Yes | Yes   |
-| `!=`   | Not equal to           | Yes | Yes   |
-| `%in%` | Found in               | Yes | Yes   |
-| `&`    | Logical And            | Yes | Yes   |
-| `|`    | Logical Or             | Yes | Yes   |
+| `<`    | Menor que              | Yes | *No*  |
+| `<=`   | Menor ou igual á       | Yes | *No*  |
+| `>`    | Maior que              | Yes | *No*  |
+| `>=`   | Maior ou igual á       | Yes | *No*  |
+| `==`   | Igual á                | Yes | Yes   |
+| `!=`   | diferente de           | Yes | Yes   |
+| `%in%` | Encontre em            | Yes | Yes   |
+| `&`    | Lógico - "E"           | Yes | Yes   |
+| `|`    | Lógico - "Ou"          | Yes | Yes   |
 
 :::
 
