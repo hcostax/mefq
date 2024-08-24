@@ -402,7 +402,7 @@ str_to_title(students) # error
 # LIÇÃO: Carregamos o pacote usando library()
 
 library("stringr")
-str_to_title(students) #finally works!
+str_to_title(students) # pronto isso funciona!
 
 # ==============================================================================
 
@@ -417,7 +417,7 @@ str_to_title(students) #finally works!
 
 <!-- Wrangle I -->
 
-# `Wrangle I`
+# Wrangle I
 
 ## Princípio de Dados Tidy (Arrumados) {.smaller}
 
@@ -448,26 +448,26 @@ str_to_title(students) #finally works!
 
 :::
 
-## Other Data Advice {.smaller}
+## Outros conselhos sobre dados {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Name all variables]{.b .blue} in the first row
-    -   This is called a [header row]{.b .green}
+-   [Nomeie todas as variáveis]{.b .blue} na primeira linha
+    -   Isso é chamado de [linha de cabeçalho]{.b .green}
     
 ::: {.fragment .mt1}
--   [Avoid merged cells]{.b .blue} for data storage
-    -   These are okay for communication
+-   [Evite células mescladas]{.b .blue} para armazenamento de dados
+    -   Estes são bons para comunicação
 :::
 
 ::: {.fragment .mt1}
--   [Avoid empty cells]{.b .blue} whenever possible
-    -   Mark [missing data]{.b .green} as `NA`
+-   [Evite células vazias]{.b .blue} sempre que possível
+    -   Marcar [dados ausentes]{.b .green} como `NA`
 :::
 
 ::: {.fragment .mt1}
--   [Avoid formatting-as-data]{.b .blue} for storage
-    -   e.g., non-redundant color-coding
+-   [Evite formatação como dados]{.b .blue} para armazenamento
+    -   por exemplo, codificação de cores não redundante
 :::
 :::
 
@@ -480,29 +480,29 @@ str_to_title(students) #finally works!
 
 :::
 
-## Tidying Example 1 {.smaller}
+## Arrumando (*Tidying*) exemplo 1 {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="45%"}
-#### Not Tidy
+#### Não Arrumado (Tidy)
 <table class="table-bad" width="100%">
   <tbody>
   <tr>
-    <td>Name</td>
+    <td>Nome</td>
     <td>Ann</td>
     <td>Bob</td>
     <td>Cat</td>
     <td>Dom</td>
   </tr>
   <tr>
-    <td>Age</td>
+    <td>Idade</td>
     <td>13</td>
     <td>10</td>
     <td>11</td>
     <td>11</td>
   </tr>
   <tr>
-    <td>Weight</td>
+    <td>Peso</td>
     <td>56.4</td>
     <td>46.8</td>
     <td>41.3</td>
@@ -512,7 +512,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.fragment .mt1 .pv4}
-❌ Here, each row is a variable and each column is an observation.
+❌ Aqui, cada linha é uma variável e cada coluna é uma observação.
 :::
 :::
 
@@ -521,13 +521,13 @@ str_to_title(students) #finally works!
 
 ::: {.column width="45%"}
 ::: {.fragment}
-#### Tidy
+#### Arrumado (*Tidy*)
 <table class="table-good" width="100%">
   <tbody>
   <tr>
-    <td>Name</td>
-    <td>Age</td>
-    <td>Weight</td>
+    <td>Nome</td>
+    <td>Idade</td>
+    <td>Peso</td>
   </tr>
   <tr>
     <td>Ann</td>
@@ -552,7 +552,7 @@ str_to_title(students) #finally works!
   </tbody>
 </table>
 ::: {.pv4}
-✔️ Here, each column is a variable and each row is an observation.
+✔️ Aqui, cada coluna é uma variável e cada linha é uma observação.
 :::
 :::
 :::
@@ -562,23 +562,23 @@ str_to_title(students) #finally works!
 
 :::
 
-## Tidying Example 2 {.smaller}
+## Arrumando (*Tidying*) exemplo 2 {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="45%"}
-#### Not Tidy
+#### Não arrumado (*Tidy*)
 <table class="table-bad" width="100%">
   <tbody>
   <tr>
-    <td>Names:</td>
+    <td>Nome:</td>
     <td>Ann</td>
     <td>Bob</td>
     <td>Cat</td>
     <td>Dom</td>
   </tr>
   <tr>
-    <td>Age</td>
-    <td>Weight</td>
+    <td>Idade</td>
+    <td>Peso</td>
     <td></td>
     <td></td>
     <td></td>
@@ -615,7 +615,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.fragment .mt1 .pv4}
-❌ Here, we have data that is not rectangular because the Names variable has its own row.
+❌ Aqui, temos dados que não são retangulares porque a variável Names tem sua própria linha.
 :::
 :::
 
@@ -624,13 +624,13 @@ str_to_title(students) #finally works!
 
 ::: {.column width="45%"}
 ::: {.fragment}
-#### Tidy
+#### Arrumado (*Tidy*)
 <table class="table-good" width="100%">
   <tbody>
   <tr>
-    <td>Name</td>
-    <td>Age</td>
-    <td>Weight</td>
+    <td>Nome</td>
+    <td>Idade</td>
+    <td>Peso</td>
   </tr>
   <tr>
     <td>Ann</td>
@@ -656,7 +656,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.pv4}
-✔️ Here, we have made the data rectangular by moving the Names variable to its own column.
+✔️ Aqui, tornamos os dados retangulares movendo a variável Nomes para sua própria coluna.
 :::
 :::
 :::
@@ -666,11 +666,11 @@ str_to_title(students) #finally works!
 
 :::
 
-## Tidying Example 3 {.smaller}
+## Arrumando (*Tidying*) exemplo 3 {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="45%"}
-#### Not Tidy
+#### Não arrumado (*Tidy*)
 <table class="table-bad table-small" width="100%">
   <tbody>
   <tr>
@@ -709,7 +709,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.fragment .mt1 .pv4}
-❌ Here, we have merged cells and two values stored in a single cell.
+❌ Aqui, mesclamos células e dois valores armazenados em uma única célula.
 :::
 :::
 
@@ -718,7 +718,7 @@ str_to_title(students) #finally works!
 
 ::: {.column width="45%"}
 ::: {.fragment}
-#### Tidy
+#### Arrumado (*Tidy*)
 <table class="table-good table-small" width="100%">
   <tbody>
   <tr>
@@ -766,7 +766,7 @@ str_to_title(students) #finally works!
   </tbody>
 </table>
 ::: {.pv4}
-✔️ Here, we have un-merged the countries and separated the cases and populations variables into columns.
+✔️Aqui, desfazemos a mesclagem dos países e separamos as variáveis de casos e populações em colunas.
 :::
 :::
 :::
@@ -777,11 +777,11 @@ str_to_title(students) #finally works!
 :::
 
 
-## Tidying Example 4 {.smaller}
+## Arrumando (*Tidying*) exemplo 4 {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="45%"}
-#### Not Tidy
+#### Não arrumado
 <table class="table-bad" width="100%">
   <tbody>
   <tr>
@@ -816,7 +816,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.fragment .mt1 .pv4}
-❌ Here, we have a missing variable name and formatting-as-data.
+❌ Aqui, temos um nome de variável ausente e formatação como dados.
 :::
 :::
 
@@ -825,7 +825,7 @@ str_to_title(students) #finally works!
 
 ::: {.column width="45%"}
 ::: {.fragment}
-#### Tidy
+#### Arrumado
 <table class="table-good" width="100%">
   <tbody>
   <tr>
@@ -861,7 +861,7 @@ str_to_title(students) #finally works!
   </tbody>
 </table>
 ::: {.pv4}
-✔️ Here, we have added a column for the psych variable, removed the legend, and named the letter variable.
+✔️ Aqui, adicionamos uma coluna para a variável psych, removemos a legenda e nomeamos a variável letter.
 :::
 :::
 :::
@@ -872,11 +872,11 @@ str_to_title(students) #finally works!
 :::
 
 
-## Tidying Example 5 {.smaller}
+## Arrumando (*Tidying*) exemplo 5 {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="45%"}
-#### Not Tidy
+#### Não arrumado
 <table class="table-bad" width="100%">
   <tbody>
   <tr>
@@ -914,7 +914,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.fragment .mt1 .pv4}
-❌ Here, we have two types of data in one file and a footnote as data.
+❌ Aqui, temos dois tipos de dados em um arquivo e uma nota de rodapé como dados.
 :::
 :::
 
@@ -923,7 +923,7 @@ str_to_title(students) #finally works!
 
 ::: {.column width="45%"}
 ::: {.fragment}
-#### Tidy
+#### Arrumado
 <table class="table-good" width="100%">
   <tbody>
     <tr>
@@ -968,7 +968,7 @@ str_to_title(students) #finally works!
 </table>
 
 ::: {.pv4}
-✔️ Here, we have split the data into two separate tables and added the revised and notes variables.
+✔️ Aqui, dividimos os dados em duas tabelas separadas e adicionamos as variáveis revisadas e notas.
 :::
 :::
 :::
@@ -978,116 +978,28 @@ str_to_title(students) #finally works!
 
 :::
 
-## Long vs. Wide Format {.smaller}
 
-::: {.columns .pv4}
-::: {.column width="45%"}
-#### Wide Format
-<table class="table-good" width="100%">
-  <tbody>
-    <tr>
-      <td>date</td>
-      <td>Boeing</td>
-      <td>Amazon</td>
-      <td>Google</td>
-    </tr>
-    <tr>
-      <td>2009-01-01</td>
-      <td>$173.55</td>
-      <td>$174.90</td>
-      <td>$174.34</td>
-    </tr>
-    <tr>
-      <td>2009-01-02</td>
-      <td>$172.61</td>
-      <td>$171.42</td>
-      <td>$170.04</td>
-    </tr>
-  </tbody>
-</table>
 
-::: {.fragment .mt1 .pv4}
-✔️ Here, we have a wide format where each observation is a date.
-:::
-:::
-
-::: {.column width="10%"}
-:::
-
-::: {.column width="45%"}
-::: {.fragment}
-#### Long Format
-<table class="table-good" width="100%">
-  <tbody>
-    <tr>
-      <td>date</td>
-      <td>stock</td>
-      <td>price</td>
-    </tr>
-    <tr>
-      <td>2009-01-01</td>
-      <td>Boeing</td>
-      <td>$173.55</td>
-    </tr>
-    <tr>
-      <td>2009-01-01</td>
-      <td>Amazon</td>
-      <td>$174.90</td>
-    </tr>
-    <tr>
-      <td>2009-01-01</td>
-      <td>Google</td>
-      <td>$174.34</td>
-    </tr>
-    <tr>
-      <td>2009-01-02</td>
-      <td>Boeing</td>
-      <td>$172.61</td>
-    </tr>
-    <tr>
-      <td>2009-01-02</td>
-      <td>Amazon</td>
-      <td>$171.42</td>
-    </tr>
-    <tr>
-      <td>2009-01-02</td>
-      <td>Google</td>
-      <td>$170.04</td>
-    </tr>
-  </tbody>
-</table>
-
-::: { .pv4}
-✔️ Here, we have a long format where each observation is the combination of a date and a stock.
-:::
-:::
-:::
-:::
-
-::: footer
-
-:::
-
-## Tibbles {.smaller}
+## Tabelas (Tibbles) {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   R works particularly well with [tidy data]{.b .green}
+-   R funciona particularmente bem com [dados organizados]{.b .green}
 
 ::: {.fragment .mt1}
--   We store tidy data in [data frames]{.b .green} or [tibbles]{.b .blue}
-    -   Tibbles are just fancier data frames<br />
-        (i.e., they have a few extra features)
+-   Armazenamos dados organizados em [data frames]{.b .green} ou [tibbles]{.b .blue}
+    -   Tibbles são apenas tabelas mais sofisticadas<br />
+        (ou seja, eles têm alguns recursos extras)
 :::
 
 ::: {.fragment .mt1}
--   To use tibbles, we need the [tidyverse]{.b .blue} package
+-   Para usar tibbles, precisamos do pacote [tidyverse]{.b .blue}
 :::
 
 ::: {.fragment .mt1}
--   Tibbles are constructed from one or more vectors
-    -   The vectors must have the [same length]{.b .green}
-    -   They can contain [different types]{.b .green} of data
+-   Tibbles são construídos a partir de um ou mais vetores
+    -   Os vetores devem ter o [mesmo comprimento]{.b .green}
+    -   Eles podem conter [diferentes tipos]{.b .green} de dados
 :::
 :::
 
@@ -1100,14 +1012,14 @@ str_to_title(students) #finally works!
 
 :::
 
-## Vectors {.smaller}
+## Vetores {.smaller}
 
 ![](../img/vectors.png)
 
 ::: {.tc .pv4}
-We start with three separate vector objects that all have the same length.
+Começamos com três objetos vetoriais separados que têm todos o mesmo comprimento.
 
-We set it up so that the $n$-th car in each train corresponds to the same observation.
+Nós configuramos para que o $n$-ésimo vagão em cada trem corresponda à mesma observação.
 :::
 
 ::: footer
@@ -1119,16 +1031,16 @@ We set it up so that the $n$-th car in each train corresponds to the same observ
 ![](../img/tibble.png)
 
 ::: {.tc .pv4}
-Then we combine the vectors into a single tibble (or data frame) object.
+Então combinamos os vetores em um único objeto tibble (ou data frame).
 
-Now, as the tibble moves around, the variables always stay together.
+Agora, conforme o tibble se move, as variáveis sempre ficam juntas.
 :::
 
 ::: footer
 
 :::
 
-## Tibbles Live Coding
+## Tibbles - Prática
 
 ```{r}
 #| echo: true
@@ -1136,7 +1048,7 @@ Now, as the tibble moves around, the variables always stay together.
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: Install and load the tidyverse package
+# CONFIGURAÇÃO: Instale e carregue o pacote tidyverse
 
 # Extras pane > Packages tab > Install
 
@@ -1144,7 +1056,7 @@ library(tidyverse)
 
 # ==============================================================================
 
-# LESSON: Create a tibble from vectors
+# LIÇÃO: Crie um tibble a partir de vetores
 
 x <- c(10, 20, 30, 40)
 x
@@ -1157,7 +1069,7 @@ my_tibble
 
 # ==============================================================================
 
-# USECASE: You can mix different types of vectors in a single tibble
+# CASO DE USO: Você pode misturar diferentes tipos de vetores em um único tibble
 
 first_names <- c("Adam", "Billy", "Caitlyn", "Debra")
 
@@ -1168,7 +1080,7 @@ guests
 
 # ==============================================================================
 
-# TIP: To save time, you can also create the vectors in the tibble call
+# DICA: Para economizar tempo, você também pode criar os vetores na chamada tibble
 
 gradebook <- tibble(
   grade = c(95, 83, 90, 76),
@@ -1178,7 +1090,7 @@ gradebook
 
 # ==============================================================================
 
-# PITFALL: Don't try to combine tibbles with different lengths
+# ARMADILHA: Não tente combinar tibbles com comprimentos diferentes
 
 y <- c(1, 2, 3)
 x <- c("a", "b")
@@ -1187,13 +1099,13 @@ tibble(y, x) #error
 
 # ==============================================================================
 
-# LESSON: However, the exception is R will "recycle" a single value
+# LIÇÃO: No entanto, a exceção é que R irá "reciclar" um único valor
 
 tibble(y, x = "a")
 
 # ==============================================================================
 
-# LESSON: You can "extract" a vector from a tibble using $
+# LIÇÃO: Você pode "extrair" um vetor de um tibble usando $
 
 mytibble <- tibble(x = c(1, 2, 3, 4, 5), y = "test")
 
@@ -1203,7 +1115,7 @@ mytibble$y
 
 # ==============================================================================
 
-# PITFALL: Don't try to extract a vector that doesn't exist
+# ARMADILHA: Não tente extrair um vetor que não existe
 
 mytibble$z #error
 ```
@@ -1212,23 +1124,47 @@ mytibble$z #error
 
 :::
 
-## Importing and Exporting {.smaller}
+
+## Tabelas longas e largas (long x wide) {.smaller}
+
+![](../img/original-dfs-tidy.png){fig-align="center"}
+
+
+::: footer
+
+:::
+
+
+
+## Tabelas longas e largas (long x wide) {.smaller}
+
+![](../img/tidyr-longer-wider.gif){fig-align="center"}
+
+
+::: footer
+
+:::
+
+
+
+
+## Importação e Exportação {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   Data is usually stored in [data files]{.b .green}
-    -   Importing files into R is called [reading]{.b .blue}
-    -   Exporting files from R is called [writing]{.b .blue}
+-   Os dados geralmente são armazenados em [arquivos de dados]{.b .green}
+    -   Importar arquivos para R é chamado [reading]{.b .blue}
+    -   Exportar arquivos de R é chamado [writing]{.b .blue}
 
 ::: {.fragment .mt1}
--   A convenient data file type is a CSV
-    -   This stands for [comma-separated values]{.b .green}
-    -   A CSV file is easy to share with other people
+-   Um tipo de arquivo de dados conveniente é um CSV
+    -   Isto significa [valores separados por vírgula]{.b .green}
+    -   Um arquivo CSV é fácil de compartilhar com outras pessoas
 :::
 
 ::: {.fragment .mt1}
--   The [tidyverse]{.b .green} package can read/write CSVs
-    -   Other packages can read/write other types
+-   O pacote [tidyverse]{.b .green} pode ler/escrever CSVs
+    -   Outros pacotes podem ler/escrever outros tipos
         (e.g., *readxl*, *haven*, *rio*, *googlesheets4*)
 :::
 :::
@@ -1242,7 +1178,7 @@ mytibble$z #error
 
 :::
 
-## Read/Write Live Coding
+## Read/Write - Prática
 
 ```{r}
 #| echo: true
@@ -1250,13 +1186,13 @@ mytibble$z #error
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: Load the tidyverse package (if you haven't yet)
+# CONFIGURAÇÃO: Carregue o pacote tidyverse (se ainda não o fez)
 
 library(tidyverse)
 
 # ==============================================================================
 
-# USECASE: Create a tibble and write it to a file
+# CASO DE USO: Crie um tibble e grave-o em um arquivo
 
 gradebook <- tibble(
   id = c(123, 456, 789),
@@ -1266,29 +1202,29 @@ gradebook
 
 write_csv(gradebook, file = "gradebook.csv")
 
-# NOTE: You can see the new file in Extras pane > Files tab.
-# You can open the file in another program (e.g., Microsoft Excel).
-# You can also email this file to someone else to share it.
+# NOTA: Você pode ver o novo arquivo no painel Extras > aba Arquivos.
+# Você pode abrir o arquivo em outro programa (por exemplo, Microsoft Excel).
+# Você também pode enviar este arquivo por e-mail para outra pessoa para compartilhá-lo.
 
 # ==============================================================================
 
-# PITFALL: Don't swap the order of the tibble and the file
+# ARMADILHA: Não troque a ordem do tibble e do file
 
 write_csv("gradebook.csv", gradebook) # error
 
 # ==============================================================================
 
-# USECASE: Read in a file containing data
+# CASO DE USO: Ler em um arquivo contendo dados
 
 old_gradebook <- read_csv("gradebook.csv")
 old_gradebook
 
-# NOTE: read_csv() will examine and guess the data type of each variable.
-# You can tell it the data type of each variable, but that is more advanced.
+# NOTA: read_csv() examinará e adivinhará o tipo de dado de cada variável.
+# Você pode dizer a ele o tipo de dado de cada variável, mas isso é mais avançado.
 
 # ==============================================================================
 
-# PITFALL: Don't use the read.csv() and write.csv() functions
+# ARMADILHA: Não use as funções read.csv() e write.csv()
 
 old_gradebook <- read.csv("gradebook.csv") # not a tibble
 old_gradebook
@@ -1301,7 +1237,7 @@ old_gradebook
 <!-- # [Practice II](https://pittmethods.github.io/r4ss/Day_1/Day1B_Practice.html){preview-link="false"} -->
 
 
-# `Wrangle II`
+# Wrangle II
 
 ## Basic wrangling verbs {.smaller}
 
