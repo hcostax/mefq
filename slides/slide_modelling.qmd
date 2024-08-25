@@ -1,0 +1,665 @@
+---
+format: 
+  revealjs:
+    css: ../styles.css
+    slide-number: true
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+    progress: true
+    history: true
+    hash-type: number
+    theme: default
+    code-block-background: true
+    highlight-style: zenburn
+    code-link: false
+    code-copy: true
+    pagetitle: "Princípios de Modelagem"
+    author-meta: "Henrique Costa"
+    date-meta: "2024-08-19"
+    df-print: paged
+---
+
+::: {.my-title}
+# [Modelagem]{.blue} <br />Solução Aproximada do Problema Real
+
+::: {.my-grey}
+[Encontro 2 | 19/08/20024]{}<br />
+[Henrique Costa | Métodos Estratégicos em FinQuant]{}
+:::
+
+<!-- ![](../img/proud_coder_357EDD.svg){.absolute bottom=0 right=0 width=400} -->
+:::
+
+<!-- Wrangle III -->
+
+# Princípios de Modelagem 
+
+## Simplificação {.smaller}
+
+::: {.pv4 .tc}
+![](../img/modelling_1.png)
+
+::: {.fragment}
+Até que ponto a [solução exata]{.b .blue} do [problema aproximado]{.b .blue} pode ser a [solução aproximada]{.b .green} do [problema real]{.b .green}?
+:::
+:::
+
+::: footer
+
+:::
+
+
+## Processo de Modelagem {.smaller}
+
+::: {.pv4 .tc}
+![](../img/modelling_2.png)
+
+::: {.fragment}
+A especificação do [modelo]{.b .blue} deve ser uma [simplificação]{.b .blue} do [problema real]{.b .green}.
+:::
+:::
+
+::: footer
+
+:::
+
+
+## Váriaveis Macro são importante? {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   As variáveis [macroeconômicas]{.b .blue} tem seus benefícios e seus custos [describing]{.b .green} and [creating]{.b .green} data visualizations
+
+::: {.fragment .mt1}
+-   To make our data visual (and therefore put our highly evolved occipital lobes to work)...
+    -   We connect [variables]{.b .blue} to [visual qualities]{.b .green}
+    -   We represent [observations]{.b .blue} as [visual objects]{.b .green}
+:::
+
+::: {.fragment .mt1}
+-   This requires four *fundamental* elements
+    -   We will first learn about them in lecture
+    -   We will then apply them in R using \{ggplot2\}
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li ksoxpinm trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: footer
+
+:::
+
+## Data {.smaller}
+
+::: {.pv4 .tc}
+
+```{r mpg}
+#| rows.print: 6
+
+mpg
+```
+
+::: {.fragment .mt1}
+Graphics require [data]{.b .blue} (e.g., tibbles), which describe [observations]{.b .green} using [variables]{.b .green}.
+:::
+:::
+
+::: footer
+
+:::
+
+## Aesthetic Mappings {.smaller}
+
+::: {.pv4 .tc}
+
+![](../img/aes.png)
+
+::: {.fragment}
+Graphics require [aesthetic mappings]{.b .blue}, which connect [data variables]{.b .green} to [visual qualities]{.b .green}.
+:::
+:::
+
+::: footer
+
+:::
+
+## Scales {.smaller}
+
+::: {.pv4 .tc}
+
+::: {layout-ncol=2}
+![](../img/position.png)
+
+![](../img/otherscale.png)
+:::
+
+::: {.fragment .mt1}
+Graphics require [scales]{.b .blue}, which connect specific [data *values*]{.b .green} to specific [aesthetic *values*]{.b .green}.
+:::
+:::
+
+::: footer
+
+:::
+
+## Geometric Objects {.smaller}
+
+::: {.pv4 .tc}
+
+```{r geoms}
+#| layout-ncol: 2
+#| fig-height: 8
+#| echo: false
+#| message: false
+
+ggplot(mpg2, aes(x = displ, y = hwy)) + 
+  geom_point(size = 4) + 
+  labs(x = "Engine Size", y = "MPG") + 
+  theme_grey(base_size = 36)
+
+ggplot(mpg2, aes(x = factor(cyl), y = hwy)) + 
+  stat_summary(geom = "col", fun = mean) + 
+  labs(x = "Cylinders", y = "Average MPG") + 
+  theme_grey(base_size = 36)
+```
+
+::: {.fragment .mt1}
+Graphics require [geometric objects]{.b .blue} (geoms), which [represent the observations]{.b .green}.
+:::
+:::
+
+::: footer
+
+:::
+
+## ggplot2 Basics {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   The [ggplot2]{.b .blue} package is a part of tidyverse
+    -   No need to install or load it separately
+    -   It plays nicely with tibbles and wrangling
+
+::: {.fragment .mt1}
+-   It implements the [grammar of graphics]{.b .green} in R
+    -   The "gg" stands for "grammar of graphics"
+    -   Thus, we will need to provide all four elements
+:::
+
+::: {.fragment .mt1}
+-   We will create a [pseudo-pipeline]{.b .green} of commands
+    -   However, we will use `+` rather than `|>`
+    -   This is because \{ggplot2\} predates the R pipe
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li gkeohday trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: footer
+
+:::
+
+## ggplot2 Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will need tidyverse and an example dataset
+
+library(tidyverse)
+
+mpg
+
+# ==============================================================================
+
+# LESSON: First, set the data to a tibble
+p <- ggplot(data = mpg)
+p
+
+# ==============================================================================
+
+# LESSON: Next, set the aesthetic mappings with aes()
+
+p <- ggplot(data = mpg, mapping = aes(x = displ, y = hwy))
+p
+
+# ==============================================================================
+
+# TIP: You can leave off the optional argument names
+
+p <- ggplot(mpg, aes(x = displ, y = hwy))
+p
+
+# ==============================================================================
+
+# LESSON: Next, set the positional scales
+
+p <- ggplot(mpg, aes(x = displ, y = hwy)) +
+  scale_x_continuous(
+    name = "Engine Size (in liters)", 
+    limits = c(1, 7), 
+    breaks = 1:7
+  ) +
+  scale_y_continuous(
+    name = "Highway Fuel Efficiency (in miles/gallon)",
+    limits = c(10, 50),
+    breaks = c(10, 20, 30, 40, 50)
+  )
+p
+
+# ==============================================================================
+
+# LESSON: Finally, add a point geom
+
+p <- 
+  ggplot(mpg, aes(x = displ, y = hwy)) + 
+  scale_x_continuous(
+    name = "Engine Size (in liters)", 
+    limits = c(1, 7), 
+    breaks = 1:7
+  ) +
+  scale_y_continuous(
+    name = "Highway Fuel Efficiency (in miles/gallon)",
+    limits = c(10, 50),
+    breaks = c(10, 20, 30, 40, 50)
+  ) +
+  geom_point()
+
+# ==============================================================================
+
+# TIP: If you leave off the scales, R will try to guess
+
+p <- ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
+p
+
+# ==============================================================================
+
+# LESSON: We can also customize the geom with arguments
+
+p <- ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(color = "red", shape = "square", size = 2)
+p
+```
+
+::: footer
+
+:::
+
+## Basic Layering {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   ggplot2 uses a [layered]{.b .blue} grammar of graphics
+    -   We can keep [stacking geoms]{.b .green} on top
+
+::: {.fragment .mt1}
+-   Layering adds a lot of possibilities
+    -   We can convey [more complex]{.b .green} ideas
+    -   We can learn more about our data
+:::
+
+::: {.fragment .mt1}
+-   But we can still describe these graphics
+    -   Just [describe each layer]{.b .green} in turn
+    -   And describe the layers' ordering
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li ikwcijxm trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: footer
+
+:::
+
+## Basic Layering Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will need tidyverse and an example dataset
+
+library(tidyverse)
+
+mpg
+
+# ==============================================================================
+
+# USECASE: Add a smooth geom (i.e., line of best fit)
+
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+# ==============================================================================
+
+# USECASE: Add a line geom (i.e., connecting points)
+
+economics
+
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_point()
+
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_point() +
+  geom_line(color = "orange", size = 1)
+
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_line(color = "orange", size = 1) +
+  geom_point()
+
+# ==============================================================================
+
+# USECASE: Add reference line geoms
+
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_hline(yintercept = 0, color = "orange", size = 1) +
+  geom_line(color = "blue", size = 1) +
+  geom_point()
+
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_vline(xintercept = 7.5, color = "orange", size = 1) +
+  geom_line(color = "blue", size = 1) +
+  geom_point() 
+
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_abline(intercept = 4000, slope = 0.5, color = "orange", size = 1) +
+  geom_line(color = "blue", size = 1) +
+  geom_point() 
+```
+
+::: footer
+
+:::
+
+## Working with Color {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   Color scales come in two main types:
+    -   [Discrete]{.b .blue} scales have [separate colors]{.b .green}
+        -   Best with factor variables
+    -   [Continuous]{.b .blue} scales [form a gradient]{.b .green}
+        -   Best with numeric variables
+
+::: {.fragment .mt1}
+-   There are two ways to control color:
+    -   You can [map color]{.b .blue} to a [variable]{.b .green}
+        -   It will take on *different* values
+    -   You can [set color]{.b .blue} to a [value]{.b .green}
+        -   It will take on *one* value only
+:::
+
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li fiivuxdi trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: footer
+
+:::
+
+## Color Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will need tidyverse and an example dataset
+
+library(tidyverse)
+
+mpg
+
+# ==============================================================================
+
+# USECASE: Continuous color scales work well with numeric variables
+
+ggplot(mpg, aes(x = hwy, y = cty, color = displ)) +
+  geom_point(size = 4)
+
+ggplot(mpg, aes(x = hwy, y = cty, color = displ)) +
+  geom_point(size = 4) +
+  scale_color_continuous(type = "viridis")
+
+# ==============================================================================
+
+# USECASE: Use a discrete color scale with categorical variables
+
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point()
+
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point() +
+  scale_color_discrete(
+    name = "Drivetrain", 
+    breaks = c("4", "f", "r"), 
+    labels = c("Four Wheel", "Front Wheel", "Rear Wheel")
+  )
+
+# ==============================================================================
+
+# PITFALL: Don't forget to set categorical variables as factors
+
+ggplot(mpg, aes(x = displ, y = hwy, color = cyl)) + 
+  geom_point() # R guesses you want a continuous scale
+
+ggplot(mpg, aes(x = displ, y = hwy, color = factor(cyl))) + 
+  geom_point() + 
+  scale_color_discrete(name = "Cylinders")
+
+# ==============================================================================
+
+# LESSON: Set a geom's color aesthetic to make it always that color
+
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(color = "red")
+
+# ==============================================================================
+
+# PITFALL: However, do this inside of geom() not aes()
+
+ggplot(mpg, aes(x = displ, y = hwy, color = "blue")) + 
+  geom_point() #unintended
+
+# ==============================================================================
+
+# LESSON: If you both set and map color, the setting will win
+
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) + 
+  geom_point(color = "blue") 
+```
+
+::: footer
+I
+:::
+
+## Themes {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   [Themes]{.b .blue} control how non-data elements look
+    -   e.g., how thick to draw the gridlines
+    -   e.g., where to position the legend
+
+::: {.fragment .mt1}
+-   [Complete themes]{.b .green} change many elements at once
+    -   Some are built into ggplot2
+    -   Others come in R packages
+    -   \{papaja\} provides `theme_apa()`
+:::
+
+::: {.fragment .mt1}
+-   [Individual elements]{.b .green} can be customized too
+    -   To do so, use `theme()` and [this reference](https://ggplot2.tidyverse.org/reference/element.html)
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li hbkyydsg trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: footer
+I
+:::
+
+## Themes Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will need tidyverse and an example graphic
+
+library(tidyverse)
+
+p <- 
+  ggplot(mpg, aes(x = displ, y = hwy, color = drv)) + 
+  geom_point() +
+  labs(title = "Fuel Efficiency")
+p
+
+# ==============================================================================
+
+# USECASE: Apply a "complete" theme
+
+p + theme_bw()
+
+p + theme_classic()
+
+p + theme_dark()
+
+# ==============================================================================
+
+# LESSON: More more precise control, we can use theme()
+
+p + theme(legend.position = "top")
+
+p + theme(plot.title = element_text(color = "purple", face = "bold"))
+
+p + theme(panel.grid = element_blank())
+
+# NOTE: There are a lot of elements to learn, so use a cheatsheet!
+```
+
+::: footer
+I
+:::
+
+## Exporting Graphics {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   We may need to [export graphics]{.b .blue} from R
+    -   e.g., for a paper, poster, or presentation
+
+::: {.fragment .mt1}
+-   This job is handling fantastically by `ggsave()`
+    -   We can create many types of files
+    -   We can customize the exact size
+:::
+
+::: {.fragment .mt1}
+-   I recommend `.png` for most daily purposes
+    -   For publishing, I prefer `.pdf` or `.svg`
+    -   They retain perfect quality at any zoom
+    -   You can send these files to most publishers
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+{{< li amfaktum trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+:::
+:::
+
+::: footer
+I
+:::
+
+## Exporting Live Coding
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: true
+#| code-line-numbers: false
+
+# SETUP: We will need tidyverse and an example graphic
+
+library(tidyverse)
+
+p <- ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point() + geom_smooth() +
+  labs(x = "Engine Displacement", y = "Highway MPG")
+p
+
+# ==============================================================================
+
+# USECASE: Save a specific ggplot object to a file
+
+ggsave(filename = "pfinal.png", plot = p)
+
+# ==============================================================================
+
+# LESSON: Specify the size of the file to create
+
+ggsave(filename = "pfinal2.png", plot = p, 
+       width = 6, height = 3, units = "in")
+
+# ==============================================================================
+
+# LESSON: Just change the extension to create a different file type
+
+ggsave(filename = "pfinal2.pdf", plot = p, 
+       width = 6, height = 3, units = "in")
+
+# ==============================================================================
+
+# PITFALL: Creating a very large file may lead to small text
+
+ggsave(filename = "p_poster.png", plot = p, 
+       width = 12, height = 8, units = "in")
+
+# ==============================================================================
+
+# TIP: You can quickly increase the text size using base_size
+
+p2 <- p + theme_grey(base_size = 24)
+
+ggsave(filename = "p_poster2.png", plot = p2,
+       width = 12, height = 8, units = "in")
+```
+
+::: footer
+I
+:::
+
+<!-- Practice IV -->
+
+# [Practice IV](https://pittmethods.github.io/r4ss/Day_2/Day2B_Practice.html){preview-link="false"}
