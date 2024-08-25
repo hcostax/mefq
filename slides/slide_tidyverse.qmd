@@ -1610,17 +1610,17 @@ sw
 ::: {.columns .pv4}
 ::: {.column width="60%" .mytable}
 
-| Symbol | Description            | Num | Chr   |
-|--------|------------------------|-----|-------|
-| `<`    | Menor que              | Yes | *No*  |
-| `<=`   | Menor ou igual á       | Yes | *No*  |
-| `>`    | Maior que              | Yes | *No*  |
-| `>=`   | Maior ou igual á       | Yes | *No*  |
-| `==`   | Igual á                | Yes | Yes   |
-| `!=`   | diferente de           | Yes | Yes   |
-| `%in%` | Encontre em            | Yes | Yes   |
-| `&`    | Lógico - "E"           | Yes | Yes   |
-| `|`    | Lógico - "Ou"          | Yes | Yes   |
+| Symbol | Description                 | Numérico | Charactere   |
+|--------|-----------------------------|----------|--------------|
+| `<`    | Menor que                   | Sim      | *Não*        |
+| `<=`   | Menor ou igual á            | Sim      | *Não*        |
+| `>`    | Maior que                   | Sim      | *Não*        |
+| `>=`   | Maior ou igual á            | Sim      | *Não*        |
+| `==`   | Igual á                     | Sim      | Sim          |
+| `!=`   | diferente de                | Sim      | Sim          |
+| `%in%` | Encontre em                 | Sim      | Sim          |
+| `&`    | Lógico - "E"                | Sim      | Sim          |
+| `|`    | Lógico - "Ou"               | Sim      | Sim          |
 
 :::
 
@@ -1635,29 +1635,29 @@ sw
 
 <!-- Program III -->
 
-# `Wrangle III`
+# Wrangle III
 
-## `Pipes & Pipelines` {.smaller}
+## Pipes & Pipelines {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
-- How can we do [multiple operations]{.b .green} to an object?
+- Como podemos fazer [operações múltiplas]{.b .green} em um objeto?
     1. `x <- 10`
     2. `x2 <- sqrt(x)`
     3. `x3 <- round(x2)`
     
 ::: {.fragment .mt1}
-- This works but is **cumbersome** and **error-prone**
+- Isso funciona, mas é **incômodo** e **propenso a erros**
 :::
 
 ::: {.fragment .mt1}
-- A better approach is to use [pipes]{.b .blue} and [pipelines]{.b .green}
-    - `x3 <- 10 |> sqrt() |> round()`
+- Uma abordagem melhor é usar [pipes]{.b .blue} e [pipelines]{.b .green}
+    - `x3 <- 10 %>% sqrt() %>% round()`
 :::
 
 ::: {.fragment .mt1}
-- I like to read `|>` as "and then..."
-    - "Take 10 and then sqrt() and then round()"
+- Gosto de ler `%>%` (ou `|>`) como "e então..."
+    - "Pegue 10 e então sqrt() e então round()"
 :::
     
 :::
@@ -1671,7 +1671,7 @@ sw
 
 :::
 
-## Pipes Live Coding
+## Pipes - Prática
 
 ```{r}
 #| echo: true
@@ -1679,17 +1679,17 @@ sw
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: Enable the pipe operator shortcut
+# CONFIGURAÇÃO: Habilitar o atalho do operador de pipe
 
 # Tools > Global Options... > Code tab > Check "Use Native Pipe Operator"
 
-# Type out |> or press Ctrl+Shift+M (Windows) / Cmd+Shift+M (Mac)
+# Digite |> ou pressione Ctrl+Shift+M (Windows) / Cmd+Shift+M (Mac)
 
 # ==============================================================================
 
-# LESSON: The pipe pushes objects to a function as its first argument
+# LIÇÃO: O pipe envia objetos para uma função como seu primeiro argumento
 
-# TEMPLATE: x |> function_name() is the same as function_name(x)
+# MODELO: x |> function_name() é o mesmo que function_name(x)
 
 x <- 10
 
@@ -1701,15 +1701,15 @@ y
 
 # ==============================================================================
 
-# PITFALL: Don't forget to remove the object from the function call
+# ARMADILHA: Não se esqueça de remover o objeto da chamada de função
 
 x |> sqrt(x) # wrong
 
-x |> sqrt() # correct
+x |> sqrt() # correto
 
 # ==============================================================================
 
-# USECASE: You can still use arguments when piping
+# CASO DE USO: Você ainda pode usar argumentos ao canalizar
 
 z <- round(3.14, digits = 1)
 z
@@ -1719,7 +1719,7 @@ z
 
 # ==============================================================================
 
-# USECASE: Pipes are useful with tibbles and wrangling verbs
+# USECASE: Pipes são úteis com tibbles e funções para data wrangling
 
 starwars
 
@@ -1731,7 +1731,7 @@ sw
 
 # ==============================================================================
 
-# PITFALL: Don't add a pipe without a step after it
+# ARMADILHA: Não adicione um pipe sem um passo depois dele
 
 sw <- starwars |> select(name, species, height) |> # error
 ```
@@ -1740,7 +1740,7 @@ sw <- starwars |> select(name, species, height) |> # error
 
 :::
 
-## Pipelines Live Coding
+## Pipelines - Prática
 
 ```{r}
 #| echo: true
@@ -1748,20 +1748,20 @@ sw <- starwars |> select(name, species, height) |> # error
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: You can chain multiple pipes together to make a pipeline
+# CASO DE USO: Você pode encadear vários pipes para criar um pipeline
 
 x <- 10 |> sqrt() |> round()
 x
 
 # ==============================================================================
 
-# TIP: If you want to see the output of a pipeline, you can pipe to print()
+# DICA: Se você quiser ver a saída de um pipeline, você pode canalizar para print()
 
 x <- 10 |> sqrt() |> round() |> print()
 
 # ==============================================================================
 
-# TIP: To make your pipelines more readable, move each step to a new line
+# DICA: Para tornar seus pipelines mais legíveis, mova cada etapa para uma nova linha
 
 x <- 
   10 |> 
@@ -1771,7 +1771,7 @@ x <-
 
 # ==============================================================================
 
-# PITFALL: Don't put the pipe at the beginning of a line, though
+# ARMADILHA: Não coloque o pipe no início de uma linha
 
 x <- 
   10 
@@ -1781,7 +1781,7 @@ x <-
 
 # ==============================================================================
 
-# USECASE: Chain together a series of verbs to flexibly wrangle data
+# CASO DE USO: Encadeie uma série de verbos para controlar dados de forma flexível
 
 tallones <- 
   starwars |> 
@@ -1801,19 +1801,19 @@ tallones <-
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Factors]{.b .blue} are used to represent categorical data
-    -   Factors have multiple possible [levels]{.b .blue}
-    -   Levels are [discrete]{.b .green} and mutually-exclusive
+-   [Factors]{.b .blue} são usados para representar dados categóricos
+    -   Os fatores têm múltiplos [níveis] possíveis{.b .blue}
+    -   Os níveis são [discretos]{.b .green} e mutuamente exclusivos
 
 ::: {.fragment .mt1}
--   Sometimes categories are [unordered]{.b .green} (nominal)
-    -   Action or Comedy or Drama
-    -   Asia or Europe or North America
+-   Às vezes, as categorias são [não ordenadas]{.b .green} (nominais)
+    -   Ação ou Comédia ou Drama
+    -   Ásia ou Europa ou América do Norte
 :::
 
 ::: {.fragment .mt1}
--   Sometimes categories are [ordered]{.b .green} (ordinal)
-    -   Mild < Medium < Hot
+-   Às vezes, as categorias são [ordenadas]{.b .green} (ordinal)
+    -   Suave < Médio < Picante
     -   XS < S < M < L < XL
 :::
 :::
@@ -1827,7 +1827,7 @@ tallones <-
 
 :::
 
-## Factors Live Coding
+## Factors - Prática
 
 ```{r}
 #| echo: true
@@ -1835,14 +1835,14 @@ tallones <-
 #| error: true
 #| code-line-numbers: false
 
-# USECASE: Ask 10 kids to order 1: nuggets, 2: pizza, or 3: salad
+# CASO DE USO: Peça a 10 crianças para pedirem 1: nuggets, 2: pizza ou 3: salada
 
 food <- c(2, 2, 1, 2, 1, 2, 1, 1, 2, 2)
 food
 
 # ==============================================================================
 
-# LESSON: We can turn this vector into a factor with factor()
+# LIÇÃO: Podemos transformar esse vetor em um fator com a função factor()
 
 food2 <- factor(food, levels = c(1, 2, 3))
 food2
@@ -1853,33 +1853,33 @@ food3
 
 # ==============================================================================
 
-# USECASE: We can also quickly and easily count each level with table()
+# CASO DE USO: Também podemos contar cada nível de forma rápida e fácil com a função table()
 
 table(food3)
 
 # ==============================================================================
 
-# PITFALL: Don't confuse levels and labels
+# ARMADILHA: Não confunda níveis e rótulos (level/label)
 
 food4 <- factor(food, labels = c(1, 2, 3),
                 levels = c("nuggets", "pizza", "salad"))
-food4 # full of <NA> because it can't find these levels
+food4 # cheio de <NA> porque não consegue encontrar esses níveis
 
 # ==============================================================================
 
-# USECASE: You can also just enter strings directly (as self-labels)
+# CASO DE USO: Você também pode simplesmente inserir strings diretamente (como auto-rótulos)
 
 genre <- c("pop", "metal", "pop", "rock", "rap", "rap", "pop", "rock")
 genre
 
-genre2 <- factor(genre) # observed levels will be assigned alphabetically
+genre2 <- factor(genre) # os níveis observados serão atribuídos em ordem alfabética
 genre2
 
 table(genre2)
 
 # ==============================================================================
 
-# LESSON: If ordinal, enter levels low-to-high and add ordered = TRUE
+# LIÇÃO: Se ordinal, insira os níveis de baixo para alto e adicione ordenado = VERDADEIRO
 
 salsa <- c("hot", "mild", "medium", "mild", "medium", "medium")
 
@@ -1888,11 +1888,11 @@ salsa2 <- factor(salsa,
                  ordered = TRUE)
 salsa2 
 
-# NOTE: We may want to visualize or model ordinal factors differently
+# NOTA: Podemos querer visualizar ou modelar fatores ordinais de forma diferente
 
 # ==============================================================================
 
-# USECASE: Working with factors in a tibble
+# CASO DE USO: Trabalhando com fatores em um tibble
 
 cereal <- read_csv("cereal.csv")
 cereal
@@ -1909,24 +1909,24 @@ table(cereal2$type)
 
 :::
 
-## Missing Values {.smaller}
+## Valores ausentes {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   Sometimes your data will have [missing values]{.b .blue}
-    -   Perhaps these were [never collected]{.b .green}
-    -   Perhaps the values were [lost/corrupted]{.b .green}
-    -   Perhaps the participant [didn't respond]{.b .green}
+-   Às vezes, seus dados terão [valores ausentes]{.b .blue}
+    -   Talvez estes [nunca tenham sido coletados]{.b .green}
+    -   Talvez os valores tenham sido [perdidos/corrompidos]{.b .green}
+    -   Talvez o participante [não respondeu]{.b .green}
 
 ::: {.fragment .mt1}
--   We need to tell R which values are missing
-    -   To do so, we set those values to `NA`
-    -   Functions from **tidyverse** make this easy
+-   Precisamos dizer a R quais valores estão faltando
+    -   Para fazer isso, definimos esses valores como `NA`
+    -   As funções do **tidyverse** tornam isso fácil
 :::
 
 ::: {.fragment .mt1}
--   Missingness is often ["contagious"]{.b .green} in R<br />
-    e.g., a vector with `NA` has an unknown mean
+-   A ausência é frequentemente ["contagiosa"]{.b .green} em R<br />
+    por exemplo, um vetor com `NA` tem uma média desconhecida
 :::
 :::
 
@@ -1939,7 +1939,7 @@ table(cereal2$type)
 
 :::
 
-## Missing Values Live Coding
+## Valores ausentes - Prática
 
 ```{r}
 #| echo: true
@@ -1947,36 +1947,36 @@ table(cereal2$type)
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse for the read and mutate functions
+# CONFIGURAÇÃO: Precisaremos do tidyverse para as funções de leitura e mutação
 
 library(tidyverse)
 
 # ==============================================================================
 
-# PITFALL: Number codes for missingness will mess up calculations in R
+# ARMADILHA: Códigos numéricos para ausências irão atrapalhar os cálculos em R
 
-heights <- c(149, 158, -999) # here we use -999 to represent a missing value
+heights <- c(149, 158, -999) # aqui usamos -999 para representar um valor ausente
 
 range(heights)
 
 mean(heights)
 
-log(heights) # our missing value is no longer -999
+log(heights) # nosso valor ausente não é mais -999
 
 # ==============================================================================
 
-# USECASE: Use NA for missingness instead
+# CASO DE USO: Use NA para ausência em vez disso
 
 heights2 <- c(149, 158, NA)
 heights2
 
-log(heights2) # the NA stayed an NA (due to contagiousness)
+log(heights2) # a NA continuou sendo NA (devido à contagiosidade)
 
 # ==============================================================================
 
-# LESSON: Use na.rm = TRUE to do a summary function ignoring the NAs
+# LIÇÃO: Use na.rm = TRUE para fazer uma função de resumo ignorando os NAs
 
-mean(heights2) # the mean is an NA (due to contagiousness)
+mean(heights2) # a média é um NA (devido à contagiosidade)
 
 mean(heights2, na.rm = TRUE)
 
@@ -1984,7 +1984,7 @@ range(heights2, na.rm = TRUE)
 
 # ==============================================================================
 
-# USECASE: Dealing with missing values in tibbles
+# CASO DE USO: Lidando com valores ausentes em tibbles
 
 cereal <- read_csv("cereal.csv")
 
@@ -1994,9 +1994,9 @@ range(cereal$rating)
 
 # ==============================================================================
 
-# LESSON: Use na_if() to convert specific values to NA while mutating
+# LIÇÃO: Use na_if() para converter valores específicos para NA durante a modificação
 
-cereal2 <- mutate(cereal, rating = na_if(rating, -999))
+cereal2 <- cereal %>% mutate(rating = na_if(rating, -999))
 
 cereal2$rating
 
@@ -2004,7 +2004,7 @@ range(cereal2$rating, na.rm = TRUE)
 
 # ==============================================================================
 
-# LESSON: Use read_csv(na) to convert specific values to NA while reading
+# LIÇÃO: Use read_csv(na) para converter valores específicos para NA durante a leitura
 
 cereal3 <- read_csv("cereal.csv", na = "-999")
 
@@ -2023,26 +2023,26 @@ range(cereal3$rating, na.rm = TRUE)
 
 
 
-# `Wrangle IV`
+# Wrangle IV
 
 ## Summarize {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   Although we store data about many observations...
--   ...we often want to [summarize across]{.b .blue} observations
-    -   This is like [folding]{.b .green} the tibble down to [one row]{.b .green}
+-   Embora armazenemos dados sobre muitas observações...
+-   ...frequentemente queremos [resumir]{.b .blue} observações
+    -   Isto é como [dobrar]{.b .green} o tibble para [uma linha]{.b .green}
 
 ::: {.fragment .mt1}
--   We've seen functions that summarize vectors
+-   Vimos funções que resumem vetores
     -   `length()`, `sum()`, `min()`, `max()`
     -   `mean()`, `median()`, `sd()`, `var()`
 :::
 
 ::: {.fragment .mt1}
--   `summarize()` lets us use them on tibbles
-    -   It works very similarly to `mutate()`
-    -   It always creates a tibble as output
+-   `summarize()` nos permite usá-los em tibbles
+    -   Funciona de forma muito semelhante a `mutate()`
+    -   Ele sempre cria um tibble como saída
 :::
 :::
 
@@ -2055,7 +2055,7 @@ range(cereal3$rating, na.rm = TRUE)
 
 :::
 
-## Summarize Live Coding
+## Summarize - Prática
 
 ```{r}
 #| echo: true
@@ -2063,7 +2063,7 @@ range(cereal3$rating, na.rm = TRUE)
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example dataset
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um conjunto de dados de exemplo
 
 library(tidyverse)
 
@@ -2078,7 +2078,7 @@ sales <-
 
 # ==============================================================================
 
-# USECASE: Summarize the typical sales
+# CASO DE USO: Resuma as vendas típicas
 
 my_summary <- 
   sales |> 
@@ -2090,7 +2090,7 @@ my_summary <-
 
 # ==============================================================================
 
-# PITFALL: Don't use summary() instead of summarize()
+# ARMADILHA: Não use summary() em vez de summarise()
 
 my_summary <- 
   sales |> 
@@ -2098,11 +2098,11 @@ my_summary <-
     avg_items = mean(items),
     avg_spent = mean(spent)
   ) |> 
-  print() # not a tibble
+  print() # não é um tibble
 
 # ==============================================================================
 
-# USECASE: Use more than one summary function
+# CASO DE USO: Use mais de uma função de resumo
 
 my_summary <- 
   sales |> 
@@ -2116,7 +2116,7 @@ my_summary <-
 
 # ==============================================================================
 
-# USECASE: Use counting functions
+# CASO DE USO: Usar funções de contagem
 
 my_counts <- 
   sales |> 
@@ -2136,15 +2136,15 @@ my_counts <-
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
-- We can also summarize a tibble [by group]{.b .blue}
-    -   This is like [folding]{.b .green} the tibble multiple times
-    -   Specifically, we fold down to [one row per group]{.b .green}
+- Também podemos resumir um tibble [por grupo]{.b .blue}
+    -   Isto é como [dobrar]{.b .green} o tibble várias vezes
+    -   Especificamente, dobramos para [uma linha por grupo]{.b .green}
 
 ::: {.fragment .mt1}
--   The syntax for summarize is identical
-    -   The only difference is to the tibble
-    -   We first pass it through `group_by()`
-    -   Pipelines make this very easy
+-  A sintaxe para resumir é idêntica
+    -   A única diferença é o tibble
+    -   Primeiro passamos por `group_by()`
+    -   Os pipelines tornam isso muito fácil
 :::
 :::
 
@@ -2157,7 +2157,7 @@ my_counts <-
 
 :::
 
-## Group Summarize Live Coding
+## Group Summarize - Prática
 
 ```{r}
 #| echo: true
@@ -2165,7 +2165,7 @@ my_counts <-
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example dataset
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um conjunto de dados de exemplo
 
 library(tidyverse)
 
@@ -2180,15 +2180,15 @@ sales <-
 
 # ==============================================================================
 
-# LESSON: We pass a tibble through group_by to group it
+# LIÇÃO: Passamos um tibble por group_by para agrupá-lo
 
 sales
 
-sales |> group_by(store) # note the display says "grouped"
+sales |> group_by(store) # observe que o display diz "agrupado"
 
 # ==============================================================================
 
-# USECASE: We can then summarize and get stats per group
+# CASO DE USO: Podemos então resumir e obter estatísticas por grupo
 
 sales |> 
   group_by(store) |> 
@@ -2202,7 +2202,7 @@ sales |>
 
 # ==============================================================================
 
-# SETUP: Let's get a larger, more realistic dataset
+# CONFIGURAÇÃO: Vamos obter um conjunto de dados maior e mais realista
 
 # Extra pane > Packages tab > Install > nycflights13
 
@@ -2212,7 +2212,7 @@ flights
 
 # ==============================================================================
 
-# USECASE: Find the carrier with the lowest average delays
+# CASO DE USO: Encontre a transportadora com os menores atrasos médios
 
 flights |> 
   group_by(carrier) |> 
@@ -2221,9 +2221,9 @@ flights |>
 
 # ==============================================================================
 
-# LESSON: We can also group by multiple variables
+# LIÇÃO: Também podemos agrupar por múltiplas variáveis
 
-# USECASE: Let's find the day of the year with the most flights
+# CASO DE USO: Vamos encontrar o dia do ano com mais voos
 
 flights |> 
   group_by(month, day) |> 
@@ -2237,15 +2237,15 @@ flights |>
 
 <!-- Visualize I -->
 
-# Visualize I
+# DataViz I
 
-## What is a graphic? {.smaller}
+## O que é um gráfico? {.smaller}
 
 ::: {.pv4 .tc}
 ![](../img/graphics.png)
 
 ::: {.fragment}
-A [data visualization]{.b .blue} expresses [data]{.b .green} through [visual aesthetics]{.b .green}.
+Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}.
 :::
 :::
 
@@ -2253,7 +2253,282 @@ A [data visualization]{.b .blue} expresses [data]{.b .green} through [visual aes
 
 :::
 
-## Describing Graphics {.smaller}
+
+## Por que expressamos dados em um gráfico? {.smaller}
+
+<br>
+<br>
+
+<br>
+<br>
+
+::: {.fragment}
+Porque é importante [visualizar]{.b .blue} dados antes de aplicar testes estatísticos [inferenciais]{.b .green} e [descritivas]{.b .green}.
+
+:::
+::: footer
+
+:::
+
+
+
+## Quarteto de Anscombe {.smaller}
+
+::: {.pv4 .tc}
+![](../img/anscombe.png)
+
+::: {.fragment}
+
+Anscombe, F. J. (1973). Graphs in statistical analysis. The American Statistician, 27(1), 17–21.
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## Quarteto de Anscombe {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+
+library(gt)
+
+data("anscombe")
+gt(anscombe, rownames_to_stub = TRUE) %>%
+  tab_header(title = "Quarteto de Anscombe")
+
+
+
+```
+
+:::
+
+::: {.column .tc .pv5 width="60%"}
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(gt)
+library(gtsummary)
+
+anscombe <- anscombe %>%
+  tidyr::pivot_longer(everything(),
+                      names_to = c(".value", "conjunto"),
+                      names_pattern = "(.)(.)")
+
+
+
+theme_gtsummary_language("pt")
+
+anscombe %>% 
+tbl_summary(
+            by = conjunto,
+            type = all_continuous() ~ "continuous2",
+            statistic = list(
+              all_continuous() ~ c("{mean}",
+                                   "{sd}")),
+            digits = all_continuous() ~ 2) %>%
+  bold_labels() %>%
+  italicize_levels() %>%
+  as_gt() %>%
+  tab_header(title = "Estatísticas Descritivas do Quarteto de Anscombe",
+             subtitle = "Agrupadas por Conjunto")
+
+```
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## Quarteto de Anscombe {.smaller}
+
+::: {.pv4 .tc}
+
+```{r}
+
+#| echo: false
+#| 
+library(purrr)
+tibble(conjunto = as.factor(1:4),
+       correlação = unique(anscombe$conjunto) %>%
+  map_dbl(~ cor(subset(anscombe, conjunto == .x, select = x),
+                subset(anscombe, conjunto == .x, select = y)))) %>%
+  gt() %>%
+  tab_header(title = "Correlações do Quarteto de Anscombe") %>%
+  tab_source_note(md("*Observação: Correlação calculada conforme a correlação de Pearson*"))
+
+```
+
+:::
+
+::: footer
+
+:::
+
+
+
+
+## Quarteto de Anscombe {.smaller}
+
+::: {.pv4 .tc}
+
+```{r}
+
+#| echo: false
+#| 
+library(broom)
+map_dfr(1:4,
+        ~ tidy(lm(y ~ x, subset(anscombe, conjunto == .x)), conf.int = TRUE)) %>%
+  filter(term == "x") %>%
+  mutate(Conjunto = unique(anscombe$conjunto)) %>%
+  inner_join(map_dfr(unique(anscombe$conjunto),
+                     ~ glance(lm(y ~ x, subset(anscombe, conjunto == .x)),
+                              conf.int = TRUE)) %>%
+               mutate(Conjunto = unique(anscombe$conjunto)),
+             by = "Conjunto") %>%
+  relocate(Conjunto) %>%
+  dplyr::select(Conjunto, estimate, std.error, p.value.x,
+                conf.low, conf.high, r.squared, adj.r.squared) %>%
+  gt() %>%
+  tab_header("Modelo de Regressão Linear do Quarteto de Anscombe",
+             md("Fórmula: `y ~ x`"))
+
+
+```
+
+::: {.fragment}
+
+Aplicando uma regressão linear teremos os mesmo $p$-valores, coeficientes, $R^2$ e $R^2$ ajustado para todos os quatro conjuntos.
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+## The Datasaurus Dozen {.smaller}
+
+::: {.pv4 .tc}
+![](../img/DataSaurus Dozen.gif)
+
+::: {.fragment}
+
+O Datasaurus original foi criado por Alberto Cairo. As outras Dúzias é descrito no artigo “Same Stats, Different Graphs: Generating Datasets with VariedAppearance and Identical Statistics through Simulated Recoaling” de Justin Matejka e George Fitzmaurice.
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## The Datasaurus Dozen {.smaller}
+
+::: {.pv4 .tc}
+
+```{r}
+
+#| echo: false
+#| 
+
+suppressPackageStartupMessages(library(datasauRus))
+
+datasaurus_dozen %>% 
+  group_by(dataset) %>% 
+  summarize(
+    mean_x    = mean(x),
+    mean_y    = mean(y),
+    std_dev_x = sd(x),
+    std_dev_y = sd(y),
+    corr_x_y  = cor(x, y)
+  ) %>% 
+  gt() %>%
+  cols_label(
+    dataset = "Conjunto",
+    mean_x    = "Média(X)",
+    mean_y    = "Média(Y)",
+    std_dev_x = "Desv. Pad(X)",
+    std_dev_y = "Desv. Pad(Y)",
+    corr_x_y  = "Correlação(X e Y)"
+  ) %>% 
+  tab_header(title = "Estatísticas Descritivas do Datasaurus Dozen",
+             subtitle = "Agrupadas por Conjunto")
+
+```
+
+:::
+
+::: footer
+
+:::
+
+
+
+## The Datasaurus Dozen {.smaller}
+
+::: {.pv4 .tc}
+
+```{r}
+
+#| echo: false
+#| 
+
+suppressPackageStartupMessages(library(datasauRus))
+
+ggplot(datasaurus_dozen, aes(x = x, y = y, colour = dataset))+
+  geom_point() +
+  theme_void() +
+  theme(legend.position = "none")+
+  facet_wrap(~dataset, ncol = 5)
+
+```
+
+:::
+
+::: footer
+
+:::
+
+
+
+## Porque usar gráficos  {.smaller}
+
+::: {.pv4 .tc}
+
+::: {.fragment}
+
+O quarteto de [Anscombe]{.b .blue} e o [Datasaurus Dozen]{.b .blue} são maneiras de ilustrar a importância de [visualizações]{.b .green} na análise de dados. Deve-se sempre olhar um conjunto de dados [graficamente]{.b .green} antes de começar qualquer análise, pois estes exemplos, ilustram contextos nos quais as propriedades estatísticas básicas para descrever conjuntos de dados são inadequadas, ou insuficiêntes.
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+
+
+## Descrevendo gráficos {.smaller}
 
 ::: {.pv4 .tc}
 
@@ -2278,7 +2553,7 @@ ggplot(mpg2, aes(x = factor(cyl), y = hwy)) +
 ```
 
 ::: {.fragment}
-Some simple graphics are [easy to describe]{.b .green} and may even have [ready names]{.b .blue}.
+Alguns gráficos simples são [fáceis de descrever]{.b .green} e podem até ter [nomes prontos]{.b .blue}.
 :::
 :::
 
@@ -2286,7 +2561,7 @@ Some simple graphics are [easy to describe]{.b .green} and may even have [ready 
 
 :::
 
-## Describing Graphics {.smaller}
+## Descrevendo gráficos {.smaller}
 
 ::: {.pv4 .tc}
 
@@ -2327,7 +2602,7 @@ ggplot(mpg2, aes(x = "0", y = hwy)) +
 ```
 
 ::: {.fragment}
-A [grammar of graphics]{.b .blue} will help us describe more [complex]{.b .green} graphics.
+Uma [gramática de gráficos]{.b .blue} nos ajudará a descrever gráficos mais [complexidade]{.b .green}.
 :::
 :::
 
@@ -2339,18 +2614,18 @@ A [grammar of graphics]{.b .blue} will help us describe more [complex]{.b .green
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   The [grammar of graphics]{.b .blue} is a set of rules for [describing]{.b .green} and [creating]{.b .green} data visualizations
+-   A [gramática dos gráficos]{.b .blue} é um conjunto de regras para [descrever]{.b .green} e [criar]{.b .green} visualizações de dados
 
 ::: {.fragment .mt1}
--   To make our data visual (and therefore put our highly evolved occipital lobes to work)...
-    -   We connect [variables]{.b .blue} to [visual qualities]{.b .green}
-    -   We represent [observations]{.b .blue} as [visual objects]{.b .green}
+-   Para tornar nossos dados visuais (e, portanto, colocar nossos lobos occipitais altamente evoluídos para funcionar)...
+    -   Conectamos [variáveis]{.b .blue} a [qualidades visuais]{.b .green}
+    -   Representamos [observações]{.b .blue} como [objetos visuais]{.b .green}
 :::
 
 ::: {.fragment .mt1}
--   This requires some *fundamental* elements
-    -   We will first learn about them in lecture
-    -   We will then apply them in R using \{ggplot2\}
+-   Isso requer alguns elementos *fundamentais*
+    -   Primeiro aprenderemos sobre eles na aula
+    -   Em seguida, aplicaremos em R usando \{ggplot2\}
 :::
 :::
 
@@ -2364,24 +2639,6 @@ A [grammar of graphics]{.b .blue} will help us describe more [complex]{.b .green
 
 :::
 
-## Data {.smaller}
-
-::: {.pv4 .tc}
-
-```{r mpg}
-#| rows.print: 6
-
-mpg
-```
-
-::: {.fragment .mt1}
-Graphics require [data]{.b .blue} (e.g., tibbles), which describe [observations]{.b .green} using [variables]{.b .green}.
-:::
-:::
-
-::: footer
-
-:::
 
 ## Aesthetic Mappings {.smaller}
 
@@ -2390,7 +2647,7 @@ Graphics require [data]{.b .blue} (e.g., tibbles), which describe [observations]
 ![](../img/aes.png)
 
 ::: {.fragment}
-Graphics require [aesthetic mappings]{.b .blue}, which connect [data variables]{.b .green} to [visual qualities]{.b .green}.
+Os gráficos exigem [mapeamentos estéticos]{.b .blue}, que conectam [variáveis]{.b .green} a [qualidades visuais]{.b .green}.
 :::
 :::
 
@@ -2409,7 +2666,7 @@ Graphics require [aesthetic mappings]{.b .blue}, which connect [data variables]{
 :::
 
 ::: {.fragment .mt1}
-Graphics require [scales]{.b .blue}, which connect specific [data *values*]{.b .green} to specific [aesthetic *values*]{.b .green}.
+Os gráficos requerem [escalas]{.b .blue}, que conectam [*valores*]{.b .green} a [*estética*]{.b .green}.
 :::
 :::
 
@@ -2417,7 +2674,7 @@ Graphics require [scales]{.b .blue}, which connect specific [data *values*]{.b .
 
 :::
 
-## Geometric Objects {.smaller}
+## Geoms {.smaller}
 
 ::: {.pv4 .tc}
 
@@ -2439,7 +2696,7 @@ ggplot(mpg2, aes(x = factor(cyl), y = hwy)) +
 ```
 
 ::: {.fragment .mt1}
-Graphics require [geometric objects]{.b .blue} (geoms), which [represent the observations]{.b .green}.
+Os gráficos requerem [objetos geométricos]{.b .blue} (geoms), que [representam as observações]{.b .green}.
 :::
 :::
 
@@ -2447,24 +2704,24 @@ Graphics require [geometric objects]{.b .blue} (geoms), which [represent the obs
 
 :::
 
-## ggplot2 Basics {.smaller}
+## O básico de ggplot2  {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   The [ggplot2]{.b .blue} package is a part of tidyverse
-    -   No need to install or load it separately
-    -   It plays nicely with tibbles and wrangling
+-   O pacote [ggplot2]{.b .blue} faz parte do tidyverse
+    -   Não há necessidade de instalar ou carregar separadamente
+    -   Trabalha bem com tibbles & data wrangling
 
 ::: {.fragment .mt1}
--   It implements the [grammar of graphics]{.b .green} in R
-    -   The "gg" stands for "grammar of graphics"
-    -   Thus, we will need to provide all four elements
+-   Ele implementa a [gramática dos gráficos]{.b .green} em R
+    -   O "gg" significa "gramática de gráficos"
+    -   Assim, precisaremos fornecer os elementos fundamentais
 :::
 
 ::: {.fragment .mt1}
--   We will create a [pseudo-pipeline]{.b .green} of commands
-    -   However, we will use `+` rather than `|>`
-    -   This is because \{ggplot2\} predates the R pipe
+-   Criaremos um [pseudo-pipeline]{.b .green} de comandos
+    -   Entretanto, usaremos `+` em vez de `%>%`
+    -   Isso é porque o \{ggplot2\} é anterior ao pipe do R
 :::
 :::
 
@@ -2477,7 +2734,7 @@ Graphics require [geometric objects]{.b .blue} (geoms), which [represent the obs
 
 :::
 
-## ggplot2 Live Coding
+## ggplot2 - Prática
 
 ```{r}
 #| echo: true
@@ -2485,7 +2742,7 @@ Graphics require [geometric objects]{.b .blue} (geoms), which [represent the obs
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example dataset
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um conjunto de dados de exemplo
 
 library(tidyverse)
 
@@ -2493,27 +2750,27 @@ mpg
 
 # ==============================================================================
 
-# LESSON: First, set the data to a tibble
+# LIÇÃO: Primeiro, defina os dados para um tibble
 p <- ggplot(data = mpg)
 p
 
 # ==============================================================================
 
-# LESSON: Next, set the aesthetic mappings with aes()
+# LIÇÃO: Em seguida, defina os mapeamentos estéticos com a função aes()
 
 p <- ggplot(data = mpg, mapping = aes(x = displ, y = hwy))
 p
 
 # ==============================================================================
 
-# TIP: You can leave off the optional argument names
+# DICA: Você pode usar aes() diretamente sem o argumento mapping
 
 p <- ggplot(mpg, aes(x = displ, y = hwy))
 p
 
 # ==============================================================================
 
-# LESSON: Next, set the positional scales
+# LIÇÃO: Em seguida, defina as escalas posicionais
 
 p <- ggplot(mpg, aes(x = displ, y = hwy)) +
   scale_x_continuous(
@@ -2530,7 +2787,7 @@ p
 
 # ==============================================================================
 
-# LESSON: Finally, add a point geom
+# LIÇÃO: Por fim, adicione um ponto geométrico (geom)
 
 p <- 
   ggplot(mpg, aes(x = displ, y = hwy)) + 
@@ -2548,41 +2805,42 @@ p <-
 
 # ==============================================================================
 
-# TIP: If you leave off the scales, R will try to guess
+# DICA: Se você deixar de fora as escalas, o R tentará adivinhar
 
 p <- ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
 p
 
 # ==============================================================================
 
-# LESSON: We can also customize the geom with arguments
+# LIÇÃO: Também podemos personalizar o geom com argumentos
 
 p <- ggplot(mpg, aes(x = displ, y = hwy)) + 
   geom_point(color = "red", shape = "square", size = 2)
 p
+
 ```
 
 ::: footer
 
 :::
 
-## Basic Layering {.smaller}
+## O básico sobre Camadas {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   ggplot2 uses a [layered]{.b .blue} grammar of graphics
-    -   We can keep [stacking geoms]{.b .green} on top
+-   ggplot2 usa uma gramática [em camadas]{.b .blue} de gráficos
+    -   Permite [empilhar geoms]{.b .green} (formas geométricas)
 
 ::: {.fragment .mt1}
--   Layering adds a lot of possibilities
-    -   We can convey [more complex]{.b .green} ideas
-    -   We can learn more about our data
+-   Camadas adiciona muitas possibilidades
+    -   Podemos transmitir ideias [mais complexas]{.b .green}
+    -   Podemos aprender mais sobre nossos dados
 :::
 
 ::: {.fragment .mt1}
--   But we can still describe these graphics
-    -   Just [describe each layer]{.b .green} in turn
-    -   And describe the layers' ordering
+-   Mas ainda podemos descrever esses gráficos
+    -   Apenas [descreva cada camada]{.b .green} por vez
+    -   E descreva a ordenação das camadas
 :::
 :::
 
@@ -2595,7 +2853,7 @@ p
 
 :::
 
-## Basic Layering Live Coding
+## Camadas ggplot2 - Prática
 
 ```{r}
 #| echo: true
@@ -2603,7 +2861,7 @@ p
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example dataset
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um conjunto de dados de exemplo
 
 library(tidyverse)
 
@@ -2611,7 +2869,7 @@ mpg
 
 # ==============================================================================
 
-# USECASE: Add a smooth geom (i.e., line of best fit)
+# CASO DE USO: Adicionar uma geometria suave (geom_smooth), ou seja, linha de melhor ajuste. 
 
 ggplot(mpg, aes(x = displ, y = hwy)) +
   geom_point() +
@@ -2623,7 +2881,7 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
 
 # ==============================================================================
 
-# USECASE: Add a line geom (i.e., connecting points)
+# CASO DE USO: Adicionar uma linha geom (ou seja, pontos de conexão)
 
 economics
 
@@ -2640,7 +2898,7 @@ ggplot(economics, aes(x = date, y = unemploy)) +
 
 # ==============================================================================
 
-# USECASE: Add reference line geoms
+# CASO DE USO: Adicionar linhas de referência geométricas
 
 ggplot(economics, aes(x = date, y = unemploy)) + 
   geom_hline(yintercept = 0, color = "orange", size = 1) +
@@ -2662,22 +2920,22 @@ ggplot(economics, aes(x = date, y = unemploy)) +
 
 :::
 
-## Working with Color {.smaller}
+## Trabalhando com cores {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   Color scales come in two main types:
-    -   [Discrete]{.b .blue} scales have [separate colors]{.b .green}
-        -   Best with factor variables
-    -   [Continuous]{.b .blue} scales [form a gradient]{.b .green}
-        -   Best with numeric variables
+-   As escalas de cores são de dois tipos principais:
+    -   As escalas [discretas]{.b .blue} têm [cores separadas]{.b .green}
+        -   Melhor com variáveis do tipo [fator]{.b .blue}
+    -   As escalas [Contínuas]{.b .blue} formam um [gradiente]{.b .verde}
+        -   Melhor com variáveis numéricas
 
 ::: {.fragment .mt1}
--   There are two ways to control color:
-    -   You can [map color]{.b .blue} to a [variable]{.b .green}
-        -   It will take on *different* values
-    -   You can [set color]{.b .blue} to a [value]{.b .green}
-        -   It will take on *one* value only
+-   Existem duas maneiras de controlar a cor:
+    -   Você pode [mapear a cor]{.b .blue} para uma [variável]{.b .green}
+        -   Assumirá valores *diferentes*
+    -   Você pode [definir a cor]{.b .blue} para um [valor]{.b .green}
+        -   Ele assumirá *um* valor apenas
 :::
 
 :::
@@ -2691,7 +2949,7 @@ ggplot(economics, aes(x = date, y = unemploy)) +
 
 :::
 
-## Color Live Coding
+## Cores - Prática
 
 ```{r}
 #| echo: true
@@ -2699,7 +2957,7 @@ ggplot(economics, aes(x = date, y = unemploy)) +
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example dataset
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um conjunto de dados de exemplo
 
 library(tidyverse)
 
@@ -2707,7 +2965,7 @@ mpg
 
 # ==============================================================================
 
-# USECASE: Continuous color scales work well with numeric variables
+# CASO DE USO: Escalas de cores contínuas funcionam bem com variáveis numéricas
 
 ggplot(mpg, aes(x = hwy, y = cty, color = displ)) +
   geom_point(size = 4)
@@ -2718,7 +2976,7 @@ ggplot(mpg, aes(x = hwy, y = cty, color = displ)) +
 
 # ==============================================================================
 
-# USECASE: Use a discrete color scale with categorical variables
+# CASO DE USO: Use uma escala de cores discreta com variáveis categóricas
 
 ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
   geom_point()
@@ -2733,10 +2991,10 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 # ==============================================================================
 
-# PITFALL: Don't forget to set categorical variables as factors
+# ARMADILHA: Não se esqueça de definir variáveis categóricas como fatores
 
 ggplot(mpg, aes(x = displ, y = hwy, color = cyl)) + 
-  geom_point() # R guesses you want a continuous scale
+  geom_point() # o R supõe que você quer uma escala contínua
 
 ggplot(mpg, aes(x = displ, y = hwy, color = factor(cyl))) + 
   geom_point() + 
@@ -2744,21 +3002,21 @@ ggplot(mpg, aes(x = displ, y = hwy, color = factor(cyl))) +
 
 # ==============================================================================
 
-# LESSON: Set a geom's color aesthetic to make it always that color
+# LIÇÃO: Defina a estética de cor de um geom para que ele sempre tenha essa cor
 
 ggplot(mpg, aes(x = displ, y = hwy)) +
   geom_point(color = "red")
 
 # ==============================================================================
 
-# PITFALL: However, do this inside of geom() not aes()
+# ARMADILHA: No entanto, faça isso dentro de geom() e não de aes()
 
 ggplot(mpg, aes(x = displ, y = hwy, color = "blue")) + 
-  geom_point() #unintended
+  geom_point()  # não intencional
 
 # ==============================================================================
 
-# LESSON: If you both set and map color, the setting will win
+# LIÇÃO: Se você definir e mapear a cor, vai dar bom.
 
 ggplot(mpg, aes(x = displ, y = hwy, color = drv)) + 
   geom_point(color = "blue") 
@@ -2768,24 +3026,24 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 :::
 
-## Themes {.smaller}
+## Temas {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   [Themes]{.b .blue} control how non-data elements look
-    -   e.g., how thick to draw the gridlines
-    -   e.g., where to position the legend
+-   [Temas]{.b .blue} controlam a aparência dos elementos não-dados
+    -   por exemplo, qual a espessura para desenhar as linhas de grade
+    -   por exemplo, onde posicionar a legenda
 
 ::: {.fragment .mt1}
--   [Complete themes]{.b .green} change many elements at once
-    -   Some are built into ggplot2
-    -   Others come in R packages
-    -   \{papaja\} provides `theme_apa()`
+-   [Temas completos]{.b .green} alteram muitos elementos de uma só vez
+    -   Alguns estão incorporados ao ggplot2
+    -   Outros vêm em pacotes R
+    
 :::
 
 ::: {.fragment .mt1}
--   [Individual elements]{.b .green} can be customized too
-    -   To do so, use `theme()` and [this reference](https://ggplot2.tidyverse.org/reference/element.html)
+-   [Elementos individuais]{.b .green} também podem ser personalizados
+    -   Para fazer isso, use `theme()` e [esta referência](https://ggplot2.tidyverse.org/reference/element.html)
 :::
 :::
 
@@ -2798,7 +3056,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 :::
 
-## Themes Live Coding
+## Temas - Prática
 
 ```{r}
 #| echo: true
@@ -2806,7 +3064,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example graphic
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um gráfico de exemplo
 
 library(tidyverse)
 
@@ -2818,7 +3076,7 @@ p
 
 # ==============================================================================
 
-# USECASE: Apply a "complete" theme
+# CASO DE USO: Aplicar um tema "completo"
 
 p + theme_bw()
 
@@ -2828,7 +3086,7 @@ p + theme_dark()
 
 # ==============================================================================
 
-# LESSON: More more precise control, we can use theme()
+# LIÇÃO: Controle mais preciso, podemos usar theme()
 
 p + theme(legend.position = "top")
 
@@ -2836,31 +3094,31 @@ p + theme(plot.title = element_text(color = "purple", face = "bold"))
 
 p + theme(panel.grid = element_blank())
 
-# NOTE: There are a lot of elements to learn, so use a cheatsheet!
+# OBSERVAÇÃO: Há muitos elementos para aprender, então leia a documentação!
 ```
 
 ::: footer
 
 :::
 
-## Exporting Graphics {.smaller}
+## Exportando gráficos {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   We may need to [export graphics]{.b .blue} from R
-    -   e.g., for a paper, poster, or presentation
+-   Podemos precisar [exportar gráficos]{.b .blue} do R
+    -   por exemplo, para um artigo, pôster ou apresentação
 
 ::: {.fragment .mt1}
--   This job is handling fantastically by `ggsave()`
-    -   We can create many types of files
-    -   We can customize the exact size
+-   Este trabalho está sendo executado fantasticamente pela função `ggsave()`
+    -   Podemos criar muitos tipos de arquivos
+    -   Podemos personalizar o tamanho exato
 :::
 
 ::: {.fragment .mt1}
--   I recommend `.png` for most daily purposes
-    -   For publishing, I prefer `.pdf` or `.svg`
-    -   They retain perfect quality at any zoom
-    -   You can send these files to most publishers
+-   Eu recomendo `.png` para a maioria dos propósitos diários
+    -   Para publicação, prefiro `.pdf` ou `.svg`
+    -   Eles mantêm a qualidade perfeita em qualquer zoom
+    
 :::
 :::
 
@@ -2873,7 +3131,7 @@ p + theme(panel.grid = element_blank())
 
 :::
 
-## Exporting Live Coding
+## Exportando gráficos - Prática 
 
 ```{r}
 #| echo: true
@@ -2881,7 +3139,7 @@ p + theme(panel.grid = element_blank())
 #| error: true
 #| code-line-numbers: false
 
-# SETUP: We will need tidyverse and an example graphic
+# CONFIGURAÇÃO: Precisaremos do tidyverse e de um gráfico de exemplo
 
 library(tidyverse)
 
@@ -2892,34 +3150,34 @@ p
 
 # ==============================================================================
 
-# USECASE: Save a specific ggplot object to a file
+# CASO DE USO: Salvar um objeto ggplot específico em um arquivo
 
 ggsave(filename = "pfinal.png", plot = p)
 
 # ==============================================================================
 
-# LESSON: Specify the size of the file to create
+# LIÇÃO: Especifique o tamanho do arquivo a ser criado
 
 ggsave(filename = "pfinal2.png", plot = p, 
        width = 6, height = 3, units = "in")
 
 # ==============================================================================
 
-# LESSON: Just change the extension to create a different file type
+# LIÇÃO: Basta alterar a extensão para criar um tipo de arquivo diferente
 
 ggsave(filename = "pfinal2.pdf", plot = p, 
        width = 6, height = 3, units = "in")
 
 # ==============================================================================
 
-# PITFALL: Creating a very large file may lead to small text
+# ARMADILHA: Criar um arquivo muito grande pode resultar em texto pequeno
 
 ggsave(filename = "p_poster.png", plot = p, 
        width = 12, height = 8, units = "in")
 
 # ==============================================================================
 
-# TIP: You can quickly increase the text size using base_size
+# DICA: Você pode aumentar rapidamente o tamanho do texto usando base_size
 
 p2 <- p + theme_grey(base_size = 24)
 
@@ -2931,7 +3189,6 @@ ggsave(filename = "p_poster2.png", plot = p2,
 
 :::
 
-<!-- Practice IV -->
 
-<!-- # [Practice IV](https://pittmethods.github.io/r4ss/Day_2/Day2B_Practice.html){preview-link="false"} -->
+# [Até o próximo encontro](https://mefq.netlify.app/){preview-link="false"}
 
