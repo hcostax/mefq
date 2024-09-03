@@ -28,6 +28,8 @@ Nesta página é possível encontrar os vídeos dos encontros.
 **Encontro 26/08/2024:** [Dados e R - Part II (Resumos e Ajuste de Dados - Data Wrangling II, III & IV)](https://youtu.be/J8DBKxRVcRc)
 
 
+**Encontro 02/09/2024:** [Dados e R - Part III (Gramática dos Gráficos)](https://youtu.be/prEy2JZMCvY)
+
 
 
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
