@@ -31,6 +31,8 @@ Nesta página é possível encontrar os vídeos dos encontros.
 **Encontro 02/09/2024:** [Dados e R - Part III (Gramática dos Gráficos)](https://youtu.be/prEy2JZMCvY)
 
 
+**Encontro 02/09/2024:** [Dados e R - Part III (Gramática dos Gráficos - pt 2)](https://youtu.be/5sAf5pRj04g)
+
 
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
 
