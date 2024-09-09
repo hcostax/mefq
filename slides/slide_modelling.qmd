@@ -65,6 +65,41 @@ A especificação do [modelo]{.b .blue} deve ser uma [simplificação]{.b .blue}
 :::
 
 
+# Microeconomia 
+
+
+## Análise Micro é útil? {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+::: {.fragment .mt1}
+-   A analíse micro ou [microeconômica]{.b .blue} pode ser entendida como uma observação sobre o [efeito marginal]{.b .green} de uma escolha, onde o ponto central é o [trade-off]{.b .green} (custo de oportunidade). 
+:::
+
+::: {.fragment .mt1}
+-   Quando a análise microeconômica é útil?
+    -   Quando há interesse em [escolhas]{.b .blue} e/ou em [efeito marginal]{.b .green}
+    -   Quando o problema for [minimização]{.b .blue} e/ou [máximização]{.b .green}
+:::
+
+::: {.fragment .mt1}
+-   A análise *fundamental* é:
+    -   Otimização
+    -   We will then apply them in R using \{ggplot2\}
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+![](../img/CNX_Econ_C11_003.jpg)
+:::
+:::
+
+::: footer
+
+:::
+
+
+
 ## Váriaveis Macro são importante? {.smaller}
 
 ::: {.columns .pv4}
