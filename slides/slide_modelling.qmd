@@ -24,7 +24,7 @@ format:
 # [Modelagem]{.blue} <br />Solução Aproximada do Problema Real
 
 ::: {.my-grey}
-[Encontro 5 | 19/08/20024]{}<br />
+[Encontro 5 | 10/09/20024]{}<br />
 [Henrique Costa | Métodos Estratégicos em FinQuant]{}
 :::
 
