@@ -20,11 +20,14 @@ Nesta página é possível encontrar os slides dos encontros e as referências u
 [Atividade Prática - ggplot2](https://mefq.netlify.app/pratica/pratica_ggplot2.html/)
 
 
+<br>
+
+### Princípios de Modelagem e Tópicos em Economia.
 
 
+[Apresentação](https://mefq.netlify.app/slides/slide_modelling#/)
 
-
-
+[Atividade Prática - PMC](https://doi.org/10.59350/xs70x-mar87)
 
 
 

@@ -16,7 +16,7 @@ format:
     code-copy: true
     pagetitle: "Princípios de Modelagem"
     author-meta: "Henrique Costa"
-    date-meta: "2024-08-19"
+    date-meta: "2024-09-09"
     df-print: paged
 ---
 
@@ -24,7 +24,7 @@ format:
 # [Modelagem]{.blue} <br />Solução Aproximada do Problema Real
 
 ::: {.my-grey}
-[Encontro 2 | 19/08/20024]{}<br />
+[Encontro 5 | 19/08/20024]{}<br />
 [Henrique Costa | Métodos Estratégicos em FinQuant]{}
 :::
 
@@ -82,11 +82,39 @@ A especificação do [modelo]{.b .blue} deve ser uma [simplificação]{.b .blue}
     -   Quando o problema for [minimização]{.b .blue} e/ou [máximização]{.b .green}
 :::
 
-::: {.fragment .mt1}
--   A análise *fundamental* é:
-    -   Otimização
-    -   We will then apply them in R using \{ggplot2\}
+
 :::
+
+::: {.column .tc .pv5 width="40%"}
+![](../img/CNX_Econ_C11_003.jpg)
+:::
+:::
+
+::: footer
+
+:::
+
+
+<!-- ## Análise Micro é Otimização {.smaller} -->
+
+<!-- ::: {.columns .pv4} -->
+<!-- ::: {.column width="60%"} -->
+<!-- ::: {.fragment .mt1} -->
+<!-- -   Se meu problema é [minimizar]{.b .blue} ou [máximizar]{.b .green}, então na verdade o meu problema é de [otimização]{.b .green}.  -->
+<!-- ::: -->
+
+<!-- ::: {.fragment .mt1} -->
+<!-- -   Quais aplicações? -->
+<!--     -   Análise de elasticidade (sensibilidade). -->
+<!--     -   Avaliação de efeitos marginais (impacto), etc. -->
+<!-- ::: -->
+
+<!-- ::: {.fragment .mt1} -->
+<!-- -   Teoria da Dualidade ajuda na especificação  -->
+<!--     -   Um problema de máximização pode ser reescrito como um problema de minimização. -->
+<!--     -   Problema primal, Problema Dual e Variáveis Duais (restrições) -->
+<!-- ::: -->
+
 :::
 
 ::: {.column .tc .pv5 width="40%"}
@@ -100,27 +128,65 @@ A especificação do [modelo]{.b .blue} deve ser uma [simplificação]{.b .blue}
 
 
 
+
+## Como posso utilizar a Análise Micro? {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+::: {.fragment .mt1}
+-   [**Otimização**]{.b .blue} e [**Equilíbrio**]{.b .green}.
+:::
+
+::: {.fragment .mt1}
+-   Estática Comparativa
+    -   Compara dois diferentes estados de equilíbrio, após o processo de ajustamento (se houver).
+    -   Não estuda o movimento por trás do equilíbrio nem o processo de mudança.
+:::
+
+::: {.fragment .mt1}
+-   Equilíbrio Parcial - *Ceteris Paribus* 
+    -   Impacto ou Efeito Marginal de uma mudança em algum parâmetro exógeno.
+    -   Dualidade: um problema de máximização pode ser reescrito como um problema de minimização. Também com ou sem Restrições.
+    
+:::
+
+:::
+
+::: {.column .tc .pv5 width="40%"}
+![](../img/estatica_comparativa.png)
+:::
+:::
+
+::: footer
+A estática comparativa foi formalizada por John Richard Hicks (1939) e Paul Samuelson (1947), mas foi apresentada graficamente já na década de 1870.
+:::
+
+
+
+# Macroeconomia 
+
+
 ## Váriaveis Macro são importante? {.smaller}
 
 ::: {.columns .pv4}
 ::: {.column width="60%"}
--   As variáveis [macroeconômicas]{.b .blue} tem seus benefícios e seus custos [describing]{.b .green} and [creating]{.b .green} data visualizations
+-   Análise [macroeconômica]{.b .blue} se refere à influências sistêmicas e relações com o tempo.
 
 ::: {.fragment .mt1}
--   To make our data visual (and therefore put our highly evolved occipital lobes to work)...
-    -   We connect [variables]{.b .blue} to [visual qualities]{.b .green}
-    -   We represent [observations]{.b .blue} as [visual objects]{.b .green}
+-   **Benefícios:**
+    -   Análises [agregadas]{.b .blue}, por uma visão [sistêmica]{.b .green}. 
+    -   Análise [Dinâmica Comparativa]{.b .blue}, e observações [temporais]{.b .green}
 :::
 
 ::: {.fragment .mt1}
--   This requires four *fundamental* elements
-    -   We will first learn about them in lecture
-    -   We will then apply them in R using \{ggplot2\}
+-   **Custos:**
+    -   Menor sensibilidade à [efeitos marginais]{.b .blue}. Exogenia muito forte e influência sistêmica.
+    -   Maior subjetividade pelo atraso. Uso forçado de previsão. [Defasagem]{.b .blue} e [Interdependencia Temporal]{.b .green}
 :::
 :::
 
 ::: {.column .tc .pv5 width="40%"}
-{{< li ksoxpinm trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}}
+![](../img/dinamica_comparativa.png)
 :::
 :::
 
@@ -128,6 +194,101 @@ A especificação do [modelo]{.b .blue} deve ser uma [simplificação]{.b .blue}
 
 :::
 
+
+
+
+## Quando usar a análise Macro? {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   Análise [macroeconômica]{.b .blue} é muito útil quando o problema real tem relações com o sistema.
+
+::: {.fragment .mt1}
+-   **Testes de Estresse**
+    -   A influência de variáveis sistêmicas podem gerar [perdas]{.b .blue}? 
+    -   Análise de [backtesting]{.b .blue}, e efeito de [propagação]{.b .green}.
+:::
+
+::: {.fragment .mt1}
+-   **Projeções (Forecast)**
+    -   Quando o comportamento passado ajuda a [projetar]{.b .blue} efeitos futuros.
+    -   Quando as informações apresentam características [Temporais]{.b .green}.
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+![](../img/impulse_response_functions.png)
+:::
+:::
+
+::: footer
+
+:::
+
+
+# Tópicos em Econometria
+
+
+## O que é e para que serve? {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+-   A [econometria]{.b .blue} é a mensuração da teoria (econômica) usando estatística frequêntista (clássica) e bayesiana.
+
+::: {.fragment .mt1}
+-   **A relação entre as veriáveis**
+    -   Estimar  [parâmetros]{.b .blue} (efeitos/impacto). 
+    -   Estimar a [qualidade]{.b .green}, da relação entre as variáveis.
+:::
+
+::: {.fragment .mt1}
+-   **Testar hipóteses e Equilíbrio**
+    -   Estima [*p-valor*]{.b .blue} e testa anulação do parâmetro.
+    -   Estuda os [resíduos]{.b .green}, em busca de choques exógenos (equilíbrio).
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+![](../img/econometria.png)
+:::
+:::
+
+::: footer
+
+:::
+
+
+## E como usar a econometria? {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+
+- Através da especificação de um [modelo estatístico]{.b .blue}
+    -   Isto é, [simplificar]{.b .green} o problema real
+    -   Estimar a  [solução aproximada]{.b .green}
+
+::: {.fragment .mt1}
+-  Métodos mais comuns:
+    -   Regressão Linear
+    -   Regressão Logística
+    -   Regressão Longitudinais (Dados em Painel)
+    -   Séries Temporais
+
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+<!-- {{< li pmwtbpap trigger=loop delay=3000 colors=secondary:#2a76dd class=rc >}} -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+
 <!-- Practice IV -->
 
-# [Practice IV](https://pittmethods.github.io/r4ss/Day_2/Day2B_Practice.html){preview-link="false"}
+# [Prática](https://doi.org/10.59350/xs70x-mar87){preview-link="false"}
