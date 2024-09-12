@@ -31,5 +31,27 @@ Nesta página é possível encontrar os slides dos encontros e as referências u
 
 [Apresentação 2](https://mefq.netlify.app/slides/slide_modelling2#/)
 
-[Econometria](https://mefq.netlify.app/slides/econometria.pdf/)
+<!-- [Econometria](https://mefq.netlify.app/slides/econometria.pdf#/) -->
 
+<!-- {{< pdf ./slides/econometria.pdf >}} -->
+
+<!--  \includepdf[pagecommand={}]{./slides/econometria.pdf} -->
+ 
+```{r}
+#| echo: false
+#| message: false
+
+suppressPackageStartupMessages(library(downloadthis))
+
+download_dir(
+  path = here::here("slides", "econometria"),
+  output_name = "econometria.pdf",
+  output_extension = ".pdf",
+  button_label = "Baixar PDF",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = TRUE
+)
+
+```
