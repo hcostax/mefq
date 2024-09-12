@@ -1,0 +1,168 @@
+---
+format: 
+  revealjs:
+    css: ../styles.css
+    slide-number: true
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+    progress: true
+    history: true
+    hash-type: number
+    theme: default
+    code-block-background: true
+    highlight-style: zenburn
+    code-link: false
+    code-copy: true
+    pagetitle: "Princípios de Modelagem"
+    author-meta: "Henrique Costa"
+    date-meta: "2024-09-09"
+    df-print: paged
+---
+
+::: {.my-title}
+# [Tópicos em Econometria]{.blue} <br />Regressão Linear
+
+::: {.my-grey}
+[Encontro 6 | 12/09/20024]{}<br />
+[Henrique Costa | Métodos Estratégicos em FinQuant]{}
+:::
+
+<!-- ![](../img/proud_coder_357EDD.svg){.absolute bottom=0 right=0 width=400} -->
+:::
+
+<!-- Wrangle III -->
+
+
+
+
+# A natureza da análise de regressão
+
+
+
+
+## Origem histórica do termo regressão {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="60%"}
+
+::: {.fragment .mt1}
+- O termo regressão foi criado por [Francis Galton]{.b .blue}
+    -   Em um artigo famoso, Galton verificou que, a variação na altura tendia a mover-se ou ["regredir"]{.b .green} à altura média da população como um todo. 
+    -   A lei da regressão universal de Galton foi confirmada por seu amigo [Karl Pearson]{.b .blue}
+
+:::
+
+
+::: {.fragment .mt1}
+-  Nas palavras de Galton, isso era uma ["regressão à mediocridade"]{.b .green}
+
+
+:::
+:::
+
+::: {.column .tc .pv5 width="40%"}
+
+
+
+::: {.fragment .mt1}
+$$ \beta > \frac{1}{n} \sum^{n}_{i=1} x_{i} $$
+:::
+
+<br>
+
+::: {.fragment .mt1}
+ - Em que: 
+    - $\beta$ = Be
+    - $>$ = Greate than
+    - $\sum^{n}_{i=1} x_{i}$ = Average
+
+::: 
+
+::: {.fragment .mt1}
+  - [Seja melhor que a média]{.b .green}
+:::
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## Conceito de função de regressão {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="50%"}
+
+::: {.fragment .mt1}
+- Função de regressão populacional (FRP)
+    -   $E(Y|X_{i}) = f(X_{i})$
+    
+    -   $E(Y|X_{i}) = \beta_{1} + \beta_{2} X_{i}$
+    
+  
+
+:::
+
+
+::: {.fragment .mt1}
+
+- Especificação estocástica da FRP 
+    -   $u_{i} = Y_{i}  - E(Y|X_{i}) = f(X_{i})$  
+    -   $Y_{i} = E(Y|X_{i}) + u_{i}$ 
+    -   [$$ Y_{i} = \beta_{1} + \beta_{2} X_{i} + u_{i} $$]{.b .blue}
+
+:::
+:::
+
+::: {.column .tc .pv5 width="50%"}
+
+
+
+::: {.fragment .mt1}
+- Função de regressão amostral (FRA)
+    -   $\hat{Y_{i}} =  \hat{\beta_{1}} + \hat{\beta_{2}} X_{i}$
+    
+    -   [$$ \hat{Y_{i}} = \hat{\beta_{1}} + \hat{\beta_{2}} X_{i} + \hat{u_{i}} $$]{.b .green}
+:::
+
+
+
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+## Exemplo {.smaller}
+
+::: {.pv4 .tc}
+![](../img/regresion_01.png){width=60%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+
+
+
+
+
+
+
+# [Prática](https://doi.org/10.59350/xs70x-mar87){preview-link="false"}

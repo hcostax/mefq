@@ -29,5 +29,7 @@ Nesta página é possível encontrar os slides dos encontros e as referências u
 
 [Atividade Prática - PMC](https://doi.org/10.59350/xs70x-mar87)
 
+[Apresentação 2](https://mefq.netlify.app/slides/slide_modelling2#/)
 
+[Econometria](https://mefq.netlify.app/slides/econometria.pdf/)
 
