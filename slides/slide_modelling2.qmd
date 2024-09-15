@@ -157,8 +157,163 @@ $$ \beta > \frac{1}{n} \sum^{n}_{i=1} x_{i} $$
 :::
 
 
+# A estimação
+
+## Mínimos quadrados ordinários {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="50%"}
+
+::: {.fragment .mt1}
+- Este método é atribuído a [Carl Friedrich Gauss]{.b .blue}
+    -   Sob certas hipóteses, o MQO tem algumas propriedades estatísticas muito atraentes que o tornou um dos métodos de análise de regressão mais poderosos e difundidos. 
 
 
+:::
+
+
+::: {.fragment .mt1}
+-   A FRP não pode ser observada diretamente, por isso temos quee estimá-la por meio da FRA.
+
+:::
+
+::: {.fragment .mt1}
+- Mas como determinamos a FRA propriamente dita?
+::: 
+
+:::
+
+::: {.column .tc .pv5 width="50%"}
+
+
+
+::: {.fragment .mt1}
+- $\hat{u_{i}} = Y_{i}  - \hat{Y_{i}}$
+- $\hat{u_{i}} = Y_{i} - \hat{\beta_{1}} - \hat{\beta_{2}} X_{i}$
+:::
+
+<br>
+
+::: {.fragment .mt1}
+ - O método que mínimiza $\hat{u_{i}}$.
+ 
+    - $\sum\hat{u_{i}}^2 = \sum(Y_{i}  - \hat{Y_{i}})^2$
+    - $\sum\hat{u_{i}}^2 = \sum(Y_{i} - \hat{\beta_{1}} - \hat{\beta_{2}} X_{i})^2$
+
+::: 
+
+::: {.fragment .mt1}
+- [$$\sum\hat{u_{i}}^2 = f(\alpha, \beta) = min_{\alpha, \beta} \sum^{n}_{i=1} (Y_{i} - \alpha - \beta X_{i})^2 $$]{.b .green}
+:::
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+
+
+## $$min_{\alpha, \beta} \bar{\hat{u_{i}}} = 0$$ {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="50%"}
+
+::: {.fragment .mt1}
+- Isto pode ser verificável quando:
+
+    -   [$\bar{\hat{Y}} = \bar{Y}$]{.b .blue} . 
+:::
+
+
+::: {.fragment .mt1}
+-   Pelo fato de que $\sum (X_{i} - \bar{X}) = 0$.
+
+:::
+
+
+:::
+
+::: {.column .tc .pv5 width="50%"}
+
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+# As hipóteses básicass do método dos mínimos quadrados
+
+## Hipóteses teóricas:
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+::: {.fragment .mt1}
+- **Hipótese 1**: Modelo de regressão linear 
+    -   o modelo de regressão é [linear nos parâmetros]{.b .blue}.
+
+:::
+
+
+::: {.fragment .mt1}
+- **Hipótese 2**: X fixo ou independente do termo de erro 
+    -   supõe-se que as variáveis X e o termo de erro são independentes, isto é,  [$cov(X_{i}, u_{i})=0$]{.b .blue}. 
+
+:::
+
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## Hipóteses teóricas:
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+
+::: {.fragment .mt1}
+- **Hipótese 3**: a média do termo de erro $u_{i} = 0$ (é zero) 
+    -   fatores não incluídos explicitamente no modelo e, portanto, agrupados em $u_{i}$, não afetam sistematicamente o valor médio de $Y$
+    -   valores positivos de $u_{i}$ cancelam os negativos, de modo que seu efeito médio sobre $Y$ é igual a 0 (zero).
+::: 
+
+
+:: {.fragment .mt1}
+- **Hipótese 4**: Homocedasticidade ou variância constante de $u_{i}$
+    -   fatores não incluídos explicitamente no modelo e, portanto, agrupados em $u_{i}$, não afetam sistematicamente o valor médio de $Y$
+    -   valores positivos de $u_{i}$ cancelam os negativos, de modo que seu efeito médio sobre $Y$ é igual a 0 (zero).
+::: 
+
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+:::
+
+::: footer
+
+:::
 
 
 
