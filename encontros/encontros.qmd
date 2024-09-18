@@ -34,6 +34,15 @@ Nesta página é possível encontrar os vídeos dos encontros.
 **Encontro 02/09/2024:** [Dados e R - Part III (Gramática dos Gráficos - pt 2)](https://youtu.be/5sAf5pRj04g)
 
 
+
+<br>
+
+### Princípios de Modelagem & Tópicos em Economia.
+
+**Encontro 09/09/2024:** [Princípios de Modelagem e Tópicos em Economia.](https://youtu.be/xyWHD-lQYrs)
+
+**Encontro 17/09/2024:** [Tópicos em Econometria: Regressão Linear](https://youtu.be/zWrskQQLeNw)
+
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
 
 <!-- [Atividade Prática - ggplot2](https://mefq.netlify.app/pratica/pratica_ggplot2.html/) -->

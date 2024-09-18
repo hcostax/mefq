@@ -291,4 +291,4 @@ A estática comparativa foi formalizada por John Richard Hicks (1939) e Paul Sam
 
 <!-- Practice IV -->
 
-# [Prática](https://doi.org/10.59350/xs70x-mar87){preview-link="false"}
+# [Prática](https://hcostax.netlify.app/blog/regression/){preview-link="false"}
