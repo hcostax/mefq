@@ -24,7 +24,7 @@ format:
 # [Tópicos em Econometria]{.blue} <br />Regressão Linear
 
 ::: {.my-grey}
-[Encontro 6 | 12/09/20024]{}<br />
+[Encontro 7 | 17/09/20024]{}<br />
 [Henrique Costa | Métodos Estratégicos em FinQuant]{}
 :::
 
@@ -112,7 +112,7 @@ $$ \beta > \frac{1}{n} \sum^{n}_{i=1} x_{i} $$
 ::: {.fragment .mt1}
 
 - Especificação estocástica da FRP 
-    -   $u_{i} = Y_{i}  - E(Y|X_{i}) = f(X_{i})$  
+    -   $u_{i} = Y_{i}  - E(Y|X_{i})$  
     -   $Y_{i} = E(Y|X_{i}) + u_{i}$ 
     -   [$$ Y_{i} = \beta_{1} + \beta_{2} X_{i} + u_{i} $$]{.b .blue}
 
@@ -249,8 +249,22 @@ $$ \beta > \frac{1}{n} \sum^{n}_{i=1} x_{i} $$
 :::
 
 
+## Exemplo {.smaller}
 
-# As hipóteses básicass do método dos mínimos quadrados
+::: {.pv4 .tc}
+![](../img/regresion_01.png){width=60%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+# As hipóteses básicas do método dos mínimos quadrados
 
 ## Hipóteses teóricas:
 
@@ -289,27 +303,221 @@ $$ \beta > \frac{1}{n} \sum^{n}_{i=1} x_{i} $$
 ::: {.columns .pv4}
 ::: {.column width="99%"}
 
-
-::: {.fragment .mt1}
-- **Hipótese 3**: a média do termo de erro $u_{i} = 0$ (é zero) 
+- **Hipótese 3**: a média do termo de erro [$\bar{u_{i}} = 0$]{.b .blue} (é zero) 
     -   fatores não incluídos explicitamente no modelo e, portanto, agrupados em $u_{i}$, não afetam sistematicamente o valor médio de $Y$
     -   valores positivos de $u_{i}$ cancelam os negativos, de modo que seu efeito médio sobre $Y$ é igual a 0 (zero).
-::: 
 
 
-:: {.fragment .mt1}
-- **Hipótese 4**: Homocedasticidade ou variância constante de $u_{i}$
-    -   fatores não incluídos explicitamente no modelo e, portanto, agrupados em $u_{i}$, não afetam sistematicamente o valor médio de $Y$
-    -   valores positivos de $u_{i}$ cancelam os negativos, de modo que seu efeito médio sobre $Y$ é igual a 0 (zero).
-::: 
 
+:::
 
 :::
 
 ::: {.column .tc .pv5 width="01%"}
 
 :::
+
+::: footer
+
 :::
+
+
+
+## Hipóteses teóricas:
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+
+- **Hipótese 4**: Homocedasticidade (variância constante) de $u_{i}$
+    -   A variância do termo de erro é a mesma independentemente do valor de $X$.
+    -   Disperção desigual de $u_{i}$.
+    
+
+:::
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+
+
+::: footer
+
+:::
+
+
+## **Hipótese 4**: Homocedasticidade {.smaller}
+
+::: {.pv4 .tc}
+![](../img/homocedasticidade.png){width=60%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+## **Hipótese 4**: Heterocedasticidade {.smaller}
+
+::: {.pv4 .tc}
+![](../img/heterocedasticidade.png){width=60%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+## Hipóteses teóricas:
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+
+- **Hipótese 5**: ausencia de autocorrelação entre os termos de erro
+    -   dados quaisquer dois valores de $X$, $X_{i}$, $X_{j}$ ($i \neq j$), a correlação entre quaisquer dois $u_{i}$, $u_{j}$ ($i \neq j$) é zero.
+    -   os termos de erro $u_{i}$ e $u_{j}$ não são correlacionados.
+Tecnicamente, esta é a hipótese de [ausência de correlação serial]{.b .blue} ou de [ausência de autocorrelação]{.b .green}.
+    
+
+:::
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+
+
+::: footer
+
+:::
+
+
+
+## **Hipótese 5**: ausencia de correlação serial (autocorrelação) {.smaller}
+
+::: {.pv4 .tc}
+![](../img/autocorrelacao.png){width=50%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+## Hipóteses teóricas:
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+
+- **Hipótese 6**: O número de observações $n$ deve ser maior que o número de parâmetros a serem estimados.
+    
+::: {.fragment .mt1}
+- **Hipótese 7**: Variabilidade dos valores de $X$ 
+    -   os valores de X em uma amostra não devem ser os mesmos.
+    -   [$var (X)$ deve ser um número positivo]{.b .green}.
+    -   não pode haver valores extremos (*outliers*) da variável $X$. 
+
+:::
+
+
+:::
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+
+
+::: footer
+
+:::
+
+
+
+
+
+## A hipótese de normalidade de $u_{i}$:
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+
+- Supõe que cada $u_{i}$ seja [distribuído *normalmente*]{.b .blue}.
+    - Média: $E(u_{i}) = 0$
+    - Variância: $E[u_{i} - E(u_{i})]^{2} = E(u^{2}_{i}) = \sigma^{2}$
+    - $cov(u_{i}, u_{j})$: $E\{[(u_{i} - E(u_{i})][u_{j} - E(u_{j})]\} = E(u_{i} \; u_{j} ) = 0 \;\;\;\; i \neq j$
+    
+::: {.fragment .mt1}
+- Isso pode ser representado de forma mais compacta: 
+    -   $u_{i} \; \sim \; N(0, \sigma^{2})$
+    -   [Erros distribuídos normalmente com média zero e variância constante]{.b .green}.
+:::
+
+
+:::
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+
+
+::: footer
+
+:::
+
+
+
+# Diagnóstico
+
+
+## Diagnóstico: analisando o resultado.
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+
+- O que devemos analisar no resultado de uma regressão linear?
+    - $u_{i} \; \sim \; N(0, \sigma^{2})$
+    - Erro padrão (Std. Error)
+    - *P-valor* - Teste de Hipótese *t*-student
+    - *P-valor* - Teste de Hipótese *F* ($F-statistic > 5.32$)
+    - $R^{2}$ - Coeficiênte de Determinação
+    
+::: {.fragment .mt1}
+- O pacote `performance` pode facilitar nossas vidas
+
+:::
+
+
+:::
+
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+:::
+
 
 ::: footer
 
@@ -320,4 +528,4 @@ $$ \beta > \frac{1}{n} \sum^{n}_{i=1} x_{i} $$
 
 
 
-# [Prática](https://doi.org/10.59350/xs70x-mar87){preview-link="false"}
+# [Prática](https://hcostax.netlify.app/blog/regression/){preview-link="false"}
