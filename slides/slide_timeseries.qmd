@@ -1,0 +1,346 @@
+---
+format: 
+  revealjs:
+    css: ../styles.css
+    slide-number: true
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+    progress: true
+    history: true
+    hash-type: number
+    theme: default
+    code-block-background: true
+    highlight-style: zenburn
+    code-link: false
+    code-copy: true
+    pagetitle: "Princípios de Modelagem"
+    author-meta: "Henrique Costa"
+    date-meta: "2024-09-09"
+    df-print: paged
+---
+
+::: {.my-title}
+# [Tópicos em Econometria]{.blue} <br />Séries Temporais
+
+::: {.my-grey}
+[Encontro 8 | 30/09/20024]{}<br />
+[Henrique Costa | Métodos Estratégicos em FinQuant]{}
+:::
+
+<!-- ![](../img/proud_coder_357EDD.svg){.absolute bottom=0 right=0 width=400} -->
+:::
+
+<!-- Wrangle III -->
+
+
+
+
+# Introdução
+
+
+
+
+## Econometria e Série de Tempo {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+::: {.fragment .mt1}
+- Na econometria clássica, o uso de dados de corte transversal predomina nas análises. Porém, em inúmeros contextos na economia, a análise cronológica de eventos é uma necessidade. 
+    
+
+:::
+
+
+::: {.fragment .mt1}
+-  Qual será a taxa de desemprego do ano que vem?
+- Como a inflação vai se comportar nos próximos meses?
+- Quanto tempo vai durar o efeito da diminuição dos juros sobre o produto?
+
+
+:::
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+
+
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## Definição: {.smaller}
+
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+::: {.fragment .mt1}
+- Série temporal é qualquer conjunto de dados ordenados ao longo do tempo. 
+
+- A análise é composta procedimentos estatísticos cujo objetivo é identificar padrões de comportamento nos dados. 
+    
+  
+
+:::
+
+
+::: {.fragment .mt1}
+
+- Realizar projeções/previsões
+- Analisar causalidade (precedência temporal)
+- Estudar periodicidades relevantes (sazonalidade e ciclo).
+
+:::
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+
+
+
+
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+
+
+## Algumas características dos modelos de séries temporais {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="99%"}
+
+::: {.fragment .mt1}
+- Importância do ordenamento temporal dos dados;
+
+- Existência de fatores determinísticos, como tendencia, sazonalidade e ciclos. 
+    
+  
+
+:::
+
+
+::: {.fragment .mt1}
+
+- Desafios na seleção dos modelos (pouco embasamento teórico)
+- Dificuldade em lidar com outliers (ter cuidado, e não excluir sem justificativa factível)
+- Observações altamente correlacionadas.
+
+:::
+:::
+
+::: {.column .tc .pv5 width="01%"}
+
+
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+
+
+# Abordagem
+
+
+
+## Univariado e Multivariado {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="50%"}
+
+::: {.fragment .mt1}
+- Modelos [Univariados]{.b .blue}
+    -   Apenas uma série
+    -   Utilizamos informações passadas da série e as observações passadas e correntes dos choques aleatórios para projetar seu valor médio.
+    -   Objetivo principal é a projeção de eventos futuros
+
+:::
+
+
+
+
+:::
+
+::: {.column .tc .pv5 width="50%"}
+
+
+
+::: {.fragment .mt1}
+- Modelos [Multivariados]{.b .green}
+  -   Duas ou mais séries
+  -   Informações de outras variáveis também são consideradas na previsão
+  -   Objetivo também é a previsão, e análise de causalidade
+:::
+
+
+
+
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+
+# Tudo começa com: Análise Gráfica
+
+
+
+
+## Exemplo: Projeção {.smaller}
+
+::: {.pv4 .tc}
+![](../img/fpp3_01.jpg){width=80%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+## Exemplo: Vendas de Remédios {.smaller}
+
+::: {.pv4 .tc}
+![](../img/fpp3_02.jpg){width=80%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+
+# Componentes
+
+## Tendencia, Sazonalidade e Ciclo {.smaller}
+
+::: {.columns .pv4}
+::: {.column width="50%"}
+
+::: {.fragment .mt1}
+- [Tendência]{.b .blue}
+    -   uma tendência existe quando há um aumento ou diminuição de longo prazo nos dados. Não precisa ser linear.  
+
+
+:::
+
+
+::: {.fragment .mt1}
+- [Sazonaliadade]{.b .blue}
+    -   um padrão sazonal ocorre quando uma série temporal é afetada por fatores sazonais, como a época do ano ou o dia da semana. A sazonalidade é sempre de um período fixo e conhecido. (Alta frequência) 
+
+:::
+
+
+:::
+
+::: {.column .tc .pv5 width="50%"}
+
+::: {.fragment .mt1}
+- [Cíclico]{.b .green}
+    -   um ciclo ocorre quando os dados exibem subidas e descidas que não são de uma frequência fixa. Essas flutuações geralmente são devidas a condições econômicas e são frequentemente relacionadas ao “ciclo de negócios”. (Baixa frequência) 
+:::
+
+
+<!-- ![](../img/regresion_01.png)  -->
+:::
+:::
+
+::: footer
+
+:::
+
+
+
+## Decomposição {.smaller}
+
+::: {.pv4 .tc}
+![](../img/fpp3_03.jpg){width=65%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+## Verificando Sazonalidade {.smaller}
+
+::: {.pv4 .tc}
+![](../img/fpp3_04.jpg){width=85%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+## Verificando Sazonalidade {.smaller}
+
+::: {.pv4 .tc}
+![](../img/fpp3_05.jpg){width=105%}
+
+<!-- ::: {.fragment} -->
+<!-- Uma [visualização de dados]{.b .blue} que expressa os [dados]{.b .green} por meio de [estética visual]{.b .green}. -->
+<!-- ::: -->
+:::
+
+::: footer
+
+:::
+
+
+
+
+
+
+
+
+
+# [Prática](https://otexts.com/fpp3/){preview-link="true"}

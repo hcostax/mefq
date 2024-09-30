@@ -29,7 +29,7 @@ Nesta página é possível encontrar os slides dos encontros e as referências u
 
 [Atividade Prática - PMC](https://doi.org/10.59350/xs70x-mar87)
 
-[Apresentação 2](https://mefq.netlify.app/slides/slide_modelling2#/)
+[Apresentação 2 - Regressão Linear](https://mefq.netlify.app/slides/slide_modelling2#/)
 
 [Verificando a suposição do modelo - modelos lineares](https://easystats.github.io/performance/articles/check_model.html)
 
@@ -58,3 +58,15 @@ download_dir(
 )
 
 ```
+
+
+
+<br>
+
+[Apresentação 3 - Series Temporais](https://mefq.netlify.app/slides/slide_timeseries#/)
+
+
+
+
+
+
