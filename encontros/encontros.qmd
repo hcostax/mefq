@@ -43,7 +43,7 @@ Nesta página é possível encontrar os vídeos dos encontros.
 
 **Encontro 17/09/2024:** [Tópicos em Econometria: Regressão Linear](https://youtu.be/zWrskQQLeNw)
 
-*Encontro 26/09/2024:** [Tópicos em Econometria: Regressão Linear parte 2](https://youtu.be/xBagjxPzefY)
+**Encontro 26/09/2024:** [Tópicos em Econometria: Regressão Linear parte 2](https://youtu.be/xBagjxPzefY)
 
 
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
