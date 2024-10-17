@@ -45,6 +45,7 @@ Nesta página é possível encontrar os vídeos dos encontros.
 
 **Encontro 26/09/2024:** [Tópicos em Econometria: Regressão Linear parte 2](https://youtu.be/xBagjxPzefY)
 
+**Encontro 26/09/2024:** [Tópicos em Econometria: Decomposição de Séries Temporais](https://youtu.be/y_otvCoaxsM)
 
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
 
