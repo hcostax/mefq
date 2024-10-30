@@ -48,7 +48,10 @@ Nesta página é possível encontrar os vídeos dos encontros.
 **Encontro 26/09/2024:** [Tópicos em Econometria: Decomposição de Séries Temporais](https://youtu.be/y_otvCoaxsM)
 
 
-**Encontro 22/10/2024:** [Primeiro Case: PMC com dados do Brasil](https://youtu.be/0mHfCbETUxU)
+<!-- **Encontro 22/10/2024:** [Primeiro Case: PMC com dados do Brasil](https://youtu.be/0mHfCbETUxU) -->
+
+
+**Encontro 29/10/2024:** [Segundo Case: Series Temporais - Part I (Decomposição I)](https://youtu.be/WVLASk2Pk2Y)
 
 
 
