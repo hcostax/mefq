@@ -55,6 +55,8 @@ Nesta página é possível encontrar os vídeos dos encontros.
 
 **Encontro 04/11/2024:** [Segundo Case: Series Temporais - Part II (Decomposição II)](https://youtu.be/_AnPwq7XUbo)
 
+**Encontro 07/11/2024:** [**REVISÃO** - Segundo Case: Series Temporais - Part II (Decomposição II)](https://youtu.be/rRtzbD5q69I)
+
 
 <!-- [Atividade Prática - Tidyverse](https://mefq.netlify.app/pratica/pratica_tidyverse.html/) -->
 
